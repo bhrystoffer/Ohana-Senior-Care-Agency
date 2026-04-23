@@ -1,0 +1,204 @@
+/* ============================================================
+   BUTTONS — Ohana Senior Care Agency V2
+   ============================================================ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  padding: 14px var(--sp-6);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:
+    background-color var(--t-fast),
+    border-color var(--t-fast),
+    color var(--t-fast),
+    transform var(--t-fast),
+    box-shadow var(--t-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ── Primary ──────────────────────────────────────────────── */
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--white);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-green-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ── Secondary / Outline ──────────────────────────────────── */
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-green-sm);
+}
+
+.btn-secondary:active { transform: translateY(0); }
+
+/* ── Ghost (on dark bg) ───────────────────────────────────── */
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,.45);
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.8);
+  transform: translateY(-1px);
+}
+
+/* ── Ghost White — alias for btn-ghost ────────────────────── */
+/* Used on hero dark sections in older agent-built pages */
+
+.btn-ghost-white {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,.45);
+  border: 2px solid rgba(255,255,255,.45);
+}
+
+.btn-ghost-white:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.8);
+  transform: translateY(-1px);
+}
+
+/* ── White (on dark bg) ───────────────────────────────────── */
+
+.btn-white {
+  background: var(--white);
+  color: var(--color-primary);
+  border-color: var(--white);
+}
+
+.btn-white:hover {
+  background: var(--green-50);
+  border-color: var(--green-50);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Text Button ──────────────────────────────────────────── */
+
+.btn-text {
+  padding: 0;
+  border-radius: 0;
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+  background: none;
+  border: none;
+}
+
+.btn-text .btn-arrow {
+  display: inline-block;
+  transition: transform var(--t-fast);
+}
+
+.btn-text:hover { color: var(--color-primary-dark); }
+.btn-text:hover .btn-arrow { transform: translateX(4px); }
+
+/* ── Sizes ────────────────────────────────────────────────── */
+
+.btn-sm  { font-size: var(--text-xs);  padding: 10px var(--sp-4); }
+.btn-lg  { font-size: var(--text-base); padding: 17px var(--sp-8); }
+.btn-xl  { font-size: var(--text-lg);  padding: 20px var(--sp-10); }
+
+/* ── Icon-only ────────────────────────────────────────────── */
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.btn-icon-sm { width: 36px; height: 36px; }
+.btn-icon-lg { width: 52px; height: 52px; }
+
+/* ── Full width ───────────────────────────────────────────── */
+
+.btn-full { width: 100%; }
+
+/* ── Loading ──────────────────────────────────────────────── */
+
+.btn.is-loading {
+  pointer-events: none;
+  color: transparent;
+}
+
+.btn.is-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.65s linear infinite;
+  color: var(--white);
+}
+
+@keyframes btn-spin { to { transform: rotate(360deg); } }
+
+/* ── Disabled ─────────────────────────────────────────────── */
+
+.btn:disabled, .btn.is-disabled {
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+/* ── Button Group ─────────────────────────────────────────── */
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.btn-group--stack {
+  flex-direction: column;
+  align-items: stretch;
+}

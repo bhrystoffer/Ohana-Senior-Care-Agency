@@ -1,0 +1,143 @@
+/* ============================================================
+   CTA BLOCKS — Ohana Senior Care Agency V2
+   ============================================================ */
+
+/* ── Dark CTA Block ───────────────────────────────────────── */
+
+.cta-block {
+  background: var(--green-950);
+  border-radius: var(--radius-3xl);
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 72px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial glow accent */
+.cta-block::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -5%;
+  width: 560px; height: 560px;
+  background: radial-gradient(circle, rgba(78,140,28,.28) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-block::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 5%;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(47,107,15,.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-block__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-10);
+  flex-wrap: wrap;
+}
+
+.cta-block__text { max-width: 600px; }
+
+.cta-block__text h2 {
+  color: var(--white);
+  margin-bottom: var(--sp-4);
+}
+
+.cta-block__text p {
+  color: rgba(255,255,255,.72);
+  font-size: var(--text-lg);
+  max-width: 54ch;
+}
+
+.cta-block__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+
+/* ── Inline Banner CTA ────────────────────────────────────── */
+
+.cta-banner {
+  background: var(--color-surface-green);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius-2xl);
+  padding: var(--sp-8) var(--sp-10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+}
+
+.cta-banner__text h3 { font-size: var(--text-2xl); margin-bottom: var(--sp-2); }
+.cta-banner__text p  { color: var(--color-text-secondary); max-width: 55ch; }
+
+.cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+
+/* ── Hero CTA Strip ───────────────────────────────────────── */
+
+.hero-cta-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.hero-cta-strip .sep {
+  width: 1px; height: 32px;
+  background: rgba(255,255,255,.25);
+  flex-shrink: 0;
+}
+
+.hero-phone {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.hero-phone svg { color: var(--green-300); flex-shrink: 0; }
+
+.hero-phone__num {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-xl);
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  line-height: 1.1;
+  transition: color var(--t-fast);
+}
+
+.hero-phone__num:hover { color: var(--green-200); }
+
+.hero-phone__label {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,.55);
+  letter-spacing: var(--ls-wide);
+  display: block;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .cta-block__inner { flex-direction: column; }
+  .cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cta-banner__actions { width: 100%; }
+  .cta-banner__actions .btn { flex: 1; }
+}

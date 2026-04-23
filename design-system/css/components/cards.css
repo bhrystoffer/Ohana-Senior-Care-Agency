@@ -1,0 +1,376 @@
+/* ============================================================
+   CARDS — Ohana Senior Care Agency V2
+   ============================================================ */
+
+/* ── Base Card ────────────────────────────────────────────── */
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition:
+    transform    var(--t-base),
+    box-shadow   var(--t-base),
+    border-color var(--t-base);
+}
+
+.card--hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-green-lg);
+  border-color: var(--green-200);
+}
+
+/* ── Service Card ─────────────────────────────────────────── */
+
+.service-card {
+  padding: var(--sp-7) var(--sp-7) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-card__icon {
+  width: 48px; height: 48px;
+  background: var(--color-primary-wash);
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: background var(--t-base), color var(--t-base);
+}
+
+.card--hoverable:hover .service-card__icon {
+  background: var(--color-primary);
+  color: var(--white);
+}
+
+.service-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.service-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  flex: 1;
+  max-width: none;
+}
+
+.service-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: auto;
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  transition: gap var(--t-fast), color var(--t-fast);
+}
+
+.service-card__link .arrow {
+  transition: transform var(--t-fast);
+}
+
+.card--hoverable:hover .service-card__link .arrow {
+  transform: translateX(3px);
+}
+
+/* ── Partner Card ─────────────────────────────────────────── */
+
+.partner-card {
+  padding: var(--sp-6) var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  height: 100%;
+}
+
+.partner-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.partner-card__logo {
+  height: 40px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.partner-card__logo-placeholder {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+}
+
+.partner-card__category {
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: var(--color-surface-alt);
+  padding: 3px var(--sp-3);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.partner-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.partner-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  flex: 1;
+  max-width: none;
+}
+
+.partner-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: auto;
+}
+
+.partner-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-secondary);
+}
+
+.partner-card__tag svg {
+  width: 12px; height: 12px;
+  color: var(--color-primary-mid);
+  flex-shrink: 0;
+}
+
+/* ── Feature Card ─────────────────────────────────────────── */
+
+.feature-card {
+  padding: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.feature-card--alt   { background: var(--color-surface-alt); }
+.feature-card--green { background: var(--color-surface-green); border-color: var(--green-100); }
+
+.feature-card--dark {
+  background: var(--green-950);
+  border-color: transparent;
+}
+
+.feature-card__num {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+.feature-card--dark .feature-card__num { color: var(--green-400); }
+
+.feature-card__icon {
+  width: 40px; height: 40px;
+  color: var(--color-primary);
+}
+.feature-card--dark .feature-card__icon { color: var(--green-300); }
+
+/* Heading inside feature cards — supports both h3 and h4 */
+.feature-card h3,
+.feature-card h4,
+.feature-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  line-height: var(--lh-snug);
+}
+.feature-card--dark h3,
+.feature-card--dark h4,
+.feature-card--dark .feature-card__title { color: var(--white); }
+
+.feature-card p,
+.feature-card__body { font-size: var(--text-sm); color: var(--color-text-secondary); max-width: none; line-height: var(--lh-relaxed); }
+.feature-card--dark p,
+.feature-card--dark .feature-card__body { color: rgba(255,255,255,.6); }
+
+/* ── Audience Card ────────────────────────────────────────── */
+
+.audience-card {
+  padding: var(--sp-8);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  height: 100%;
+}
+
+.audience-card--families {
+  background: linear-gradient(140deg, var(--green-50) 0%, var(--green-100) 100%);
+  border-color: var(--green-200);
+}
+
+.audience-card--providers {
+  background: linear-gradient(140deg, var(--white) 0%, var(--gray-50) 100%);
+}
+
+.audience-card--facilities {
+  background: linear-gradient(140deg, var(--green-900) 0%, var(--green-950) 100%);
+  border-color: transparent;
+}
+
+.audience-card--facilities h3,
+.audience-card--facilities p { color: var(--white); }
+.audience-card--facilities p { opacity: .75; }
+
+.audience-card__icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.15);
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+.audience-card--facilities .audience-card__icon {
+  color: var(--green-300);
+}
+
+.audience-card h3 { font-size: var(--text-2xl); }
+.audience-card p  { font-size: var(--text-base); max-width: none; }
+
+/* ── Testimonial Card ─────────────────────────────────────── */
+
+.testimonial-card {
+  padding: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.testimonial-card__stars {
+  display: flex;
+  gap: 3px;
+  color: #F59E0B;
+}
+
+.testimonial-card__quote {
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text);
+  font-style: italic;
+  max-width: none;
+  flex: 1;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: auto;
+}
+
+.testimonial-card__avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary-subtle);
+  object-fit: cover;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+}
+
+.testimonial-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.testimonial-card__role {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* ── Generic Card BEM Children ────────────────────────────── */
+/* Used with .card (+ optional .feature-card .card--hoverable) */
+
+.card__icon-wrap {
+  width: 48px; height: 48px;
+  background: var(--color-primary-wash);
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: background var(--t-base), color var(--t-base);
+}
+
+.card--hoverable:hover .card__icon-wrap {
+  background: var(--color-primary);
+  color: var(--white);
+}
+
+.card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  line-height: var(--lh-snug);
+}
+
+.card__body {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: none;
+}

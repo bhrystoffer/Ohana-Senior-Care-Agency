@@ -1,0 +1,293 @@
+/* ============================================================
+   FORMS — Ohana Senior Care Agency V2
+   ============================================================ */
+
+/* ── Form Wrapper ─────────────────────────────────────────── */
+
+.form { display: flex; flex-direction: column; gap: var(--sp-5); }
+
+.form--card {
+  background: var(--white);
+  padding: var(--sp-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* ── Field ────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+/* ── Label ────────────────────────────────────────────────── */
+
+.field > label {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.required-mark { color: var(--color-error); margin-left: 2px; }
+
+/* ── Input / Textarea / Select ────────────────────────────── */
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-regular);
+  color: var(--color-text);
+  background: var(--white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 12px var(--sp-4);
+  line-height: var(--lh-normal);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  transition:
+    border-color var(--t-fast),
+    box-shadow   var(--t-fast);
+}
+
+.input::placeholder,
+.textarea::placeholder { color: var(--color-text-muted); }
+
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: var(--gray-400);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(47,107,15,.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── Select Wrapper ───────────────────────────────────────── */
+
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap .select { padding-right: var(--sp-10); cursor: pointer; }
+
+.select-wrap .select-arrow {
+  position: absolute;
+  right: var(--sp-4);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-muted);
+  width: 16px; height: 16px;
+}
+
+/* ── States ───────────────────────────────────────────────── */
+
+.input.is-error,
+.textarea.is-error,
+.select.is-error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(192,57,43,.09);
+}
+
+.input.is-success,
+.textarea.is-success {
+  border-color: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(42,122,75,.09);
+}
+
+/* ── Field Messages ───────────────────────────────────────── */
+
+.field-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--lh-normal);
+}
+
+.field-error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  font-weight: var(--fw-medium);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.field-error svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+/* ── Checkbox / Radio ─────────────────────────────────────── */
+
+.check-label,
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.check-label input[type="checkbox"],
+.radio-label  input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--t-fast), border-color var(--t-fast);
+}
+
+.radio-label input[type="radio"] { border-radius: 50%; }
+
+.check-label input[type="checkbox"]:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.check-label input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px; left: 5px;
+  width: 5px; height: 9px;
+  border: 2px solid var(--white);
+  border-top: none; border-left: none;
+  transform: rotate(45deg);
+}
+
+.radio-label input[type="radio"]:checked {
+  border-color: var(--color-primary);
+}
+
+.radio-label input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* ── Form Tabs ────────────────────────────────────────────── */
+
+.form-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--color-border-subtle);
+  margin-bottom: var(--sp-8);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.form-tabs::-webkit-scrollbar { display: none; }
+
+.form-tab {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  padding: var(--sp-3) var(--sp-5);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+}
+
+.form-tab:hover { color: var(--color-primary); }
+
+.form-tab.is-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.form-panel { display: none; flex-direction: column; gap: var(--sp-5); }
+.form-panel.is-active { display: flex; }
+
+/* ── Urgency Picker ───────────────────────────────────────── */
+
+.urgency-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--sp-3);
+}
+
+.urgency-opt { position: relative; }
+
+.urgency-opt input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+
+.urgency-opt label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sp-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+
+.urgency-opt input:checked + label {
+  border-color: var(--color-primary);
+  background: var(--color-primary-wash);
+}
+
+.urgency-opt label .urgency-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+}
+
+.urgency-opt label .urgency-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ── Form Footer (submit area) ────────────────────────────── */
+
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .field-row       { grid-template-columns: 1fr; }
+  .form--card      { padding: var(--sp-6); }
+  .urgency-grid    { grid-template-columns: 1fr 1fr; }
+}

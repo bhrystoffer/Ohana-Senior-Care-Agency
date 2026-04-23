@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ohana Senior Care — Design System V2</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/components/sections.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/nav.css" />
+  <link rel="stylesheet" href="css/components/footer.css" />
+  <link rel="stylesheet" href="css/components/cards.css" />
+  <link rel="stylesheet" href="css/components/forms.css" />
+  <link rel="stylesheet" href="css/components/cta.css" />
+  <link rel="stylesheet" href="css/components/carousel.css" />
+
+  <!-- Showcase-specific styles -->
+  <style>
+    /* Showcase chrome */
+    .ds-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--gray-950);
+      padding: var(--sp-3) var(--section-x);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-6);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .ds-nav::-webkit-scrollbar { display: none; }
+    .ds-nav__logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-bold);
+      color: var(--white);
+      white-space: nowrap;
+      margin-right: var(--sp-4);
+      flex-shrink: 0;
+    }
+    .ds-nav__logo span { color: var(--green-400); }
+    .ds-nav a {
+      font-size: var(--text-xs);
+      font-weight: var(--fw-medium);
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color var(--t-fast);
+      padding: var(--sp-1) var(--sp-2);
+      border-radius: var(--radius-md);
+    }
+    .ds-nav a:hover { color: var(--white); }
+
+    /* Section headers */
+    .ds-section {
+      padding: var(--sp-16) var(--section-x);
+      max-width: var(--container-wide);
+      margin-inline: auto;
+    }
+    .ds-section + .ds-section {
+      border-top: 1px solid var(--color-border-subtle);
+    }
+    .ds-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--sp-2);
+    }
+    .ds-heading {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--color-text);
+      letter-spacing: var(--ls-tighter);
+      margin-bottom: var(--sp-8);
+    }
+    .ds-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-8);
+    }
+    .ds-label {
+      font-size: var(--text-xs);
+      font-weight: var(--fw-semibold);
+      letter-spacing: var(--ls-wide);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-3);
+    }
+    .ds-block {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* Color swatches */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: var(--sp-3);
+    }
+    .swatch {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .swatch__color {
+      height: 64px;
+    }
+    .swatch__info {
+      padding: var(--sp-2) var(--sp-3);
+      background: var(--white);
+      border: 1px solid var(--color-border-subtle);
+      border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+    .swatch__name {
+      font-size: 10px;
+      font-weight: var(--fw-semibold);
+      color: var(--color-text);
+    }
+    .swatch__hex {
+      font-size: 10px;
+      font-family: monospace;
+      color: var(--color-text-muted);
+    }
+
+    /* Spacing demo */
+    .space-demo {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .space-block {
+      background: var(--color-primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: var(--sp-2);
+    }
+    .space-block span {
+      font-size: 10px;
+      color: var(--white);
+      font-family: monospace;
+      white-space: nowrap;
+    }
+
+    /* Preview backgrounds */
+    .on-white  { background: var(--white); padding: var(--sp-8); border-radius: var(--radius-xl); border: 1px solid var(--color-border-subtle); }
+    .on-dark-bg { background: var(--green-950); padding: var(--sp-8); border-radius: var(--radius-xl); }
+    .on-green-bg { background: var(--color-surface-green); padding: var(--sp-8); border-radius: var(--radius-xl); border: 1px solid var(--green-100); }
+    .ds-preview-frame {
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    /* Typography demo */
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-6);
+      padding: var(--sp-4) 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+    .type-row:last-child { border-bottom: none; }
+    .type-meta {
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+
+    /* Hidden on page, used only to validate nav structure  */
+    body { padding-top: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     SHOWCASE NAV (sticky)
+     ============================================================ -->
+<nav class="ds-nav" aria-label="Design system sections">
+  <span class="ds-nav__logo">Ohana <span>DS</span> v2</span>
+  <a href="#colors">Colors</a>
+  <a href="#typography">Type</a>
+  <a href="#spacing">Spacing</a>
+  <a href="#buttons">Buttons</a>
+  <a href="#badges">Badges</a>
+  <a href="#nav-section">Navigation</a>
+  <a href="#cards">Cards</a>
+  <a href="#forms">Forms</a>
+  <a href="#cta">CTA Blocks</a>
+  <a href="#carousel">Carousel</a>
+  <a href="#footer">Footer</a>
+  <a href="#interactions">Interactions</a>
+</nav>
+
+
+<!-- ============================================================
+     1. COLOR SYSTEM
+     ============================================================ -->
+<section id="colors" class="ds-section">
+  <p class="ds-title">01 — Colors</p>
+  <h2 class="ds-heading">Color System</h2>
+
+  <p class="ds-label">Primary Green Scale</p>
+  <div class="swatch-grid" style="margin-bottom: var(--sp-8);">
+    <div class="swatch"><div class="swatch__color" style="background:#0E2204"></div><div class="swatch__info"><div class="swatch__name">Green 950</div><div class="swatch__hex">#0E2204</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#1A3D08"></div><div class="swatch__info"><div class="swatch__name">Green 900</div><div class="swatch__hex">#1A3D08</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#2F6B0F"></div><div class="swatch__info"><div class="swatch__name">Green 800 ★</div><div class="swatch__hex">#2F6B0F</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#3A7A12"></div><div class="swatch__info"><div class="swatch__name">Green 700</div><div class="swatch__hex">#3A7A12</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#4E8C1C"></div><div class="swatch__info"><div class="swatch__name">Green 600</div><div class="swatch__hex">#4E8C1C</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#6A9E47"></div><div class="swatch__info"><div class="swatch__name">Green 500</div><div class="swatch__hex">#6A9E47</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#7E9F63"></div><div class="swatch__info"><div class="swatch__name">Green 400</div><div class="swatch__hex">#7E9F63</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#93AD7E"></div><div class="swatch__info"><div class="swatch__name">Green 300</div><div class="swatch__hex">#93AD7E</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#AEBBA4"></div><div class="swatch__info"><div class="swatch__name">Green 200</div><div class="swatch__hex">#AEBBA4</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#D0DECC"></div><div class="swatch__info"><div class="swatch__name">Green 100</div><div class="swatch__hex">#D0DECC</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#EEF5E9; border:1px solid #D0DECC"></div><div class="swatch__info"><div class="swatch__name">Green 50</div><div class="swatch__hex">#EEF5E9</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#F6FAF4; border:1px solid #E4EEE0"></div><div class="swatch__info"><div class="swatch__name">Green 25</div><div class="swatch__hex">#F6FAF4</div></div></div>
+  </div>
+
+  <p class="ds-label">Neutrals</p>
+  <div class="swatch-grid" style="margin-bottom: var(--sp-8);">
+    <div class="swatch"><div class="swatch__color" style="background:#0D0D0D"></div><div class="swatch__info"><div class="swatch__name">Gray 950</div><div class="swatch__hex">#0D0D0D</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#1A1A1A"></div><div class="swatch__info"><div class="swatch__name">Gray 900</div><div class="swatch__hex">#1A1A1A</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#5A5A5A"></div><div class="swatch__info"><div class="swatch__name">Gray 600 ★</div><div class="swatch__hex">#5A5A5A</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#A3A3A3"></div><div class="swatch__info"><div class="swatch__name">Gray 400</div><div class="swatch__hex">#A3A3A3</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#D4D4D4"></div><div class="swatch__info"><div class="swatch__name">Gray 300 ★</div><div class="swatch__hex">#D4D4D4</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#F2F2F2; border:1px solid #E5E5E5"></div><div class="swatch__info"><div class="swatch__name">Gray 100</div><div class="swatch__hex">#F2F2F2</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#FFFFFF; border:1px solid #E5E5E5"></div><div class="swatch__info"><div class="swatch__name">White</div><div class="swatch__hex">#FFFFFF</div></div></div>
+  </div>
+
+  <p class="ds-label">Status</p>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch__color" style="background:#2A7A4B"></div><div class="swatch__info"><div class="swatch__name">Success</div><div class="swatch__hex">#2A7A4B</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#C0392B"></div><div class="swatch__info"><div class="swatch__name">Error</div><div class="swatch__hex">#C0392B</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#C97B0A"></div><div class="swatch__info"><div class="swatch__name">Warning</div><div class="swatch__hex">#C97B0A</div></div></div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     2. TYPOGRAPHY
+     ============================================================ -->
+<section id="typography" class="ds-section" style="background: var(--color-surface-alt);">
+  <p class="ds-title">02 — Typography</p>
+  <h2 class="ds-heading">Type System</h2>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Heading Scale — Plus Jakarta Sans</p>
+  <div style="margin-bottom: var(--sp-10);">
+    <div class="type-row"><div class="type-meta"><span class="ds-label">H1 / 800</span><br><span class="caption">clamp(2.5–4rem)</span></div><h1 style="font-size: var(--h1-size); margin:0;">Coordinated care.</h1></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">H2 / 700</span><br><span class="caption">clamp(1.875–2.875rem)</span></div><h2 style="font-size: var(--h2-size); margin:0;">A healthcare management organization.</h2></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">H3 / 600</span><br><span class="caption">clamp(1.375–1.875rem)</span></div><h3 style="font-size: var(--h3-size); margin:0;">Independent, licensed, accountable.</h3></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">H4 / 600</span><br><span class="caption">clamp(1.125–1.375rem)</span></div><h4 style="font-size: var(--h4-size); margin:0;">Non-Emergency Medical Transportation</h4></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">H5 / 600</span><br><span class="caption">1.125rem / 18px</span></div><h5 style="margin:0;">Senior Placement Advisory</h5></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">H6 / 600</span><br><span class="caption">1rem / 16px</span></div><h6 style="margin:0;">Network-coordinated service</h6></div>
+  </div>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Body — Inter</p>
+  <div style="margin-bottom: var(--sp-10);">
+    <div class="type-row"><div class="type-meta"><span class="ds-label">Lead</span><br><span class="caption">clamp(1–1.2rem)</span></div><p class="lead" style="margin:0;">Ohana connects families, providers, and facilities to the right home-based and community services.</p></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">Body</span><br><span class="caption">1rem / 16px</span></div><p style="margin:0;">We coordinate and manage access to the full continuum of home-based and community care. We don't sell leads. We build relationships, verify partners, and stay accountable to families.</p></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">Body SM</span><br><span class="caption">0.875rem / 14px</span></div><p class="body-sm" style="margin:0;">Clinical services are delivered by independent licensed providers within our trusted network. Ohana coordinates intake, communication, and transitions.</p></div>
+    <div class="type-row"><div class="type-meta"><span class="ds-label">Body XS</span><br><span class="caption">0.75rem / 12px</span></div><p class="body-xs" style="margin:0;">Ohana Senior Care Agency is a care coordination and healthcare management organization. Ohana does not directly render clinical services except where explicitly stated.</p></div>
+  </div>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Special Styles</p>
+  <div class="ds-row">
+    <div class="ds-block">
+      <p class="ds-label">Eyebrow</p>
+      <div class="eyebrow">Care Coordination &amp; Healthcare Management</div>
+    </div>
+    <div class="ds-block">
+      <p class="ds-label">Label / Caption</p>
+      <span class="label">Network-Coordinated</span><br><br>
+      <span class="caption">All clinical services are provided by independent licensed partners.</span>
+    </div>
+    <div class="ds-block">
+      <p class="ds-label">Pull Quote</p>
+      <blockquote class="pull-quote">"Not an app. Not a chatbot. A real coordinator who picks up the phone."</blockquote>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. SPACING
+     ============================================================ -->
+<section id="spacing" class="ds-section">
+  <p class="ds-title">03 — Spacing</p>
+  <h2 class="ds-heading">Spacing Scale (4px base)</h2>
+  <div class="space-demo">
+    <div class="space-block" style="width:4px;height:4px;"><span></span></div>
+    <div class="space-block" style="width:8px;height:8px;"><span></span></div>
+    <div class="space-block" style="width:12px;height:12px;"><span></span></div>
+    <div class="space-block" style="width:16px;height:24px;"><span></span></div>
+    <div class="space-block" style="width:20px;height:32px;"><span></span></div>
+    <div class="space-block" style="width:24px;height:40px;"><span></span></div>
+    <div class="space-block" style="width:32px;height:56px;"><span></span></div>
+    <div class="space-block" style="width:40px;height:72px;"><span></span></div>
+    <div class="space-block" style="width:48px;height:88px;"><span></span></div>
+    <div class="space-block" style="width:64px;height:104px;"><span></span></div>
+    <div class="space-block" style="width:80px;height:120px;"><span></span></div>
+    <div class="space-block" style="width:96px;height:136px;"><span></span></div>
+    <div class="space-block" style="width:128px;height:152px;"><span></span></div>
+  </div>
+  <div style="display:flex; gap: var(--sp-4); flex-wrap:wrap; margin-top: var(--sp-4);">
+    <span class="caption">sp-1: 4px</span><span class="caption">sp-2: 8px</span><span class="caption">sp-3: 12px</span>
+    <span class="caption">sp-4: 16px</span><span class="caption">sp-5: 20px</span><span class="caption">sp-6: 24px</span>
+    <span class="caption">sp-8: 32px</span><span class="caption">sp-10: 40px</span><span class="caption">sp-12: 48px</span>
+    <span class="caption">sp-16: 64px</span><span class="caption">sp-20: 80px</span><span class="caption">sp-24: 96px</span>
+    <span class="caption">sp-32: 128px</span>
+  </div>
+  <div style="margin-top: var(--sp-8); display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--sp-4);">
+    <div style="background: var(--color-surface-green); border: 1px solid var(--green-100); border-radius: var(--radius-lg); padding: var(--sp-4);">
+      <p class="ds-label" style="margin-bottom: var(--sp-2);">Section padding</p>
+      <p class="body-sm text-secondary">Y: clamp(64px, 8vw, 112px)<br>X: clamp(16px, 4vw, 40px)</p>
+    </div>
+    <div style="background: var(--color-surface-green); border: 1px solid var(--green-100); border-radius: var(--radius-lg); padding: var(--sp-4);">
+      <p class="ds-label" style="margin-bottom: var(--sp-2);">Container widths</p>
+      <p class="body-sm text-secondary">Default: 1240px<br>Narrow: 760px<br>Wide: 1440px</p>
+    </div>
+    <div style="background: var(--color-surface-green); border: 1px solid var(--green-100); border-radius: var(--radius-lg); padding: var(--sp-4);">
+      <p class="ds-label" style="margin-bottom: var(--sp-2);">Breakpoints</p>
+      <p class="body-sm text-secondary">Mobile: &lt;640px<br>Tablet: 641–1024px<br>Desktop: &gt;1024px</p>
+    </div>
+    <div style="background: var(--color-surface-green); border: 1px solid var(--green-100); border-radius: var(--radius-lg); padding: var(--sp-4);">
+      <p class="ds-label" style="margin-bottom: var(--sp-2);">Border radius</p>
+      <p class="body-sm text-secondary">sm:4 md:8 lg:12 xl:16<br>2xl:24 3xl:32 full:9999</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4. BUTTONS
+     ============================================================ -->
+<section id="buttons" class="ds-section" style="background: var(--color-surface-alt);">
+  <p class="ds-title">04 — Buttons</p>
+  <h2 class="ds-heading">Button System</h2>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Variants on light background</p>
+  <div class="ds-row on-white" style="margin-bottom: var(--sp-6);">
+    <button class="btn btn-primary">Submit Care Request</button>
+    <button class="btn btn-secondary">Explore Services</button>
+    <button class="btn btn-text">Learn More <span class="btn-arrow">→</span></button>
+  </div>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Variants on dark background</p>
+  <div class="ds-row on-dark-bg" style="margin-bottom: var(--sp-6);">
+    <button class="btn btn-white">Submit Care Request</button>
+    <button class="btn btn-ghost">Explore Services</button>
+    <button class="btn btn-text" style="color: var(--green-300);">Learn More <span class="btn-arrow">→</span></button>
+  </div>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Sizes</p>
+  <div class="ds-row on-white" style="align-items: center; margin-bottom: var(--sp-6);">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+    <button class="btn btn-primary btn-xl">X-Large</button>
+    <button class="btn btn-primary btn-full" style="max-width:220px;">Full Width</button>
+  </div>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">States</p>
+  <div class="ds-row on-white">
+    <button class="btn btn-primary is-loading">Loading</button>
+    <button class="btn btn-primary" disabled>Disabled</button>
+    <button class="btn btn-secondary" disabled>Disabled</button>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. BADGES & NOTICES
+     ============================================================ -->
+<section id="badges" class="ds-section">
+  <p class="ds-title">05 — Badges &amp; Notices</p>
+  <h2 class="ds-heading">Status & Compliance Components</h2>
+
+  <div class="ds-row" style="margin-bottom: var(--sp-8);">
+    <div class="ds-block">
+      <p class="ds-label">Tier Badges</p>
+      <div style="display: flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-3);">
+        <span class="tier-badge tier-badge--direct">
+          <i data-lucide="zap" style="width:10px;height:10px;"></i>
+          Ohana-Direct
+        </span>
+        <span class="tier-badge tier-badge--network">
+          <i data-lucide="network" style="width:10px;height:10px;"></i>
+          Network-Coordinated
+        </span>
+      </div>
+    </div>
+    <div class="ds-block">
+      <p class="ds-label">Eyebrow Labels</p>
+      <div style="display: flex; flex-direction: column; gap: var(--sp-3); margin-top: var(--sp-3);">
+        <div class="eyebrow">Care Coordination &amp; Healthcare Management</div>
+        <div class="on-dark-bg" style="border-radius: var(--radius-lg); display: inline-block;">
+          <div class="eyebrow eyebrow--dark" style="margin-bottom:0;">Ohana Senior Care Agency</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="ds-label" style="margin-bottom: var(--sp-4);">Compliance &amp; Alert Components</p>
+  <div style="display: flex; flex-direction: column; gap: var(--sp-4); max-width: 720px;">
+    <div class="compliance-note">
+      <i data-lucide="info" style="width:16px;height:16px;flex-shrink:0;margin-top:1px;color:var(--color-primary-mid);"></i>
+      <span>Clinical services are provided by independent licensed partners within the Ohana network. Ohana coordinates intake and care management — clinical care is delivered by the treating provider.</span>
+    </div>
+    <div class="emergency-notice">
+      <i data-lucide="alert-triangle" style="width:16px;height:16px;flex-shrink:0;"></i>
+      For medical emergencies, call <strong>911</strong> immediately. This form is not monitored 24/7.
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     6. NAVIGATION
+     ============================================================ -->
+<section id="nav-section" class="ds-section" style="background: var(--color-surface-alt); padding-bottom: var(--sp-8);">
+  <p class="ds-title">06 — Navigation</p>
+  <h2 class="ds-heading">Header &amp; Nav Components</h2>
+  <p class="lead" style="margin-bottom: var(--sp-8);">The nav below is the real component. Scroll within this page to see compact state. Resize to mobile to see hamburger + drawer.</p>
+</section>
+
+<!-- REAL NAVIGATION COMPONENT -->
+<header class="site-header" id="demo-nav" style="position: relative; height: auto; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); overflow: visible; box-shadow: var(--shadow-md); margin: 0 var(--section-x) var(--sp-6);">
+  <div class="nav-wrap" style="height: var(--nav-height);">
+
+    <!-- Logo -->
+    <a href="/" class="nav-logo">
+      <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="nav-logo__wordmark">
+        <span class="nav-logo__name">Ohana Senior Care</span>
+        <span class="nav-logo__tagline">Care Coordination · Southern CA</span>
+      </div>
+    </a>
+
+    <!-- Desktop links -->
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#" class="nav-link is-active">Home</a>
+
+      <div class="nav-has-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-expanded="false">
+          Services
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <div class="nav-dropdown-group">
+            <h6>Ohana-Direct</h6>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="map-pin" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Senior Placement</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="truck" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">NEMT</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="utensils" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Meal Program</span>
+            </a>
+          </div>
+          <div class="nav-dropdown-group">
+            <h6>Clinical Network</h6>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="heart-pulse" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Home Health</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="activity" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Wound Care</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="hand-heart" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Palliative &amp; Hospice</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="users" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Caregiving</span>
+            </a>
+          </div>
+          <div class="nav-dropdown-group">
+            <h6>Diagnostics &amp; More</h6>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="stethoscope" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Mobile Doctor (PCP)</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="flask-conical" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Lab &amp; Diagnostics</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="scan" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">X-Ray</span>
+            </a>
+            <a href="#" class="nav-dropdown-item">
+              <span class="nav-dropdown-item__icon"><i data-lucide="brain" style="width:14px;height:14px;"></i></span>
+              <span class="nav-dropdown-item__label">Mental Health</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Partners</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <a href="tel:9092064228" class="nav-phone">
+        <i data-lucide="phone" style="width:14px;height:14px;"></i>
+        (909) 206-4228
+      </a>
+      <a href="#" class="btn btn-primary btn-sm">Care Request</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Dark variant preview -->
+<div style="margin: 0 var(--section-x) var(--sp-16);">
+  <p class="ds-label" style="margin-bottom: var(--sp-3);">Dark variant (for dark hero pages)</p>
+  <header class="site-header is-dark" style="position: relative; height: var(--nav-height); border-radius: var(--radius-xl); overflow: hidden;">
+    <div class="nav-wrap">
+      <a href="/" class="nav-logo">
+        <div style="width:38px;height:38px;background:rgba(255,255,255,.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="nav-logo__wordmark">
+          <span class="nav-logo__name">Ohana Senior Care</span>
+          <span class="nav-logo__tagline">Care Coordination · Southern CA</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#" class="nav-link is-active">Home</a>
+        <a href="#" class="nav-link">Services</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Partners</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="tel:9092064228" class="nav-phone"><i data-lucide="phone" style="width:14px;height:14px;"></i>(909) 206-4228</a>
+        <a href="#" class="btn btn-white btn-sm">Care Request</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+<!-- ============================================================
+     7. CARDS
+     ============================================================ -->
+<section id="cards" class="ds-section" style="background: var(--color-surface-alt);">
+  <p class="ds-title">07 — Cards</p>
+  <h2 class="ds-heading">Card System</h2>
+
+  <!-- Service Cards -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Service Cards</p>
+  <div class="grid grid-auto-md stagger" style="margin-bottom: var(--sp-12);">
+
+    <a href="#" class="card card--hoverable service-card reveal">
+      <div class="service-card__header">
+        <span class="service-card__icon"><i data-lucide="truck" style="width:22px;height:22px;"></i></span>
+        <span class="tier-badge tier-badge--direct">Ohana-Direct</span>
+      </div>
+      <h3 class="service-card__title">Non-Emergency Medical Transportation</h3>
+      <p class="service-card__desc">Ambulatory, wheelchair, and gurney transport operated directly by Ohana. Dialysis routes, hospital discharge, facility transfers.</p>
+      <div class="service-card__footer">
+        <span class="service-card__link">Book a Ride <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a href="#" class="card card--hoverable service-card reveal reveal-delay-1" style="--reveal-delay: 80ms;">
+      <div class="service-card__header">
+        <span class="service-card__icon"><i data-lucide="map-pin" style="width:22px;height:22px;"></i></span>
+        <span class="tier-badge tier-badge--direct">Ohana-Direct</span>
+      </div>
+      <h3 class="service-card__title">Senior Placement</h3>
+      <p class="service-card__desc">Consultative placement advisory for independent living, assisted living, memory care, and skilled nursing — no cost to families.</p>
+      <div class="service-card__footer">
+        <span class="service-card__link">Start Search <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a href="#" class="card card--hoverable service-card reveal" style="transition-delay: 160ms;">
+      <div class="service-card__header">
+        <span class="service-card__icon"><i data-lucide="heart-pulse" style="width:22px;height:22px;"></i></span>
+        <span class="tier-badge tier-badge--network">Network-Coordinated</span>
+      </div>
+      <h3 class="service-card__title">Home Health</h3>
+      <p class="service-card__desc">Skilled nursing, PT/OT/ST, and HHA services coordinated through independent Medicare-certified partner agencies.</p>
+      <div class="service-card__footer">
+        <span class="service-card__link">Request Coordination <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <a href="#" class="card card--hoverable service-card reveal" style="transition-delay: 240ms;">
+      <div class="service-card__header">
+        <span class="service-card__icon"><i data-lucide="brain" style="width:22px;height:22px;"></i></span>
+        <span class="tier-badge tier-badge--network">Network-Coordinated</span>
+      </div>
+      <h3 class="service-card__title">Mental Health</h3>
+      <p class="service-card__desc">Geriatric-aware counseling, psychiatric evaluation, and behavioral health support — coordinated through licensed clinicians in our network.</p>
+      <div class="service-card__footer">
+        <span class="service-card__link">Request Access <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Partner Cards -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Partner Cards</p>
+  <div class="grid grid-auto-md stagger" style="margin-bottom: var(--sp-12);">
+
+    <div class="card card--hoverable partner-card reveal">
+      <div class="partner-card__top">
+        <span class="partner-card__logo-placeholder">Angel Pathway Hospice</span>
+        <span class="partner-card__category">Hospice &amp; Palliative</span>
+      </div>
+      <h4 class="partner-card__name">Angel Pathway Hospice, Inc.</h4>
+      <p class="partner-card__desc">Providing compassionate end-of-life care and palliative services across Los Angeles County. Medicare-certified, ACHC accredited.</p>
+      <div class="partner-card__meta">
+        <span class="partner-card__tag"><i data-lucide="map-pin" style="width:12px;height:12px;"></i>Los Angeles, CA</span>
+        <span class="partner-card__tag"><i data-lucide="shield-check" style="width:12px;height:12px;"></i>Medicare-certified</span>
+      </div>
+    </div>
+
+    <div class="card card--hoverable partner-card reveal" style="transition-delay:80ms;">
+      <div class="partner-card__top">
+        <span class="partner-card__logo-placeholder">Quantum Laboratory</span>
+        <span class="partner-card__category">Mobile Diagnostics</span>
+      </div>
+      <h4 class="partner-card__name">Quantum Laboratory</h4>
+      <p class="partner-card__desc">CLIA-certified mobile specimen collection and diagnostic laboratory services. PCR, wound, UTI, respiratory panels with 24–48h turnaround.</p>
+      <div class="partner-card__meta">
+        <span class="partner-card__tag"><i data-lucide="map-pin" style="width:12px;height:12px;"></i>California</span>
+        <span class="partner-card__tag"><i data-lucide="flask-conical" style="width:12px;height:12px;"></i>CLIA-certified</span>
+      </div>
+    </div>
+
+    <div class="card card--hoverable partner-card reveal" style="transition-delay:160ms;">
+      <div class="partner-card__top">
+        <span class="partner-card__logo-placeholder">Quality Care Home Health</span>
+        <span class="partner-card__category">Home Health</span>
+      </div>
+      <h4 class="partner-card__name">Quality Care Home Health</h4>
+      <p class="partner-card__desc">Skilled nursing and therapy services for homebound patients in the San Gabriel Valley. CMS-certified and ACHC accredited.</p>
+      <div class="partner-card__meta">
+        <span class="partner-card__tag"><i data-lucide="map-pin" style="width:12px;height:12px;"></i>West Covina, CA</span>
+        <span class="partner-card__tag"><i data-lucide="shield-check" style="width:12px;height:12px;"></i>CMS-certified</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Audience Cards -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Audience Cards</p>
+  <div class="grid grid-3 stagger" style="margin-bottom: var(--sp-12);">
+    <div class="card audience-card audience-card--families reveal">
+      <div class="audience-card__icon" style="background: rgba(47,107,15,.1);">
+        <i data-lucide="users" style="width:22px;height:22px;color:var(--color-primary);"></i>
+      </div>
+      <h3>Families &amp; Patients</h3>
+      <p>Help navigating a confusing system — without the sales calls. One coordinator. One call. A real plan.</p>
+      <a href="#" class="btn btn-secondary" style="margin-top:auto;">Submit Care Request</a>
+    </div>
+    <div class="card audience-card audience-card--providers reveal" style="transition-delay:80ms;">
+      <div class="audience-card__icon" style="background: var(--green-50);">
+        <i data-lucide="stethoscope" style="width:22px;height:22px;color:var(--color-primary);"></i>
+      </div>
+      <h3>Providers &amp; Clinicians</h3>
+      <p>A coordination partner that respects clinical judgment and keeps the paperwork moving. Secure, fast referrals.</p>
+      <a href="#" class="btn btn-secondary" style="margin-top:auto;">Submit a Referral</a>
+    </div>
+    <div class="card audience-card audience-card--facilities reveal" style="transition-delay:160ms;">
+      <div class="audience-card__icon">
+        <i data-lucide="building-2" style="width:22px;height:22px;color:var(--green-300);"></i>
+      </div>
+      <h3>Facilities &amp; Organizations</h3>
+      <p>Reliable discharge and transition support with clear lines of communication. Built for volume, built for trust.</p>
+      <a href="#" class="btn btn-ghost" style="margin-top:auto;">Partner With Us</a>
+    </div>
+  </div>
+
+  <!-- Testimonial Cards -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Testimonial Cards</p>
+  <div class="grid grid-3 stagger">
+    <div class="card testimonial-card reveal">
+      <div class="testimonial-card__stars">
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+      </div>
+      <p class="testimonial-card__quote">"Ohana made an impossible situation feel manageable. They found the right placement for my mother in 48 hours and stayed involved every step of the way."</p>
+      <div class="testimonial-card__author">
+        <div class="testimonial-card__avatar">S</div>
+        <div>
+          <div class="testimonial-card__name">Sarah M.</div>
+          <div class="testimonial-card__role">Family — Los Angeles, CA</div>
+        </div>
+      </div>
+    </div>
+    <div class="card testimonial-card reveal" style="transition-delay:80ms;">
+      <div class="testimonial-card__stars">
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+      </div>
+      <p class="testimonial-card__quote">"As a discharge planner, I've worked with a lot of coordination agencies. Ohana is the only one that actually follows through. They pick up the phone."</p>
+      <div class="testimonial-card__author">
+        <div class="testimonial-card__avatar">D</div>
+        <div>
+          <div class="testimonial-card__name">David P.</div>
+          <div class="testimonial-card__role">Discharge Planner — Riverside Medical</div>
+        </div>
+      </div>
+    </div>
+    <div class="card testimonial-card reveal" style="transition-delay:160ms;">
+      <div class="testimonial-card__stars">
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+        <i data-lucide="star" style="width:14px;height:14px;fill:#F59E0B;"></i>
+      </div>
+      <p class="testimonial-card__quote">"Their transport team has never missed a dialysis appointment for any of our patients. Reliable, professional, and genuinely kind to the people they serve."</p>
+      <div class="testimonial-card__author">
+        <div class="testimonial-card__avatar">T</div>
+        <div>
+          <div class="testimonial-card__name">Tony B.</div>
+          <div class="testimonial-card__role">Community Administrator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     8. FORMS
+     ============================================================ -->
+<section id="forms" class="ds-section">
+  <p class="ds-title">08 — Forms</p>
+  <h2 class="ds-heading">Form Components</h2>
+
+  <div class="grid grid-2" style="gap: var(--sp-12);">
+
+    <!-- Form fields showcase -->
+    <div>
+      <p class="ds-label" style="margin-bottom: var(--sp-5);">Field Components</p>
+      <div class="form on-white">
+
+        <div class="field-row">
+          <div class="field">
+            <label>First Name <span class="required-mark">*</span></label>
+            <input type="text" class="input" placeholder="Maria" />
+          </div>
+          <div class="field">
+            <label>Last Name <span class="required-mark">*</span></label>
+            <input type="text" class="input" placeholder="Santos" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email Address <span class="required-mark">*</span></label>
+          <input type="email" class="input" placeholder="maria@example.com" />
+          <span class="field-hint">We'll send a confirmation to this address.</span>
+        </div>
+
+        <div class="field">
+          <label>Primary Need</label>
+          <div class="select-wrap">
+            <select class="select">
+              <option value="">Select a service…</option>
+              <option>Senior Placement</option>
+              <option>Non-Emergency Medical Transportation</option>
+              <option>Home Health</option>
+              <option>Wound Care</option>
+              <option>Palliative &amp; Hospice</option>
+              <option>Mental Health</option>
+            </select>
+            <i data-lucide="chevron-down" class="select-arrow"></i>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Brief Description</label>
+          <textarea class="textarea" placeholder="Describe the situation briefly. A coordinator will follow up through a secure channel if more detail is needed."></textarea>
+          <span class="field-hint">Please avoid detailed health information in this field.</span>
+        </div>
+
+        <!-- Error state demo -->
+        <div class="field">
+          <label>Phone Number <span class="required-mark">*</span></label>
+          <input type="tel" class="input is-error" value="abc123" />
+          <span class="field-error">
+            <i data-lucide="alert-circle" style="width:12px;height:12px;"></i>
+            Please enter a valid phone number.
+          </span>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="field">
+          <label class="check-label">
+            <input type="checkbox" />
+            <span>I acknowledge that Ohana Senior Care Agency provides care coordination services, and that clinical services are provided by independent licensed partners. I consent to being contacted about this request.</span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Urgency picker + tabs -->
+    <div>
+      <p class="ds-label" style="margin-bottom: var(--sp-5);">Urgency Picker</p>
+      <div class="on-white" style="margin-bottom: var(--sp-8);">
+        <div class="field">
+          <label>Urgency</label>
+          <div class="urgency-grid">
+            <div class="urgency-opt">
+              <input type="radio" name="urgency" id="u1" value="immediate" />
+              <label for="u1">
+                <span class="urgency-title">Immediate</span>
+                <span class="urgency-sub">Same day</span>
+              </label>
+            </div>
+            <div class="urgency-opt">
+              <input type="radio" name="urgency" id="u2" value="24h" checked />
+              <label for="u2">
+                <span class="urgency-title">Within 48h</span>
+                <span class="urgency-sub">1–2 days</span>
+              </label>
+            </div>
+            <div class="urgency-opt">
+              <input type="radio" name="urgency" id="u3" value="week" />
+              <label for="u3">
+                <span class="urgency-title">This week</span>
+                <span class="urgency-sub">3–7 days</span>
+              </label>
+            </div>
+            <div class="urgency-opt">
+              <input type="radio" name="urgency" id="u4" value="planning" />
+              <label for="u4">
+                <span class="urgency-title">Planning ahead</span>
+                <span class="urgency-sub">No rush</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="ds-label" style="margin-bottom: var(--sp-5);">Tabbed Contact Forms (Contact Page pattern)</p>
+      <div class="form--card" data-tabs>
+        <div class="form-tabs">
+          <button class="form-tab">General Contact</button>
+          <button class="form-tab">Care Request</button>
+          <button class="form-tab">Submit Referral</button>
+        </div>
+
+        <div class="form-panel">
+          <div class="field">
+            <label>Full Name <span class="required-mark">*</span></label>
+            <input type="text" class="input" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label>Email <span class="required-mark">*</span></label>
+            <input type="email" class="input" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label>Message</label>
+            <textarea class="textarea" placeholder="How can we help?" style="min-height:80px;"></textarea>
+          </div>
+          <div class="form-footer">
+            <button class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="field-row">
+            <div class="field">
+              <label>Patient First Name <span class="required-mark">*</span></label>
+              <input type="text" class="input" placeholder="First" />
+            </div>
+            <div class="field">
+              <label>Patient Last Name <span class="required-mark">*</span></label>
+              <input type="text" class="input" placeholder="Last" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Service Needed <span class="required-mark">*</span></label>
+            <div class="select-wrap">
+              <select class="select"><option>Select service…</option><option>Senior Placement</option><option>NEMT</option><option>Home Health</option></select>
+              <i data-lucide="chevron-down" class="select-arrow"></i>
+            </div>
+          </div>
+          <div class="compliance-note">
+            <i data-lucide="info"></i>
+            <span>Please avoid detailed health information here. A coordinator will follow up securely.</span>
+          </div>
+          <div class="form-footer">
+            <div class="emergency-notice"><i data-lucide="alert-triangle" style="width:14px;height:14px;flex-shrink:0;"></i>For emergencies, call 911. This form is not monitored 24/7.</div>
+            <button class="btn btn-primary">Submit Care Request</button>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="field-row">
+            <div class="field">
+              <label>Your Name <span class="required-mark">*</span></label>
+              <input type="text" class="input" placeholder="Referring professional" />
+            </div>
+            <div class="field">
+              <label>Organization <span class="required-mark">*</span></label>
+              <input type="text" class="input" placeholder="Hospital / Facility" />
+            </div>
+          </div>
+          <div class="field">
+            <label>Services Requested <span class="required-mark">*</span></label>
+            <div class="select-wrap">
+              <select class="select"><option>Select service…</option><option>Home Health</option><option>NEMT</option><option>Wound Care</option></select>
+              <i data-lucide="chevron-down" class="select-arrow"></i>
+            </div>
+          </div>
+          <div class="field">
+            <label class="check-label">
+              <input type="checkbox" />
+              <span>I confirm I have authorization to submit this referral and I understand Ohana coordinates services through independent licensed partners.</span>
+            </label>
+          </div>
+          <div class="form-footer">
+            <button class="btn btn-primary">Submit Referral</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     9. CTA BLOCKS
+     ============================================================ -->
+<section id="cta" class="ds-section" style="background: var(--color-surface-alt);">
+  <p class="ds-title">09 — CTA Blocks</p>
+  <h2 class="ds-heading">Call-to-Action Components</h2>
+
+  <!-- Dark CTA block -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Dark CTA Block (primary use)</p>
+  <div class="cta-block reveal" style="margin-bottom: var(--sp-8);">
+    <div class="cta-block__inner">
+      <div class="cta-block__text">
+        <h2>Need care coordinated today?</h2>
+        <p>Whether it's a discharge, a new caregiver, transportation, or a complex case — start one conversation and we'll take it from there.</p>
+      </div>
+      <div class="cta-block__actions">
+        <a href="#" class="btn btn-white btn-lg">Submit Care Request</a>
+        <a href="tel:9092064228" class="btn btn-ghost btn-lg">
+          <i data-lucide="phone" style="width:16px;height:16px;"></i>
+          (909) 206-4228
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline banner -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Inline Banner CTA</p>
+  <div class="cta-banner reveal" style="margin-bottom: var(--sp-8);">
+    <div class="cta-banner__text">
+      <h3>Become a network partner</h3>
+      <p>We're always looking to expand our network of licensed, credentialed providers serving Southern California.</p>
+    </div>
+    <div class="cta-banner__actions">
+      <a href="#" class="btn btn-primary">Partner Application</a>
+      <a href="#" class="btn btn-secondary">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Hero CTA strip -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Hero CTA Strip (used in page heroes)</p>
+  <div class="on-dark-bg" style="border-radius: var(--radius-xl);">
+    <div class="hero-cta-strip">
+      <a href="#" class="btn btn-white btn-lg">Submit Care Request</a>
+      <div class="sep"></div>
+      <div class="hero-phone">
+        <i data-lucide="phone" style="width:20px;height:20px;color:var(--green-300);flex-shrink:0;"></i>
+        <div>
+          <a href="tel:9092064228" class="hero-phone__num">(909) 206-4228</a>
+          <span class="hero-phone__label">Mon–Fri, 8am–6pm PT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     10. PARTNER CAROUSEL
+     ============================================================ -->
+<section id="carousel" class="ds-section">
+  <p class="ds-title">10 — Partner Carousel</p>
+  <h2 class="ds-heading">Logo Carousel Component</h2>
+  <p class="lead" style="margin-bottom: var(--sp-8);">CSS-driven infinite scroll. Logos desaturated at rest, full color on hover. Auto-pauses on hover. JS duplicates items for seamless loop.</p>
+</section>
+
+<div class="logo-carousel">
+  <p class="logo-carousel__label">Trusted Network Partners</p>
+  <div class="logo-track-wrap">
+    <div class="logo-track">
+      <div class="logo-item"><span class="logo-item__text">Angel Pathway Hospice</span></div>
+      <div class="logo-item"><span class="logo-item__text">ACT Group</span></div>
+      <div class="logo-item"><span class="logo-item__text">Azzur Workforce</span></div>
+      <div class="logo-item"><span class="logo-item__text">EVA In-Home Care</span></div>
+      <div class="logo-item"><span class="logo-item__text">Galaxy Home Health</span></div>
+      <div class="logo-item"><span class="logo-item__text">Madison Hospice</span></div>
+      <div class="logo-item"><span class="logo-item__text">Quality Care Home Health</span></div>
+      <div class="logo-item"><span class="logo-item__text">Quantum Laboratory</span></div>
+      <div class="logo-item"><span class="logo-item__text">101 Mobile Medical</span></div>
+      <div class="logo-item"><span class="logo-item__text">Manage Care Solutions</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ds-section" style="padding-top: var(--sp-8); padding-bottom: var(--sp-4);">
+  <p class="body-sm text-secondary">When real partner logos are provided, replace <code>.logo-item__text</code> with <code>&lt;img&gt;</code> tags. Logos should have transparent backgrounds and be supplied at 2x for retina. The carousel handles grayscale/opacity states via CSS.</p>
+</div>
+
+
+<!-- ============================================================
+     11. FOOTER
+     ============================================================ -->
+<section id="footer" class="ds-section" style="background: var(--color-surface-alt); padding-bottom: 0;">
+  <p class="ds-title">11 — Footer</p>
+  <h2 class="ds-heading" style="margin-bottom: var(--sp-8);">Footer Component</h2>
+</section>
+
+<!-- REAL FOOTER COMPONENT -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <div style="width:36px;height:36px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <span class="footer-logo__name">Ohana Senior Care</span>
+            <span class="footer-logo__tagline">Care Coordination · Southern CA</span>
+          </div>
+        </a>
+        <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
+        <div class="footer-contacts">
+          <a href="tel:9092064228" class="footer-contact"><i data-lucide="phone" style="width:15px;height:15px;"></i>(909) 206-4228</a>
+          <a href="mailto:info@ohanaseniorcare.com" class="footer-contact"><i data-lucide="mail" style="width:15px;height:15px;"></i>info@ohanaseniorcare.com</a>
+          <span class="footer-contact"><i data-lucide="clock" style="width:15px;height:15px;"></i>Mon–Fri, 8am–6pm PT</span>
+          <span class="footer-contact"><i data-lucide="map-pin" style="width:15px;height:15px;"></i>Los Angeles · Orange · Riverside · San Bernardino</span>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ohana Direct -->
+      <div class="footer-col">
+        <h6>Ohana-Direct</h6>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Senior Placement <span class="tag">Direct</span></a>
+          <a href="#" class="footer-link">Medical Transport (NEMT) <span class="tag">Direct</span></a>
+          <a href="#" class="footer-link">Meal Program</a>
+        </div>
+      </div>
+
+      <!-- Network Services -->
+      <div class="footer-col">
+        <h6>Network Services</h6>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Caregiving</a>
+          <a href="#" class="footer-link">Home Health</a>
+          <a href="#" class="footer-link">Wound Care</a>
+          <a href="#" class="footer-link">Palliative &amp; Hospice</a>
+          <a href="#" class="footer-link">Mobile Doctor (PCP)</a>
+          <a href="#" class="footer-link">Lab &amp; Diagnostics</a>
+          <a href="#" class="footer-link">X-Ray</a>
+          <a href="#" class="footer-link">Pharmacy</a>
+          <a href="#" class="footer-link">Mental Health</a>
+          <a href="#" class="footer-link">Staffing</a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h6>Company</h6>
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Ohana</a>
+          <a href="#" class="footer-link">Partner Network</a>
+          <a href="#" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Submit Referral</a>
+          <a href="#" class="footer-link">Care Request</a>
+        </div>
+        <h6 style="margin-top: var(--sp-6);">Contact</h6>
+        <div class="footer-links">
+          <a href="mailto:info@ohanaseniorcare.com" class="footer-link">info@</a>
+          <a href="mailto:intake@ohanaseniorcare.com" class="footer-link">intake@</a>
+          <a href="mailto:nemt@ohanaseniorcare.com" class="footer-link">nemt@</a>
+          <a href="mailto:partners@ohanaseniorcare.com" class="footer-link">partners@</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom row -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p class="footer-copy">© 2025 Ohana Senior Care Agency. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="/privacy-policy" class="footer-legal-link">Privacy Policy</a>
+          <a href="#" class="footer-legal-link">Terms of Use</a>
+          <a href="#" class="footer-legal-link">Accessibility</a>
+        </div>
+      </div>
+      <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization providing administrative, coordination, and select non-clinical support services. Medical and clinical services referenced on this website are provided by independent licensed providers and partners within our trusted network. Ohana does not directly render clinical services except where explicitly stated. Ohana Senior Care Agency does not accept or pay compensation for patient referrals in violation of applicable law.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     12. INTERACTIONS
+     ============================================================ -->
+<section id="interactions" class="ds-section" style="background: var(--color-surface-alt);">
+  <p class="ds-title">12 — Interactions</p>
+  <h2 class="ds-heading">Motion &amp; Interaction System</h2>
+
+  <div class="grid grid-auto-md" style="margin-bottom: var(--sp-10);">
+    <div class="on-white">
+      <p class="ds-label" style="margin-bottom: var(--sp-3);">Transition Durations</p>
+      <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+        <div style="display:flex; align-items:center; gap: var(--sp-4);">
+          <div style="width: 60px; height: 8px; background: var(--color-primary); border-radius: var(--radius-full); transition: width 150ms var(--ease-out);" onmouseenter="this.style.width='120px'" onmouseleave="this.style.width='60px'"></div>
+          <span class="caption">fast — 150ms (micro interactions, hover states)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);">
+          <div style="width: 60px; height: 8px; background: var(--color-primary); border-radius: var(--radius-full); transition: width 240ms var(--ease-out);" onmouseenter="this.style.width='120px'" onmouseleave="this.style.width='60px'"></div>
+          <span class="caption">base — 240ms (buttons, nav links, card borders)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);">
+          <div style="width: 60px; height: 8px; background: var(--color-primary); border-radius: var(--radius-full); transition: width 360ms var(--ease-in-out);" onmouseenter="this.style.width='120px'" onmouseleave="this.style.width='60px'"></div>
+          <span class="caption">slow — 360ms (reveals, drawer open)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap: var(--sp-4);">
+          <div style="width: 60px; height: 8px; background: var(--color-primary); border-radius: var(--radius-full); transition: width 520ms var(--ease-in-out);" onmouseenter="this.style.width='120px'" onmouseleave="this.style.width='60px'"></div>
+          <span class="caption">slower — 520ms (page transitions, hero entrances)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="on-white">
+      <p class="ds-label" style="margin-bottom: var(--sp-3);">Easing Curves</p>
+      <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+        <div><span class="label">ease-out</span><p class="body-sm text-secondary" style="margin-top: var(--sp-1);">cubic-bezier(0, 0, 0.2, 1) — starts fast, decelerates. Used for entering elements.</p></div>
+        <div><span class="label">ease-in-out</span><p class="body-sm text-secondary" style="margin-top: var(--sp-1);">cubic-bezier(0.4, 0, 0.2, 1) — gradual start and end. Used for drawers and panels.</p></div>
+        <div><span class="label">ease-spring</span><p class="body-sm text-secondary" style="margin-top: var(--sp-1);">cubic-bezier(0.34, 1.56, 0.64, 1) — slight overshoot. Used sparingly for delight moments.</p></div>
+      </div>
+    </div>
+
+    <div class="on-white">
+      <p class="ds-label" style="margin-bottom: var(--sp-3);">Scroll Reveal</p>
+      <p class="body-sm text-secondary">Elements with <code>.reveal</code> start at <code>opacity:0, translateY(20px)</code> and transition to visible when entering the viewport via IntersectionObserver. Add <code>.stagger</code> to a parent for child delay steps of 60ms each.</p>
+    </div>
+
+    <div class="on-white">
+      <p class="ds-label" style="margin-bottom: var(--sp-3);">Global Rules</p>
+      <ul style="display: flex; flex-direction: column; gap: var(--sp-2);">
+        <li class="body-sm text-secondary">Cards: <code>translateY(-4px)</code> + green shadow on hover</li>
+        <li class="body-sm text-secondary">Buttons: <code>translateY(-1px)</code> + shadow on hover</li>
+        <li class="body-sm text-secondary">Nav: compresses height on scroll (80→62px)</li>
+        <li class="body-sm text-secondary">Text links: arrow shifts <code>translateX(4px)</code></li>
+        <li class="body-sm text-secondary">Logo carousel: auto-scroll pauses on hover</li>
+        <li class="body-sm text-secondary">No animation for <code>prefers-reduced-motion</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Stat counter demo -->
+  <p class="ds-label" style="margin-bottom: var(--sp-5);">Stat Counter Animation (<code>data-count</code>)</p>
+  <div class="on-dark-bg" style="border-radius: var(--radius-2xl);">
+    <div class="stats-strip on-dark">
+      <div class="stat-item">
+        <span class="stat-number" data-count="2500" data-suffix="+">2500+</span>
+        <span class="stat-label">Families served across Southern California</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="100" data-suffix="%">100%</span>
+        <span class="stat-label">Credential-verified before joining the network</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="0">0</span>
+        <span class="stat-label">Hidden brokers or lead resellers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="4">4</span>
+        <span class="stat-label">Counties served in Southern California</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spacing at bottom -->
+<div style="height: var(--sp-16);"></div>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="js/scroll-reveal.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+  // Init Lucide icons
+  lucide.createIcons();
+
+  // Wire up the demo nav hamburger to the showcase drawer
+  // (The real drawer HTML is minimal here for showcase purposes)
+  document.querySelectorAll('.nav-hamburger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('is-open');
+    });
+  });
+</script>
+
+</body>
+</html>

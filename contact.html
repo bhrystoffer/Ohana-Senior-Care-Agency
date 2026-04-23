@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Ohana Senior Care Agency | Care Requests &amp; Referrals</title>
+  <meta name="description" content="Reach Ohana Senior Care Agency for care coordination requests, professional referrals, or general questions. Submit a care intake form or referral directly online — Southern California." />
+
+  <!-- Favicon — replace with real icon files before launch -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ohana Senior Care Agency" />
+  <meta property="og:url" content="https://www.ohanaseniorcare.com/contact.html" />
+  <meta property="og:title" content="Contact Ohana Senior Care Agency | Care Requests &amp; Referrals" />
+  <meta property="og:description" content="Submit a care coordination request, professional referral, or general inquiry. Real coordinators respond within one business day. Serving Southern California." />
+  <meta property="og:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ohana Senior Care Agency — Care Coordination, Southern California" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Ohana Senior Care Agency | Care Requests &amp; Referrals" />
+  <meta name="twitter:description" content="Submit a care coordination request, professional referral, or general inquiry. Real coordinators respond within one business day. Serving Southern California." />
+  <meta name="twitter:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ohanaseniorcare.com/contact.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="design-system/css/tokens.css" />
+  <link rel="stylesheet" href="design-system/css/global.css" />
+  <link rel="stylesheet" href="design-system/css/typography.css" />
+  <link rel="stylesheet" href="design-system/css/components/sections.css" />
+  <link rel="stylesheet" href="design-system/css/components/buttons.css" />
+  <link rel="stylesheet" href="design-system/css/components/nav.css" />
+  <link rel="stylesheet" href="design-system/css/components/cards.css" />
+  <link rel="stylesheet" href="design-system/css/components/forms.css" />
+  <link rel="stylesheet" href="design-system/css/components/cta.css" />
+  <link rel="stylesheet" href="design-system/css/components/footer.css" />
+
+  <style>
+
+    /* ── Page Hero ────────────────────────────────────────── */
+    .page-hero {
+      padding-block: var(--section-y);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero__glow {
+      position: absolute;
+      top: -40%; right: -5%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(78,140,28,.16) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero__inner { position: relative; z-index: 1; }
+    .page-hero__text { max-width: 680px; }
+
+    /* ── Quick Info Bar ───────────────────────────────────── */
+    .quick-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--sp-4);
+      margin-top: var(--sp-10);
+    }
+    .quick-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4);
+      padding: var(--sp-5) var(--sp-6);
+      background: var(--white);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-xl);
+      transition: box-shadow var(--t-base), transform var(--t-base);
+    }
+    .quick-info-item:hover {
+      box-shadow: var(--shadow-green-md);
+      transform: translateY(-2px);
+    }
+    .quick-info-item__icon {
+      width: 40px; height: 40px;
+      background: var(--color-primary-wash);
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-primary);
+    }
+    .quick-info-item__body {}
+    .quick-info-item__label {
+      font-family: var(--font-heading);
+      font-size: var(--text-xs);
+      font-weight: var(--fw-semibold);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      display: block;
+      margin-bottom: var(--sp-1);
+    }
+    .quick-info-item__value {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-semibold);
+      color: var(--color-text);
+    }
+    .quick-info-item__value a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .quick-info-item__value a:hover { text-decoration: underline; }
+
+    /* ── Emergency Notice ─────────────────────────────────── */
+    .emergency-notice {
+      background: var(--red-50, #fef2f2);
+      border: 1.5px solid var(--red-200, #fecaca);
+      border-radius: var(--radius-xl);
+      padding: var(--sp-5) var(--sp-6);
+      display: flex;
+      gap: var(--sp-4);
+      align-items: flex-start;
+    }
+    .emergency-notice__icon {
+      width: 36px; height: 36px;
+      background: var(--red-100, #fee2e2);
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--red-600, #dc2626);
+    }
+    .emergency-notice__body {}
+    .emergency-notice__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-bold);
+      color: var(--red-700, #b91c1c);
+      margin-bottom: var(--sp-1);
+    }
+    .emergency-notice__text {
+      font-size: var(--text-sm);
+      color: var(--red-700, #b91c1c);
+      line-height: var(--lh-relaxed);
+    }
+    .emergency-notice__text strong { font-weight: var(--fw-bold); }
+
+    /* ── Compliance Notice ────────────────────────────────── */
+    .compliance-note {
+      background: var(--green-25);
+      border: 1.5px solid var(--color-primary-wash);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-4) var(--sp-5);
+      display: flex;
+      gap: var(--sp-3);
+      align-items: flex-start;
+    }
+    .compliance-note i { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+    .compliance-note p {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-relaxed);
+      margin: 0;
+    }
+
+    /* ── Form Section Layout ──────────────────────────────── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: var(--sp-10);
+      align-items: start;
+    }
+    .contact-sidebar {}
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-2xl);
+      padding: var(--sp-7);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-6);
+    }
+    .sidebar-card + .sidebar-card { margin-top: var(--sp-5); }
+    .sidebar-card__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: var(--fw-bold);
+      color: var(--color-text);
+      margin-bottom: var(--sp-1);
+    }
+    .sidebar-card__body {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+    .sidebar-detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar-detail-list li {
+      display: flex;
+      gap: var(--sp-3);
+      align-items: flex-start;
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+    .sidebar-detail-list li i { color: var(--color-primary); flex-shrink: 0; margin-top: 1px; }
+    .sidebar-detail-list li strong {
+      display: block;
+      font-weight: var(--fw-semibold);
+      color: var(--color-text);
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+    }
+    .sidebar-detail-list li span { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+    /* ── Reassurance List ─────────────────────────────────── */
+    .reassurance-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+    .reassurance-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-relaxed);
+    }
+    .reassurance-list li i { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Responsive contact layout ────────────────────────── */
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+      .contact-sidebar { order: -1; }
+    }
+
+  </style>
+</head>
+<body>
+
+<a href="#main" class="sr-only" style="position:fixed;top:var(--sp-3);left:var(--sp-3);z-index:9999;background:var(--color-primary);color:var(--white);padding:var(--sp-2) var(--sp-4);border-radius:var(--radius-md);font-family:var(--font-heading);font-size:var(--text-sm);font-weight:var(--fw-semibold);" onfocus="this.classList.remove('sr-only')" onblur="this.classList.add('sr-only')">Skip to main content</a>
+
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="nav-logo" aria-label="Ohana Senior Care Agency — Home">
+      <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="nav-logo__wordmark">
+        <span class="nav-logo__name">Ohana Senior Care</span>
+        <span class="nav-logo__tagline">Care Coordination &middot; Southern CA</span>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-has-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Services<svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown" role="menu">
+          <div class="nav-dropdown-group"><h6>Ohana-Direct</h6>
+            <a href="services/senior-placement.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="map-pin" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Senior Placement</span></a>
+            <a href="services/nemt.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="truck" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Medical Transportation</span></a>
+            <a href="services/meal-program.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="utensils" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Meal Program</span></a>
+          </div>
+          <div class="nav-dropdown-group"><h6>Clinical Network</h6>
+            <a href="services/caregiving.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="users" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Caregiving</span></a>
+            <a href="services/home-health.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="heart-pulse" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Home Health</span></a>
+            <a href="services/wound-care.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="activity" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Wound Care</span></a>
+            <a href="services/palliative-hospice.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="hand-heart" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Palliative &amp; Hospice</span></a>
+          </div>
+          <div class="nav-dropdown-group"><h6>Diagnostics &amp; Specialized</h6>
+            <a href="services/mobile-doctor.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="stethoscope" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Mobile Doctor (PCP)</span></a>
+            <a href="services/mobile-lab.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="flask-conical" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Lab &amp; Diagnostics</span></a>
+            <a href="services/xray.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="scan" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">X-Ray</span></a>
+            <a href="services/pharmacy.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="pill" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Pharmacy</span></a>
+            <a href="services/mental-health.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="brain" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Mental Health</span></a>
+            <a href="services/staffing.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="briefcase" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Staffing</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="contact.html" class="nav-link is-active">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:9092064228" class="nav-phone"><i data-lucide="phone" style="width:14px;height:14px;" aria-hidden="true"></i>(909) 206-4228</a>
+      <a href="#intake" class="btn btn-primary btn-sm">Care Request</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+<div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+  <nav class="nav-drawer__links">
+    <a href="index.html" class="nav-drawer__link">Home</a>
+    <a href="about.html" class="nav-drawer__link">About</a>
+    <a href="partners.html" class="nav-drawer__link">Partners</a>
+    <a href="contact.html" class="nav-drawer__link">Contact</a>
+  </nav>
+  <div class="nav-drawer__services"><h6>All Services</h6>
+    <a href="services/senior-placement.html" class="nav-drawer__service-link">Senior Placement</a>
+    <a href="services/nemt.html" class="nav-drawer__service-link">Medical Transportation (NEMT)</a>
+    <a href="services/meal-program.html" class="nav-drawer__service-link">Meal Program</a>
+    <a href="services/caregiving.html" class="nav-drawer__service-link">Caregiving</a>
+    <a href="services/home-health.html" class="nav-drawer__service-link">Home Health</a>
+    <a href="services/wound-care.html" class="nav-drawer__service-link">Wound Care</a>
+    <a href="services/palliative-hospice.html" class="nav-drawer__service-link">Palliative &amp; Hospice</a>
+    <a href="services/mobile-doctor.html" class="nav-drawer__service-link">Mobile Doctor (PCP)</a>
+    <a href="services/mobile-lab.html" class="nav-drawer__service-link">Lab &amp; Diagnostics</a>
+    <a href="services/xray.html" class="nav-drawer__service-link">X-Ray</a>
+    <a href="services/pharmacy.html" class="nav-drawer__service-link">Pharmacy</a>
+    <a href="services/mental-health.html" class="nav-drawer__service-link">Mental Health</a>
+    <a href="services/staffing.html" class="nav-drawer__service-link">Staffing</a>
+  </div>
+  <div class="nav-drawer__ctas">
+    <a href="#intake" class="btn btn-primary btn-full">Submit Care Request</a>
+    <a href="tel:9092064228" class="btn btn-secondary btn-full"><i data-lucide="phone" style="width:15px;height:15px;"></i>(909) 206-4228</a>
+    <a href="#referral" class="btn btn-text" style="justify-content:center;">Submit a Referral <span class="btn-arrow">→</span></a>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main">
+
+
+  <!-- ============================================================
+       EMERGENCY NOTICE — Above everything else
+       ============================================================ -->
+  <div style="background:var(--red-50,#fef2f2);border-bottom:1.5px solid var(--red-200,#fecaca);padding:var(--sp-3) 0;" role="alert" aria-live="assertive">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;">
+        <span style="display:flex;align-items:center;gap:var(--sp-2);font-family:var(--font-heading);font-size:var(--text-sm);font-weight:var(--fw-bold);color:var(--red-700,#b91c1c);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Medical Emergency?
+        </span>
+        <span style="font-size:var(--text-sm);color:var(--red-700,#b91c1c);">Call <strong>911</strong> immediately. &nbsp;|&nbsp; Mental health crisis: call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline). &nbsp;|&nbsp; This website is not monitored for emergencies.</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="page-hero" aria-label="Contact Ohana Senior Care Agency">
+    <div class="page-hero__glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero__inner">
+        <div class="page-hero__text reveal">
+          <div class="eyebrow">Get In Touch</div>
+          <h1>How can we help you?</h1>
+          <p class="lead">Whether you're a family navigating care options, a physician submitting a referral, or a facility looking for coordination support — reach us through the form that fits your need.</p>
+          <p class="body-md" style="color:var(--color-text-secondary);">We respond to all inquiries within one business day. For urgent care needs, please call us directly.</p>
+        </div>
+
+        <!-- ── Quick Info Cards ── -->
+        <div class="quick-info reveal" style="--reveal-delay:0.15s;">
+          <div class="quick-info-item">
+            <div class="quick-info-item__icon"><i data-lucide="phone" style="width:18px;height:18px;"></i></div>
+            <div class="quick-info-item__body">
+              <span class="quick-info-item__label">Phone</span>
+              <div class="quick-info-item__value"><a href="tel:9092064228">(909) 206-4228</a></div>
+              <span style="font-size:var(--text-xs);color:var(--color-text-muted);">Mon–Fri, 8am–6pm PT</span>
+            </div>
+          </div>
+          <div class="quick-info-item">
+            <div class="quick-info-item__icon"><i data-lucide="mail" style="width:18px;height:18px;"></i></div>
+            <div class="quick-info-item__body">
+              <span class="quick-info-item__label">Email</span>
+              <div class="quick-info-item__value"><a href="mailto:info@ohanaseniorcare.com">info@ohanaseniorcare.com</a></div>
+              <span style="font-size:var(--text-xs);color:var(--color-text-muted);">Replies within 1 business day</span>
+            </div>
+          </div>
+          <div class="quick-info-item">
+            <div class="quick-info-item__icon"><i data-lucide="map-pin" style="width:18px;height:18px;"></i></div>
+            <div class="quick-info-item__body">
+              <span class="quick-info-item__label">Service Area</span>
+              <div class="quick-info-item__value">Southern California</div>
+              <span style="font-size:var(--text-xs);color:var(--color-text-muted);">LA · Orange · Riverside · San Bernardino</span>
+            </div>
+          </div>
+          <div class="quick-info-item">
+            <div class="quick-info-item__icon"><i data-lucide="clock" style="width:18px;height:18px;"></i></div>
+            <div class="quick-info-item__body">
+              <span class="quick-info-item__label">Hours</span>
+              <div class="quick-info-item__value">Mon – Fri, 8am – 6pm</div>
+              <span style="font-size:var(--text-xs);color:var(--color-text-muted);">Pacific Time · After-hours by arrangement</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FORMS SECTION
+       ============================================================ -->
+  <section class="section" id="forms" aria-label="Contact forms">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- ── Main Form Column ── -->
+        <div class="reveal">
+
+          <!-- Privacy / sensitive data notice -->
+          <div class="compliance-note" style="margin-bottom:var(--sp-6);" role="note">
+            <i data-lucide="shield" style="width:16px;height:16px;"></i>
+            <p><strong>Privacy notice:</strong> Do not submit sensitive protected health information (PHI) such as full medical records, diagnoses, or insurance account numbers through this form. For secure transmission of clinical documents, contact us by phone. See our <a href="privacy-policy.html" style="color:var(--color-primary);">Privacy Policy</a> for details on how we handle submitted information.</p>
+          </div>
+
+          <!-- ── Tab Container ── -->
+          <div data-tabs aria-label="Contact form types">
+
+            <!-- Tab Buttons -->
+            <div class="form-tabs" role="tablist" aria-label="Select a form">
+              <button class="form-tab" role="tab" aria-selected="false" aria-controls="panel-general" id="tab-general">
+                <i data-lucide="message-circle" style="width:14px;height:14px;vertical-align:-2px;margin-right:var(--sp-2);"></i>
+                General Contact
+              </button>
+              <button class="form-tab" role="tab" aria-selected="false" aria-controls="panel-intake" id="tab-intake">
+                <i data-lucide="clipboard-list" style="width:14px;height:14px;vertical-align:-2px;margin-right:var(--sp-2);"></i>
+                Care Request / Intake
+              </button>
+              <button class="form-tab" role="tab" aria-selected="false" aria-controls="panel-referral" id="tab-referral">
+                <i data-lucide="share-2" style="width:14px;height:14px;vertical-align:-2px;margin-right:var(--sp-2);"></i>
+                Professional Referral
+              </button>
+            </div>
+
+
+            <!-- ══ PANEL A: General Contact ══════════════════════ -->
+            <div class="form-panel" id="panel-general" role="tabpanel" aria-labelledby="tab-general">
+              <div class="form--card">
+                <div style="margin-bottom:var(--sp-6);">
+                  <h2 style="font-size:var(--text-xl);margin-bottom:var(--sp-2);">General Contact</h2>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);">Questions about our services, service area, or how care coordination works? Send us a message and we'll get back to you within one business day.</p>
+                </div>
+
+                <form class="form" data-validate action="#" method="post" name="general-contact" novalidate>
+                  <input type="hidden" name="form-type" value="general-contact" />
+                  <!-- Honeypot — do not fill this field (bot trap) -->
+                  <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="gc-name">Full Name <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="text" id="gc-name" name="full-name" class="input" placeholder="Jane Smith" autocomplete="name" required aria-required="true" />
+                      <span class="field-error" hidden id="gc-name-err" role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter your full name.
+                      </span>
+                    </div>
+                    <div class="field">
+                      <label for="gc-phone">Phone Number <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="tel" id="gc-phone" name="phone" class="input" placeholder="(555) 000-0000" autocomplete="tel" required aria-required="true" />
+                      <span class="field-error" hidden id="gc-phone-err" role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter a phone number.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="gc-email">Email Address <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="email" id="gc-email" name="email" class="input" placeholder="jane@example.com" autocomplete="email" required aria-required="true" />
+                    <span class="field-error" hidden id="gc-email-err" role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please enter an email address.
+                    </span>
+                  </div>
+
+                  <div class="field">
+                    <label for="gc-reason">Reason for Contact <span class="required-mark" aria-hidden="true">*</span></label>
+                    <div class="select-wrap">
+                      <select id="gc-reason" name="reason" class="select" required aria-required="true">
+                        <option value="" disabled selected>Select a reason…</option>
+                        <option value="general-question">General Question</option>
+                        <option value="service-info">Service Information</option>
+                        <option value="facility-inquiry">Facility or B2B Inquiry</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="billing">Billing or Administrative</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please select a reason.
+                    </span>
+                  </div>
+
+                  <div class="field">
+                    <label for="gc-message">Message <span class="required-mark" aria-hidden="true">*</span></label>
+                    <textarea id="gc-message" name="message" class="textarea" placeholder="How can we help you?" rows="5" required aria-required="true"></textarea>
+                    <span class="field-hint">Please keep messages general. Do not include full medical records or PHI.</span>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please enter your message.
+                    </span>
+                  </div>
+
+                  <div class="form-footer">
+                    <label class="check-label">
+                      <input type="checkbox" name="privacy-consent" required aria-required="true" />
+                      <span>I have read and agree to the <a href="privacy-policy.html" style="color:var(--color-primary);">Privacy Policy</a>. I understand that Ohana Senior Care Agency will use my information to respond to my inquiry.</span>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-lg" style="align-self:flex-start;">
+                      Send Message
+                      <i data-lucide="send" style="width:16px;height:16px;" aria-hidden="true"></i>
+                    </button>
+                    <p style="font-size:var(--text-xs);color:var(--color-text-muted);">We typically respond within 1 business day. For urgent needs, call <a href="tel:9092064228" style="color:var(--color-primary);">(909) 206-4228</a>.</p>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- ═══════════════════════════════════════════════════ -->
+
+
+            <!-- ══ PANEL B: Care Request / Intake ════════════════ -->
+            <div class="form-panel" id="panel-intake" role="tabpanel" aria-labelledby="tab-intake">
+              <div class="form--card">
+                <div style="margin-bottom:var(--sp-6);">
+                  <h2 style="font-size:var(--text-xl);margin-bottom:var(--sp-2);">Care Request / Intake Form</h2>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);">Use this form to request care coordination for yourself or a loved one. A member of our team will follow up within one business day to discuss care options and next steps.</p>
+                </div>
+
+                <form class="form" data-validate action="#" method="post" name="care-intake" novalidate>
+                  <input type="hidden" name="form-type" value="care-intake" />
+                  <!-- Honeypot — do not fill this field (bot trap) -->
+                  <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="ci-patient-name">Patient / Client Name <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="text" id="ci-patient-name" name="patient-name" class="input" placeholder="Full name of the person needing care" required aria-required="true" />
+                      <span class="field-hint">First and last name only. No medical record numbers needed at this stage.</span>
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter the patient or client name.
+                      </span>
+                    </div>
+                    <div class="field">
+                      <label for="ci-contact-name">Your Name (Contact Person) <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="text" id="ci-contact-name" name="contact-name" class="input" placeholder="Who we should contact" autocomplete="name" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter your name.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="ci-relationship">Relationship to Patient <span class="required-mark" aria-hidden="true">*</span></label>
+                    <div class="select-wrap">
+                      <select id="ci-relationship" name="relationship" class="select" required aria-required="true">
+                        <option value="" disabled selected>Select relationship…</option>
+                        <option value="self">Self</option>
+                        <option value="spouse-partner">Spouse or Partner</option>
+                        <option value="child">Adult Child</option>
+                        <option value="other-family">Other Family Member</option>
+                        <option value="caregiver">Caregiver or Care Manager</option>
+                        <option value="legal-guardian">Legal Guardian or POA</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please select a relationship.
+                    </span>
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="ci-phone">Phone Number <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="tel" id="ci-phone" name="phone" class="input" placeholder="(555) 000-0000" autocomplete="tel" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter a phone number.
+                      </span>
+                    </div>
+                    <div class="field">
+                      <label for="ci-email">Email Address <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="email" id="ci-email" name="email" class="input" placeholder="you@example.com" autocomplete="email" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter an email address.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="ci-service">Service Needed <span class="required-mark" aria-hidden="true">*</span></label>
+                    <div class="select-wrap">
+                      <select id="ci-service" name="service-needed" class="select" required aria-required="true">
+                        <option value="" disabled selected>Select a service…</option>
+                        <optgroup label="Ohana-Direct Services">
+                          <option value="senior-placement">Senior Placement</option>
+                          <option value="nemt">Medical Transportation (NEMT)</option>
+                          <option value="meal-program">Meal Program</option>
+                        </optgroup>
+                        <optgroup label="Clinical Network — Coordinated Access">
+                          <option value="caregiving">In-Home Caregiving</option>
+                          <option value="home-health">Home Health (Skilled Nursing)</option>
+                          <option value="wound-care">Wound Care</option>
+                          <option value="palliative-hospice">Palliative Care or Hospice</option>
+                          <option value="mobile-doctor">Mobile Doctor (PCP)</option>
+                          <option value="mobile-lab">Lab &amp; Diagnostics</option>
+                          <option value="xray">Mobile X-Ray</option>
+                          <option value="pharmacy">Pharmacy / Medication Delivery</option>
+                          <option value="mental-health">Mental Health Services</option>
+                          <option value="staffing">Clinical Staffing</option>
+                        </optgroup>
+                        <option value="multiple">Multiple Services / Not Sure</option>
+                      </select>
+                      <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please select a service.
+                    </span>
+                  </div>
+
+                  <div class="field">
+                    <label for="ci-location">City / Location <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="text" id="ci-location" name="location" class="input" placeholder="City where care is needed" required aria-required="true" />
+                    <span class="field-hint">We serve Los Angeles, Orange, Riverside, and San Bernardino counties.</span>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please enter a city or location.
+                    </span>
+                  </div>
+
+                  <div class="field">
+                    <label for="ci-notes">Additional Notes</label>
+                    <textarea id="ci-notes" name="notes" class="textarea" placeholder="Any additional context about timing, current care situation, or specific needs (optional)" rows="4"></textarea>
+                    <span class="field-hint">Do not include diagnoses, insurance ID numbers, or full medical history in this field.</span>
+                  </div>
+
+                  <div class="form-footer">
+                    <label class="check-label">
+                      <input type="checkbox" name="privacy-consent" required aria-required="true" />
+                      <span>I understand that Ohana Senior Care Agency is a care coordination organization. By submitting this form, I agree to the <a href="privacy-policy.html" style="color:var(--color-primary);">Privacy Policy</a> and consent to Ohana contacting me regarding care coordination options.</span>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-lg" style="align-self:flex-start;">
+                      Submit Care Request
+                      <i data-lucide="arrow-right" style="width:16px;height:16px;" aria-hidden="true"></i>
+                    </button>
+                    <p style="font-size:var(--text-xs);color:var(--color-text-muted);">Submitting this form does not initiate services or constitute a clinical intake. A care coordinator will contact you to discuss options. For immediate needs, call <a href="tel:9092064228" style="color:var(--color-primary);">(909) 206-4228</a>.</p>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- ═══════════════════════════════════════════════════ -->
+
+
+            <!-- ══ PANEL C: Professional Referral ════════════════ -->
+            <div class="form-panel" id="panel-referral" role="tabpanel" aria-labelledby="tab-referral">
+              <div class="form--card">
+                <div style="margin-bottom:var(--sp-6);">
+                  <h2 style="font-size:var(--text-xl);margin-bottom:var(--sp-2);">Professional Referral</h2>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);">For physicians, discharge planners, social workers, and other licensed professionals referring patients to Ohana's coordination network. Use patient initials or a reference ID — do not include full names in this field.</p>
+                </div>
+
+                <form class="form" data-validate action="#" method="post" name="professional-referral" novalidate>
+                  <input type="hidden" name="form-type" value="professional-referral" />
+                  <!-- Honeypot — do not fill this field (bot trap) -->
+                  <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="ref-org">Referring Organization <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="text" id="ref-org" name="referring-org" class="input" placeholder="Hospital, clinic, SNF, or agency name" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter your organization name.
+                      </span>
+                    </div>
+                    <div class="field">
+                      <label for="ref-contact-name">Your Name <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="text" id="ref-contact-name" name="contact-name" class="input" placeholder="Referring clinician or coordinator" autocomplete="name" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter your name.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field">
+                      <label for="ref-phone">Phone Number <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="tel" id="ref-phone" name="phone" class="input" placeholder="Direct line or office number" autocomplete="tel" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter a phone number.
+                      </span>
+                    </div>
+                    <div class="field">
+                      <label for="ref-email">Email Address <span class="required-mark" aria-hidden="true">*</span></label>
+                      <input type="email" id="ref-email" name="email" class="input" placeholder="you@organization.com" autocomplete="email" required aria-required="true" />
+                      <span class="field-error" hidden role="alert">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        Please enter an email address.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="ref-patient-id">Patient Initials or Reference ID <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="text" id="ref-patient-id" name="patient-reference" class="input" placeholder="E.g., J.S. or MR-2024-001" required aria-required="true" />
+                    <span class="field-hint">Do not enter full patient names. Use initials or an internal case reference ID.</span>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please enter patient initials or a reference ID.
+                    </span>
+                  </div>
+
+                  <div class="field">
+                    <label for="ref-service">Requested Service <span class="required-mark" aria-hidden="true">*</span></label>
+                    <div class="select-wrap">
+                      <select id="ref-service" name="requested-service" class="select" required aria-required="true">
+                        <option value="" disabled selected>Select a service…</option>
+                        <optgroup label="Ohana-Direct">
+                          <option value="senior-placement">Senior Placement</option>
+                          <option value="nemt">Medical Transportation (NEMT)</option>
+                          <option value="meal-program">Meal Program</option>
+                        </optgroup>
+                        <optgroup label="Network-Coordinated">
+                          <option value="caregiving">In-Home Caregiving</option>
+                          <option value="home-health">Home Health (Skilled Nursing / Therapy)</option>
+                          <option value="wound-care">Wound Care</option>
+                          <option value="palliative">Palliative Care</option>
+                          <option value="hospice">Hospice</option>
+                          <option value="mobile-doctor">Mobile Doctor / PCP</option>
+                          <option value="mobile-lab">Lab &amp; Diagnostics</option>
+                          <option value="xray">Mobile X-Ray</option>
+                          <option value="pharmacy">Pharmacy / Medication Delivery</option>
+                          <option value="mental-health">Mental Health Services</option>
+                          <option value="staffing">Clinical Staffing</option>
+                        </optgroup>
+                        <option value="multiple">Multiple / Combination</option>
+                      </select>
+                      <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <span class="field-error" hidden role="alert">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      Please select the requested service.
+                    </span>
+                  </div>
+
+                  <!-- Urgency Picker -->
+                  <div class="field">
+                    <label>Urgency Level <span class="required-mark" aria-hidden="true">*</span></label>
+                    <div class="urgency-grid" role="radiogroup" aria-label="Select urgency level">
+                      <div class="urgency-opt">
+                        <input type="radio" id="urg-routine" name="urgency" value="routine" required />
+                        <label for="urg-routine">
+                          <span class="urgency-title">Routine</span>
+                          <span class="urgency-sub">Within 5–7 days</span>
+                        </label>
+                      </div>
+                      <div class="urgency-opt">
+                        <input type="radio" id="urg-soon" name="urgency" value="soon" />
+                        <label for="urg-soon">
+                          <span class="urgency-title">Soon</span>
+                          <span class="urgency-sub">Within 2–3 days</span>
+                        </label>
+                      </div>
+                      <div class="urgency-opt">
+                        <input type="radio" id="urg-urgent" name="urgency" value="urgent" />
+                        <label for="urg-urgent">
+                          <span class="urgency-title">Urgent</span>
+                          <span class="urgency-sub">Within 24 hours</span>
+                        </label>
+                      </div>
+                    </div>
+                    <span class="field-hint">For life-threatening emergencies, call 911. For 24-hour urgent coordination, call <a href="tel:9092064228" style="color:var(--color-primary);">(909) 206-4228</a>.</span>
+                  </div>
+
+                  <div class="field">
+                    <label for="ref-notes">Referral Notes</label>
+                    <textarea id="ref-notes" name="referral-notes" class="textarea" placeholder="Clinical context, discharge timeline, special coordination needs, or insurance notes (optional — do not include full PHI)" rows="4"></textarea>
+                    <span class="field-hint">This form is not HIPAA-secured. For transmission of full clinical documents, please contact us by phone or via your existing secure channel.</span>
+                  </div>
+
+                  <div class="form-footer">
+                    <label class="check-label">
+                      <input type="checkbox" name="referral-auth" required aria-required="true" />
+                      <span>I confirm I am a licensed professional or authorized representative submitting this referral in accordance with applicable privacy laws. I have not included full patient PHI in this form.</span>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-lg" style="align-self:flex-start;">
+                      Submit Referral
+                      <i data-lucide="arrow-right" style="width:16px;height:16px;" aria-hidden="true"></i>
+                    </button>
+                    <p style="font-size:var(--text-xs);color:var(--color-text-muted);">Ohana Senior Care Agency does not pay or receive compensation for patient referrals in violation of applicable state or federal law, including the Stark Law and Anti-Kickback Statute.</p>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- ═══════════════════════════════════════════════════ -->
+
+          </div><!-- /data-tabs -->
+        </div>
+        <!-- /Main Form Column -->
+
+
+        <!-- ── Sidebar ── -->
+        <aside class="contact-sidebar reveal" style="--reveal-delay:0.1s;" aria-label="Contact details and resources">
+
+          <div class="sidebar-card">
+            <div>
+              <div class="sidebar-card__title">Reach Us Directly</div>
+              <div class="sidebar-card__body">For urgent care needs or questions that can't wait, call during business hours.</div>
+            </div>
+            <ul class="sidebar-detail-list">
+              <li>
+                <i data-lucide="phone" style="width:16px;height:16px;"></i>
+                <div>
+                  <strong><a href="tel:9092064228" style="color:var(--color-primary);text-decoration:none;">(909) 206-4228</a></strong>
+                  <span>Mon–Fri, 8am–6pm PT</span>
+                </div>
+              </li>
+              <li>
+                <i data-lucide="mail" style="width:16px;height:16px;"></i>
+                <div>
+                  <strong><a href="mailto:info@ohanaseniorcare.com" style="color:var(--color-primary);text-decoration:none;">info@ohanaseniorcare.com</a></strong>
+                  <span>Replies within 1 business day</span>
+                </div>
+              </li>
+              <li>
+                <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
+                <div>
+                  <strong>Southern California</strong>
+                  <span>Los Angeles · Orange · Riverside · San Bernardino</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card__title">What to Expect</div>
+            <ul class="reassurance-list">
+              <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>A care coordinator reviews your request — typically within 1 business day</li>
+              <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>We'll discuss your needs and the right coordination approach</li>
+              <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>No pressure — we present options and let families decide</li>
+              <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>We work with most insurance plans and can discuss financial questions</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-card__title">For Facilities &amp; Providers</div>
+            <div class="sidebar-card__body" style="margin-bottom:var(--sp-4);">Looking to partner with Ohana's network or refer patients on an ongoing basis? Use the Referral tab or reach out directly.</div>
+            <a href="partners.html" class="btn btn-secondary btn-full" style="font-size:var(--text-sm);">
+              <i data-lucide="users" style="width:14px;height:14px;"></i>
+              View Partner Network
+            </a>
+          </div>
+
+          <!-- Emergency callout in sidebar -->
+          <div class="emergency-notice" role="alert">
+            <div class="emergency-notice__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="emergency-notice__body">
+              <div class="emergency-notice__title">Medical or Mental Health Emergency?</div>
+              <p class="emergency-notice__text">Call <strong>911</strong> for medical emergencies. Call or text <strong>988</strong> for mental health crisis support. This website is not monitored for emergencies.</p>
+            </div>
+          </div>
+
+        </aside>
+        <!-- /Sidebar -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REASSURANCE SECTION
+       ============================================================ -->
+  <section class="section bg-alt" aria-label="Our response commitment">
+    <div class="container">
+      <div class="section-header reveal" style="max-width:600px;">
+        <h2>We take every inquiry seriously.</h2>
+        <p class="lead">Care coordination starts with a conversation. Here's what happens after you reach out.</p>
+      </div>
+      <div class="grid-3 stagger reveal" style="margin-top:var(--sp-10);">
+        <div class="card feature-card card--hoverable">
+          <div class="card__icon-wrap"><i data-lucide="inbox" style="width:22px;height:22px;"></i></div>
+          <h3 class="card__title">We receive your message</h3>
+          <p class="card__body">Every submission goes directly to a care coordinator — not a call center or automated queue. Someone reads it.</p>
+        </div>
+        <div class="card feature-card card--hoverable">
+          <div class="card__icon-wrap"><i data-lucide="phone-call" style="width:22px;height:22px;"></i></div>
+          <h3 class="card__title">We follow up within 1 business day</h3>
+          <p class="card__body">A coordinator will call or email to learn more about your situation and explain what coordination options are available.</p>
+        </div>
+        <div class="card feature-card card--hoverable">
+          <div class="card__icon-wrap"><i data-lucide="git-branch" style="width:22px;height:22px;"></i></div>
+          <h3 class="card__title">We match you to the right resource</h3>
+          <p class="card__body">Whether through Ohana directly or a vetted network partner, we identify the best fit — and stay involved through the handoff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA BLOCK
+       ============================================================ -->
+  <section class="section" aria-label="Call us">
+    <div class="container">
+      <div class="cta-block reveal">
+        <div class="cta-block__inner">
+          <div class="cta-block__text">
+            <h2 class="on-dark">Prefer to talk to someone?</h2>
+            <p class="lead on-dark">Our care coordinators are available Monday through Friday, 8am to 6pm Pacific. No scripts. No transfers. A real conversation.</p>
+          </div>
+          <div class="cta-block__actions">
+            <a href="tel:9092064228" class="btn btn-white btn-lg">
+              <i data-lucide="phone" style="width:16px;height:16px;" aria-hidden="true"></i>
+              (909) 206-4228
+            </a>
+            <a href="mailto:info@ohanaseniorcare.com" class="btn btn-ghost btn-lg">
+              <i data-lucide="mail" style="width:16px;height:16px;" aria-hidden="true"></i>
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Ohana Senior Care Agency — Home">
+          <div style="width:36px;height:36px;background:var(--green-800);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div><span class="footer-logo__name">Ohana Senior Care</span><span class="footer-logo__tagline">Care Coordination &middot; Southern CA</span></div>
+        </a>
+        <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
+        <div class="footer-contacts">
+          <a href="tel:9092064228" class="footer-contact"><i data-lucide="phone" aria-hidden="true"></i>(909) 206-4228</a>
+          <a href="mailto:info@ohanaseniorcare.com" class="footer-contact"><i data-lucide="mail" aria-hidden="true"></i>info@ohanaseniorcare.com</a>
+          <span class="footer-contact"><i data-lucide="clock" aria-hidden="true"></i>Mon&ndash;Fri, 8am&ndash;6pm PT</span>
+          <span class="footer-contact"><i data-lucide="map-pin" aria-hidden="true"></i>Los Angeles &middot; Orange &middot; Riverside &middot; San Bernardino</span>
+        </div>
+      </div>
+      <div class="footer-col"><h6>Ohana-Direct</h6><div class="footer-links">
+        <a href="services/senior-placement.html" class="footer-link">Senior Placement <span class="tag">Direct</span></a>
+        <a href="services/nemt.html" class="footer-link">Medical Transportation <span class="tag">Direct</span></a>
+        <a href="services/meal-program.html" class="footer-link">Meal Program</a>
+      </div></div>
+      <div class="footer-col"><h6>Network Services</h6><div class="footer-links">
+        <a href="services/caregiving.html" class="footer-link">Caregiving</a>
+        <a href="services/home-health.html" class="footer-link">Home Health</a>
+        <a href="services/wound-care.html" class="footer-link">Wound Care</a>
+        <a href="services/palliative-hospice.html" class="footer-link">Palliative &amp; Hospice</a>
+        <a href="services/mobile-doctor.html" class="footer-link">Mobile Doctor (PCP)</a>
+        <a href="services/mobile-lab.html" class="footer-link">Lab &amp; Diagnostics</a>
+        <a href="services/xray.html" class="footer-link">X-Ray</a>
+        <a href="services/pharmacy.html" class="footer-link">Pharmacy</a>
+        <a href="services/mental-health.html" class="footer-link">Mental Health</a>
+        <a href="services/staffing.html" class="footer-link">Staffing</a>
+      </div></div>
+      <div class="footer-col"><h6>Company</h6><div class="footer-links">
+        <a href="about.html" class="footer-link">About Ohana</a>
+        <a href="partners.html" class="footer-link">Partner Network</a>
+        <a href="contact.html" class="footer-link">Contact Us</a>
+        <a href="contact.html#referral" class="footer-link">Submit Referral</a>
+        <a href="contact.html#intake" class="footer-link">Care Request</a>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p class="footer-copy">&copy; 2026 Ohana Senior Care Agency. All rights reserved.</p>
+        <nav class="footer-legal-links" aria-label="Legal">
+          <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="footer-legal-link">Terms of Use</a>
+          <a href="#" class="footer-legal-link">Accessibility</a>
+        </nav>
+      </div>
+      <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization providing administrative, coordination, and select non-clinical support services. Clinical services are provided by independent licensed providers and partners. Ohana does not directly render clinical services except where explicitly stated. Ohana Senior Care Agency does not accept or pay compensation for patient referrals in violation of applicable federal or state law.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" role="navigation" aria-label="Mobile quick actions">
+  <a href="tel:9092064228" class="btn btn-secondary"><i data-lucide="phone" style="width:15px;height:15px;" aria-hidden="true"></i>Call Us</a>
+  <a href="#intake" class="btn btn-primary">Submit Care Request</a>
+</div>
+
+<script src="design-system/js/scroll-reveal.js"></script>
+<script src="design-system/js/nav.js"></script>
+<script src="design-system/js/main.js"></script>
+<script>
+  lucide.createIcons();
+
+  // ── Deep-link tab activation via URL hash ─────────────────
+  (function () {
+    const hashMap = {
+      '#general':  0,
+      '#intake':   1,
+      '#referral': 2
+    };
+    function activateTabFromHash() {
+      const hash  = window.location.hash.toLowerCase();
+      const idx   = hashMap[hash];
+      if (idx === undefined) return;
+
+      const container = document.querySelector('[data-tabs]');
+      if (!container) return;
+
+      const tabs   = container.querySelectorAll('.form-tab');
+      const panels = container.querySelectorAll('.form-panel');
+
+      tabs.forEach((t, i) => {
+        t.classList.toggle('is-active', i === idx);
+        t.setAttribute('aria-selected', i === idx);
+      });
+      panels.forEach((p, i) => p.classList.toggle('is-active', i === idx));
+
+      // Scroll to forms section
+      const section = document.getElementById('forms');
+      if (section) {
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 80;
+        const top  = section.getBoundingClientRect().top + window.scrollY - navH - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+
+    // On load
+    activateTabFromHash();
+    // On hash change (in-page nav)
+    window.addEventListener('hashchange', activateTabFromHash);
+  })();
+</script>
+</body>
+</html>

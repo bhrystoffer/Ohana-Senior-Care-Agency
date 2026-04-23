@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use | Ohana Senior Care Agency</title>
+  <meta name="description" content="Terms of Use for Ohana Senior Care Agency — governing use of our website and care coordination services." />
+
+  <!-- Favicon — replace with real icon files before launch -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ohana Senior Care Agency" />
+  <meta property="og:url" content="https://www.ohanaseniorcare.com/terms-of-use.html" />
+  <meta property="og:title" content="Terms of Use | Ohana Senior Care Agency" />
+  <meta property="og:description" content="Terms of Use for the Ohana Senior Care Agency website — governing use of our site and care coordination services." />
+  <meta property="og:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ohana Senior Care Agency — Care Coordination, Southern California" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terms of Use | Ohana Senior Care Agency" />
+  <meta name="twitter:description" content="Terms of Use for the Ohana Senior Care Agency website — governing use of our site and care coordination services." />
+  <meta name="twitter:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ohanaseniorcare.com/terms-of-use.html" />
+  <meta name="robots" content="noindex" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="design-system/css/tokens.css" />
+  <link rel="stylesheet" href="design-system/css/global.css" />
+  <link rel="stylesheet" href="design-system/css/typography.css" />
+  <link rel="stylesheet" href="design-system/css/components/sections.css" />
+  <link rel="stylesheet" href="design-system/css/components/buttons.css" />
+  <link rel="stylesheet" href="design-system/css/components/nav.css" />
+  <link rel="stylesheet" href="design-system/css/components/cards.css" />
+  <link rel="stylesheet" href="design-system/css/components/footer.css" />
+
+  <style>
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+    .policy-content { min-width: 0; }
+    .policy-content h2 {
+      font-size: var(--text-2xl);
+      margin-top: var(--sp-12);
+      margin-bottom: var(--sp-4);
+      padding-top: var(--sp-8);
+      border-top: 1px solid var(--color-border-subtle);
+    }
+    .policy-content h2:first-of-type { border-top: none; margin-top: var(--sp-8); padding-top: 0; }
+    .policy-content h3 { font-size: var(--text-lg); margin-top: var(--sp-6); margin-bottom: var(--sp-3); }
+    .policy-content p { margin-bottom: var(--sp-4); max-width: none; }
+    .policy-content ul { margin-bottom: var(--sp-4); padding-left: var(--sp-6); }
+    .policy-content ul li { margin-bottom: var(--sp-2); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+    .policy-toc {
+      position: sticky;
+      top: calc(var(--nav-height) + var(--sp-8));
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-xl);
+      padding: var(--sp-6);
+    }
+    .policy-toc__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-4);
+    }
+    .policy-toc__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+    .policy-toc__list a { font-size: var(--text-sm); color: var(--color-text-secondary); text-decoration: none; line-height: var(--lh-snug); }
+    .policy-toc__list a:hover { color: var(--color-primary); }
+    .policy-toc__updated {
+      margin-top: var(--sp-5);
+      padding-top: var(--sp-4);
+      border-top: 1px solid var(--color-border-subtle);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      line-height: var(--lh-relaxed);
+    }
+    @media (max-width: 768px) {
+      .policy-layout { grid-template-columns: 1fr; }
+      .policy-toc { position: static; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#main" class="sr-only" style="position:fixed;top:var(--sp-3);left:var(--sp-3);z-index:9999;background:var(--color-primary);color:var(--white);padding:var(--sp-2) var(--sp-4);border-radius:var(--radius-md);font-family:var(--font-heading);font-size:var(--text-sm);font-weight:var(--fw-semibold);" onfocus="this.classList.remove('sr-only')" onblur="this.classList.add('sr-only')">Skip to main content</a>
+
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="nav-logo" aria-label="Ohana Senior Care Agency — Home">
+      <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="nav-logo__wordmark">
+        <span class="nav-logo__name">Ohana Senior Care</span>
+        <span class="nav-logo__tagline">Care Coordination &middot; Southern CA</span>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="partners.html" class="nav-link">Partners</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:9092064228" class="nav-phone"><i data-lucide="phone" style="width:14px;height:14px;" aria-hidden="true"></i>(909) 206-4228</a>
+      <a href="contact.html#intake" class="btn btn-primary btn-sm">Care Request</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+<div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+  <nav class="nav-drawer__links">
+    <a href="index.html" class="nav-drawer__link">Home</a>
+    <a href="about.html" class="nav-drawer__link">About</a>
+    <a href="partners.html" class="nav-drawer__link">Partners</a>
+    <a href="contact.html" class="nav-drawer__link">Contact</a>
+  </nav>
+  <div class="nav-drawer__ctas">
+    <a href="contact.html#intake" class="btn btn-primary btn-full">Submit Care Request</a>
+    <a href="tel:9092064228" class="btn btn-secondary btn-full"><i data-lucide="phone" style="width:15px;height:15px;"></i>(909) 206-4228</a>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main">
+
+  <!-- Legal review banner -->
+  <div style="background:#fffbeb;border-bottom:1.5px solid #fcd34d;padding:var(--sp-3) 0;" role="note" aria-label="Document status notice">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;">
+        <span style="display:flex;align-items:center;gap:var(--sp-2);font-family:var(--font-heading);font-size:var(--text-sm);font-weight:var(--fw-bold);color:#92400e;">
+          <i data-lucide="alert-triangle" style="width:15px;height:15px;" aria-hidden="true"></i>
+          Attorney Review Pending
+        </span>
+        <span style="font-size:var(--text-sm);color:#92400e;">This Terms of Use is a draft pending legal review. Items marked <em>[insert before launch]</em> require completion. Do not publish without attorney approval.</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="policy-layout">
+
+        <!-- ── Terms Content ── -->
+        <article class="policy-content" aria-label="Terms of Use">
+
+          <h1>Terms of Use</h1>
+          <p style="color:var(--color-text-secondary);">
+            <strong>Effective Date:</strong> [insert before launch]<br />
+            <strong>Last Updated:</strong> [insert before launch]
+          </p>
+
+          <!-- [ATTORNEY NOTE: Full terms require legal review. The sections below are starter scaffolding only and must be reviewed, expanded, and approved by qualified counsel before publication.] -->
+
+          <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using the website located at <a href="https://www.ohanaseniorcare.com" class="link">www.ohanaseniorcare.com</a> (the "Site"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the Site.</p>
+            <p>These Terms apply to all visitors, users, and others who access or use the Site, including individuals seeking care information, healthcare professionals, and business partners.</p>
+          </section>
+
+          <section id="about">
+            <h2>2. About Ohana Senior Care Agency</h2>
+            <p>Ohana Senior Care Agency ("Ohana," "we," "us," or "our") is a healthcare management and care coordination organization. We coordinate access to home-based and community care services through a network of independent licensed providers and partner agencies across Southern California.</p>
+            <p><strong>Important:</strong> Ohana does not directly provide clinical services except where explicitly stated. Clinical services are provided by independently licensed third-party providers. Nothing on this Site constitutes medical advice, a clinical recommendation, or a patient-provider relationship.</p>
+          </section>
+
+          <section id="not-medical-advice">
+            <h2>3. No Medical Advice</h2>
+            <p>The content on this Site is provided for informational purposes only. It does not constitute medical advice, diagnosis, or treatment recommendations. Always seek the advice of a qualified healthcare provider for medical conditions, treatment decisions, or health-related questions.</p>
+            <p><strong>In an emergency, call 911 immediately.</strong> This Site is not monitored for emergencies and is not a substitute for professional medical care.</p>
+          </section>
+
+          <section id="use-of-site">
+            <h2>4. Permitted Use of the Site</h2>
+            <p>You may use the Site for lawful purposes only. You agree not to:</p>
+            <ul>
+              <li>Use the Site in any way that violates applicable federal, state, or local laws or regulations</li>
+              <li>Transmit unsolicited commercial communications (spam)</li>
+              <li>Attempt to gain unauthorized access to any part of the Site or its related systems</li>
+              <li>Use automated tools to scrape, crawl, or extract data from the Site without written permission</li>
+              <li>Impersonate another person or entity, or misrepresent your affiliation with any person or organization</li>
+              <li>Submit false, misleading, or fraudulent information through any form on the Site</li>
+            </ul>
+          </section>
+
+          <section id="forms-submissions">
+            <h2>5. Forms and Submitted Information</h2>
+            <p>The Site includes contact and intake forms for general inquiries, care coordination requests, and professional referrals. By submitting a form, you acknowledge that:</p>
+            <ul>
+              <li>Submitting a form does not initiate clinical services, establish a patient-provider relationship, or guarantee a specific outcome</li>
+              <li>Forms should not be used to transmit protected health information (PHI), full medical records, or sensitive personal health data</li>
+              <li>Information submitted is handled as described in our <a href="privacy-policy.html" class="link">Privacy Policy</a></li>
+              <li>A response to your inquiry is not guaranteed within any specific timeframe, and does not constitute a binding agreement</li>
+            </ul>
+            <!-- [ATTORNEY NOTE: Confirm whether submitted information should trigger any specific contractual obligations or disclaimers under California law, including disclosure requirements for care coordination organizations.] -->
+          </section>
+
+          <section id="third-party">
+            <h2>6. Third-Party Providers and Network Partners</h2>
+            <p>Ohana coordinates access to care through a network of independent licensed providers and partner agencies. These providers are independent third parties, not employees or agents of Ohana. Ohana does not control, supervise, or guarantee the services, conduct, or outcomes of any third-party provider.</p>
+            <p>References to partner organizations on this Site are for informational and coordination purposes only. Their inclusion does not constitute an endorsement of any specific provider or guarantee of service quality.</p>
+          </section>
+
+          <section id="intellectual-property">
+            <h2>7. Intellectual Property</h2>
+            <p>All content on the Site — including text, graphics, logos, design elements, and code — is the property of Ohana Senior Care Agency or its licensors and is protected by applicable copyright and intellectual property laws.</p>
+            <p>You may not reproduce, distribute, modify, create derivative works from, or republish any content from this Site without prior written permission from Ohana Senior Care Agency.</p>
+          </section>
+
+          <section id="disclaimer">
+            <h2>8. Disclaimer of Warranties</h2>
+            <p>THE SITE AND ALL CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, OHANA DISCLAIMS ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+            <p>We do not warrant that the Site will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+            <!-- [ATTORNEY NOTE: Review disclaimer language for California consumer protection compliance. Certain implied warranty disclaimers may be limited by California law.] -->
+          </section>
+
+          <section id="limitation">
+            <h2>9. Limitation of Liability</h2>
+            <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL OHANA SENIOR CARE AGENCY, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF, OR INABILITY TO USE, THE SITE OR ANY CONTENT THEREON.</p>
+            <!-- [ATTORNEY NOTE: Confirm limitation of liability cap and whether any carve-outs are required for personal injury or fraud claims under California law.] -->
+          </section>
+
+          <section id="governing-law">
+            <h2>10. Governing Law</h2>
+            <p>These Terms are governed by the laws of the State of California, without regard to its conflict-of-law provisions. Any disputes arising from these Terms or your use of the Site shall be subject to the exclusive jurisdiction of the courts located in [County — insert before launch], California.</p>
+          </section>
+
+          <section id="changes">
+            <h2>11. Changes to These Terms</h2>
+            <p>We reserve the right to update these Terms at any time. We will indicate the date of the most recent update at the top of this page. Your continued use of the Site after any changes constitutes your acceptance of the revised Terms.</p>
+          </section>
+
+          <section id="contact-legal">
+            <h2>12. Contact</h2>
+            <p>Questions about these Terms of Use may be directed to:</p>
+            <ul>
+              <li><strong>Email:</strong> <a href="mailto:info@ohanaseniorcare.com" class="link">info@ohanaseniorcare.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:9092064228" class="link">(909) 206-4228</a></li>
+              <li><strong>Mailing Address:</strong> [insert before launch]</li>
+            </ul>
+          </section>
+
+          <!-- Bottom note to counsel -->
+          <div style="margin-top:var(--sp-10);padding-top:var(--sp-8);border-top:2px solid var(--color-border-subtle);">
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);">
+              <strong>Notice to counsel:</strong> This Terms of Use is a draft scaffold prepared for legal review. It is not a final or reviewed document. Key decisions pending review: (1) governing law county selection, (2) arbitration clause consideration, (3) limitation of liability cap amount, (4) California consumer protection compliance for disclaimers, (5) any disclosures specific to care coordination organizations. Do not publish without qualified healthcare counsel review.
+            </p>
+          </div>
+
+        </article>
+        <!-- /Terms Content -->
+
+
+        <!-- ── Table of Contents (Sidebar) ── -->
+        <nav class="policy-toc" aria-label="Terms sections">
+          <div class="policy-toc__title">Sections</div>
+          <ol class="policy-toc__list">
+            <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+            <li><a href="#about">2. About Ohana</a></li>
+            <li><a href="#not-medical-advice">3. No Medical Advice</a></li>
+            <li><a href="#use-of-site">4. Permitted Use</a></li>
+            <li><a href="#forms-submissions">5. Forms & Submissions</a></li>
+            <li><a href="#third-party">6. Third-Party Providers</a></li>
+            <li><a href="#intellectual-property">7. Intellectual Property</a></li>
+            <li><a href="#disclaimer">8. Disclaimer of Warranties</a></li>
+            <li><a href="#limitation">9. Limitation of Liability</a></li>
+            <li><a href="#governing-law">10. Governing Law</a></li>
+            <li><a href="#changes">11. Changes to Terms</a></li>
+            <li><a href="#contact-legal">12. Contact</a></li>
+          </ol>
+          <div class="policy-toc__updated">
+            <strong>Effective:</strong> [Insert Date]<br />
+            <strong>Status:</strong> Draft — Pending Legal Review
+          </div>
+        </nav>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Ohana Senior Care Agency — Home">
+          <div style="width:34px;height:34px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <span class="footer-logo__name">Ohana Senior Care</span>
+            <span class="footer-logo__tagline">Care Coordination &middot; Southern CA</span>
+          </div>
+        </a>
+        <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
+        <div class="footer-contacts">
+          <a href="tel:9092064228" class="footer-contact"><i data-lucide="phone" aria-hidden="true"></i>(909) 206-4228</a>
+          <a href="mailto:info@ohanaseniorcare.com" class="footer-contact"><i data-lucide="mail" aria-hidden="true"></i>info@ohanaseniorcare.com</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Company</h6>
+        <div class="footer-links">
+          <a href="about.html" class="footer-link">About Ohana</a>
+          <a href="partners.html" class="footer-link">Partner Network</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h6>Legal</h6>
+        <div class="footer-links">
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="footer-link">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p class="footer-copy">&copy; 2026 Ohana Senior Care Agency. All rights reserved.</p>
+        <nav class="footer-legal-links" aria-label="Legal">
+          <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+          <a href="terms-of-use.html" class="footer-legal-link">Terms of Use</a>
+        </nav>
+      </div>
+      <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization providing administrative, coordination, and select non-clinical support services. Clinical services are provided by independent licensed providers and partners within our network. Ohana does not directly render clinical services except where explicitly stated. Ohana Senior Care Agency does not accept or pay compensation for patient referrals in violation of applicable federal or state law.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="design-system/js/nav.js"></script>
+<script src="design-system/js/main.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

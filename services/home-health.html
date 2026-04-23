@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Health — Ohana Senior Care Agency</title>
+  <meta name="description" content="Ohana coordinates access to skilled home health services through Medicare-certified partner agencies — RN visits, physical therapy, occupational therapy, and more for post-discharge and homebound patients." />
+
+  <!-- Favicon — replace with real icon files before launch -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ohana Senior Care Agency" />
+  <meta property="og:url" content="https://www.ohanaseniorcare.com/services/home-health.html" />
+  <meta property="og:title" content="Home Health Coordination | Ohana Senior Care Agency" />
+  <meta property="og:description" content="Ohana coordinates access to skilled home health through Medicare-certified partner agencies — RN, PT, OT for post-discharge and homebound patients in Southern California." />
+  <meta property="og:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ohana Senior Care Agency — Care Coordination, Southern California" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home Health Coordination | Ohana Senior Care Agency" />
+  <meta name="twitter:description" content="Ohana coordinates access to skilled home health through Medicare-certified partner agencies — RN, PT, OT for post-discharge and homebound patients in Southern California." />
+  <meta name="twitter:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ohanaseniorcare.com/services/home-health.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../design-system/css/tokens.css" />
+  <link rel="stylesheet" href="../design-system/css/global.css" />
+  <link rel="stylesheet" href="../design-system/css/typography.css" />
+  <link rel="stylesheet" href="../design-system/css/components/sections.css" />
+  <link rel="stylesheet" href="../design-system/css/components/buttons.css" />
+  <link rel="stylesheet" href="../design-system/css/components/nav.css" />
+  <link rel="stylesheet" href="../design-system/css/components/cards.css" />
+  <link rel="stylesheet" href="../design-system/css/components/cta.css" />
+  <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <style>
+    .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
+    .page-hero__glow { position: absolute; top: -40%; right: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(78,140,28,.18) 0%, transparent 65%); pointer-events: none; }
+    .page-hero__inner { position: relative; z-index: 1; }
+    .page-hero__text { max-width: 720px; }
+    .feature-list { display: flex; flex-direction: column; gap: var(--sp-3); list-style: none; padding: 0; }
+    .feature-list li { display: flex; align-items: flex-start; gap: var(--sp-3); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+    .feature-list li i { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+    .process-steps { display: flex; flex-direction: column; gap: var(--sp-5); }
+    .process-step { display: flex; gap: var(--sp-5); align-items: flex-start; }
+    .process-step__num { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--white); font-family: var(--font-heading); font-size: var(--text-sm); font-weight: var(--fw-bold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .process-step__title { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--sp-1); }
+    .faq-list { display: flex; flex-direction: column; gap: var(--sp-5); }
+    .faq-item { border-bottom: 1px solid var(--gray-200); padding-bottom: var(--sp-5); }
+    .faq-q { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--sp-2); }
+    .faq-a { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="sr-only" style="position:fixed;top:var(--sp-3);left:var(--sp-3);z-index:9999;background:var(--color-primary);color:var(--white);padding:var(--sp-2) var(--sp-4);border-radius:var(--radius-md);font-family:var(--font-heading);font-size:var(--text-sm);font-weight:var(--fw-semibold);" onfocus="this.classList.remove('sr-only')" onblur="this.classList.add('sr-only')">Skip to main content</a>
+
+<header class="site-header" id="site-header">
+  <div class="nav-wrap">
+    <a href="../" class="nav-logo" aria-label="Ohana Senior Care Agency — Home">
+      <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="nav-logo__wordmark">
+        <span class="nav-logo__name">Ohana Senior Care</span>
+        <span class="nav-logo__tagline">Care Coordination &middot; Southern CA</span>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../" class="nav-link">Home</a>
+      <div class="nav-has-dropdown">
+        <button class="nav-link nav-dropdown-trigger is-active" aria-expanded="false" aria-haspopup="true">Services<svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown" role="menu">
+          <div class="nav-dropdown-group"><h6>Ohana-Direct</h6>
+            <a href="senior-placement.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="map-pin" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Senior Placement</span></a>
+            <a href="nemt.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="truck" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Medical Transportation</span></a>
+            <a href="meal-program.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="utensils" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Meal Program</span></a>
+          </div>
+          <div class="nav-dropdown-group"><h6>Clinical Network</h6>
+            <a href="caregiving.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="users" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Caregiving</span></a>
+            <a href="home-health.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="heart-pulse" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Home Health</span></a>
+            <a href="wound-care.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="activity" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Wound Care</span></a>
+            <a href="palliative-hospice.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="hand-heart" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Palliative &amp; Hospice</span></a>
+          </div>
+          <div class="nav-dropdown-group"><h6>Diagnostics &amp; Specialized</h6>
+            <a href="mobile-doctor.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="stethoscope" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Mobile Doctor (PCP)</span></a>
+            <a href="mobile-lab.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="flask-conical" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Lab &amp; Diagnostics</span></a>
+            <a href="xray.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="scan" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">X-Ray</span></a>
+            <a href="pharmacy.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="pill" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Pharmacy</span></a>
+            <a href="mental-health.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="brain" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Mental Health</span></a>
+            <a href="staffing.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="briefcase" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Staffing</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="../about.html" class="nav-link">About</a>
+      <a href="../partners.html" class="nav-link">Partners</a>
+      <a href="../contact.html" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:9092064228" class="nav-phone"><i data-lucide="phone" style="width:14px;height:14px;" aria-hidden="true"></i>(909) 206-4228</a>
+      <a href="../contact.html#intake" class="btn btn-primary btn-sm">Care Request</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+<div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+  <nav class="nav-drawer__links">
+    <a href="../" class="nav-drawer__link">Home</a>
+    <a href="../about.html" class="nav-drawer__link">About</a>
+    <a href="../partners.html" class="nav-drawer__link">Partners</a>
+    <a href="../contact.html" class="nav-drawer__link">Contact</a>
+  </nav>
+  <div class="nav-drawer__services"><h6>All Services</h6>
+    <a href="senior-placement.html" class="nav-drawer__service-link">Senior Placement</a>
+    <a href="nemt.html" class="nav-drawer__service-link">Medical Transportation (NEMT)</a>
+    <a href="meal-program.html" class="nav-drawer__service-link">Meal Program</a>
+    <a href="caregiving.html" class="nav-drawer__service-link">Caregiving</a>
+    <a href="home-health.html" class="nav-drawer__service-link">Home Health</a>
+    <a href="wound-care.html" class="nav-drawer__service-link">Wound Care</a>
+    <a href="palliative-hospice.html" class="nav-drawer__service-link">Palliative &amp; Hospice</a>
+    <a href="mobile-doctor.html" class="nav-drawer__service-link">Mobile Doctor (PCP)</a>
+    <a href="mobile-lab.html" class="nav-drawer__service-link">Lab &amp; Diagnostics</a>
+    <a href="xray.html" class="nav-drawer__service-link">X-Ray</a>
+    <a href="pharmacy.html" class="nav-drawer__service-link">Pharmacy</a>
+    <a href="mental-health.html" class="nav-drawer__service-link">Mental Health</a>
+    <a href="staffing.html" class="nav-drawer__service-link">Staffing</a>
+  </div>
+  <div class="nav-drawer__ctas">
+    <a href="../contact.html#intake" class="btn btn-primary btn-full">Submit Care Request</a>
+    <a href="tel:9092064228" class="btn btn-secondary btn-full"><i data-lucide="phone" style="width:15px;height:15px;"></i>(909) 206-4228</a>
+    <a href="../contact.html#referral" class="btn btn-text" style="justify-content:center;">Submit a Referral <span class="btn-arrow">→</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="section page-hero bg-dark">
+    <div class="page-hero__glow" aria-hidden="true"></div>
+    <div class="container page-hero__inner">
+      <div class="page-hero__text reveal">
+        <div class="tier-badge tier-badge--network" style="margin-bottom:var(--sp-4);">Network-Coordinated</div>
+        <h1 class="h1" style="color:var(--white);">Skilled home health — coordinated through trusted, licensed partners.</h1>
+        <p class="text-lg" style="color:var(--gray-300);margin-top:var(--sp-4);margin-bottom:var(--sp-6);">Ohana coordinates access to Medicare-certified home health agencies that provide skilled nursing, physical therapy, occupational therapy, and speech therapy in your home. We match the right agency to your clinical needs and location — and stay involved through the process.</p>
+        <div class="btn-group">
+          <a href="../contact.html#intake" class="btn btn-primary btn-lg">Request Home Health Coordination</a>
+          <a href="tel:9092064228" class="btn btn-ghost btn-lg"><i data-lucide="phone" style="width:16px;height:16px;" aria-hidden="true"></i>(909) 206-4228</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Available -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="h2">Skilled services available through our network</h2>
+        <p class="text-lg text-secondary">Home health agencies in the Ohana network are Medicare-certified and provide a full range of skilled services in the patient's home. These services are provided by independent licensed clinicians — not by Ohana directly.</p>
+      </div>
+      <div class="cards-grid stagger" style="margin-top:var(--sp-8);">
+
+        <div class="card feature-card">
+          <div class="feature-card__icon">
+            <i data-lucide="heart-pulse" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card__title">Skilled Nursing</h3>
+          <p class="feature-card__body">RN and LVN home visits for wound assessment and care, medication management and reconciliation, IV therapy, catheter care, and chronic disease monitoring. Skilled nursing visits are ordered by a physician and conducted by licensed nurses through our partner agencies.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-card__icon">
+            <i data-lucide="activity" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card__title">Physical &amp; Occupational Therapy</h3>
+          <p class="feature-card__body">In-home PT and OT for post-surgical recovery, stroke rehabilitation, fall prevention, strength restoration, and functional independence. Therapists work within the patient's home environment — addressing real-world barriers to safe mobility and daily activity.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-card__icon">
+            <i data-lucide="users" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card__title">Speech Therapy &amp; Social Work</h3>
+          <p class="feature-card__body">Speech-language pathology for dysphagia evaluation and treatment, cognitive communication, and post-stroke language recovery. Medical social work services support discharge planning, community resource connection, and care coordination for complex patient situations.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Serves -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="h2">Who home health coordination serves</h2>
+        <p class="text-lg text-secondary">Home health is most appropriate for patients who are homebound or transitioning out of a facility. Ohana can coordinate access for several patient situations.</p>
+      </div>
+      <div class="cards-grid stagger" style="margin-top:var(--sp-8);">
+
+        <div class="card feature-card">
+          <div class="feature-card__icon">
+            <i data-lucide="clipboard-list" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card__title">Post-Discharge Patients</h3>
+          <p class="feature-card__body">Patients leaving hospitals or skilled nursing facilities who need continued skilled care at home. Post-acute home health helps bridge the gap between inpatient care and independent recovery — reducing readmission risk and supporting a safe transition.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-card__icon">
+            <i data-lucide="home" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card__title">Homebound Seniors</h3>
+          <p class="feature-card__body">Patients whose medical condition makes leaving home difficult or medically inadvisable may be eligible for Medicare-covered home health services. Homebound status is determined by the treating physician and the home health agency — Ohana facilitates the coordination and referral process.</p>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-card__icon">
+            <i data-lucide="stethoscope" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card__title">Chronic Disease Management</h3>
+          <p class="feature-card__body">Patients managing diabetes, COPD, congestive heart failure, or other complex conditions who benefit from regular skilled nursing oversight at home. Episodic skilled nursing visits can catch early deterioration and reduce unnecessary emergency utilization.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Coverage -->
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-layout section-layout--2col reveal">
+        <div>
+          <h2 class="h2">Medicare &amp; Medi-Cal coverage</h2>
+          <p class="text-secondary" style="margin-top:var(--sp-3);margin-bottom:var(--sp-4);">Home health services may be covered under Medicare Part A or Part B when ordered by a physician and provided by a Medicare-certified agency. To qualify, the patient generally must:</p>
+          <ul class="feature-list" style="margin-bottom:var(--sp-5);">
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Be under the care of a physician who orders the home health services</li>
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Be considered homebound as defined under Medicare criteria</li>
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Require skilled nursing, physical therapy, speech therapy, or occupational therapy</li>
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Receive services from a Medicare-certified home health agency</li>
+          </ul>
+          <p class="text-sm text-secondary">Medi-Cal may also cover home health services for eligible beneficiaries. Coverage determinations are made by the treating physician and the home health agency, not by Ohana.</p>
+        </div>
+        <div>
+          <div class="compliance-note">
+            <p><strong>Coverage &amp; billing:</strong> Ohana does not bill Medicare or Medi-Cal. Coverage eligibility, prior authorization, and billing are managed entirely by the independent home health agency providing services. Ohana's role is coordination and referral only. Patients and families should confirm coverage eligibility directly with the home health agency and their insurer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin-inline:auto;">
+        <div class="compliance-note">
+          <p>Home health services coordinated through Ohana are provided by independent Medicare-certified agencies within our network. Ohana does not directly render skilled nursing, physical therapy, occupational therapy, speech therapy, or any other clinical care. All clinical decisions — including plan of care, visit frequency, and treatment approach — remain with the treating agency and its licensed clinicians.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Block -->
+  <section class="section" aria-label="Get home health coordination">
+    <div class="container">
+      <div class="cta-block reveal">
+        <div class="cta-block__inner">
+          <div class="cta-block__text">
+            <h2 class="on-dark">Need home health coordinated?</h2>
+            <p class="lead on-dark">Whether you're planning a hospital discharge or managing a chronic condition at home, Ohana can connect you with the right Medicare-certified home health agency — quickly and reliably. Contact our coordination team to get started.</p>
+          </div>
+          <div class="cta-block__actions">
+            <a href="../contact.html#intake" class="btn btn-white btn-lg">Request Home Health Coordination</a>
+            <a href="tel:9092064228" class="btn btn-ghost btn-lg">
+              <i data-lucide="phone" style="width:16px;height:16px;" aria-hidden="true"></i>(909) 206-4228
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../" class="footer-logo" aria-label="Ohana Senior Care Agency — Home">
+          <div style="width:36px;height:36px;background:var(--green-800);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div><span class="footer-logo__name">Ohana Senior Care</span><span class="footer-logo__tagline">Care Coordination &middot; Southern CA</span></div>
+        </a>
+        <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
+        <div class="footer-contacts">
+          <a href="tel:9092064228" class="footer-contact"><i data-lucide="phone" aria-hidden="true"></i>(909) 206-4228</a>
+          <a href="mailto:info@ohanaseniorcare.com" class="footer-contact"><i data-lucide="mail" aria-hidden="true"></i>info@ohanaseniorcare.com</a>
+          <span class="footer-contact"><i data-lucide="clock" aria-hidden="true"></i>Mon&ndash;Fri, 8am&ndash;6pm PT</span>
+          <span class="footer-contact"><i data-lucide="map-pin" aria-hidden="true"></i>Los Angeles &middot; Orange &middot; Riverside &middot; San Bernardino</span>
+        </div>
+      </div>
+      <div class="footer-col"><h6>Ohana-Direct</h6><div class="footer-links">
+        <a href="senior-placement.html" class="footer-link">Senior Placement <span class="tag">Direct</span></a>
+        <a href="nemt.html" class="footer-link">Medical Transportation <span class="tag">Direct</span></a>
+        <a href="meal-program.html" class="footer-link">Meal Program</a>
+      </div></div>
+      <div class="footer-col"><h6>Network Services</h6><div class="footer-links">
+        <a href="caregiving.html" class="footer-link">Caregiving</a>
+        <a href="home-health.html" class="footer-link">Home Health</a>
+        <a href="wound-care.html" class="footer-link">Wound Care</a>
+        <a href="palliative-hospice.html" class="footer-link">Palliative &amp; Hospice</a>
+        <a href="mobile-doctor.html" class="footer-link">Mobile Doctor (PCP)</a>
+        <a href="mobile-lab.html" class="footer-link">Lab &amp; Diagnostics</a>
+        <a href="xray.html" class="footer-link">X-Ray</a>
+        <a href="pharmacy.html" class="footer-link">Pharmacy</a>
+        <a href="mental-health.html" class="footer-link">Mental Health</a>
+        <a href="staffing.html" class="footer-link">Staffing</a>
+      </div></div>
+      <div class="footer-col"><h6>Company</h6><div class="footer-links">
+        <a href="../about.html" class="footer-link">About Ohana</a>
+        <a href="../partners.html" class="footer-link">Partner Network</a>
+        <a href="../contact.html" class="footer-link">Contact Us</a>
+        <a href="../contact.html#referral" class="footer-link">Submit Referral</a>
+        <a href="../contact.html#intake" class="footer-link">Care Request</a>
+      </div></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p class="footer-copy">&copy; 2026 Ohana Senior Care Agency. All rights reserved.</p>
+        <nav class="footer-legal-links" aria-label="Legal">
+          <a href="../privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+          <a href="../terms-of-use.html" class="footer-legal-link">Terms of Use</a>
+        </nav>
+      </div>
+      <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization. Clinical services are provided by independent licensed providers within our network. Ohana does not directly render clinical services except where explicitly stated.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" role="navigation" aria-label="Mobile quick actions">
+  <a href="tel:9092064228" class="btn btn-secondary"><i data-lucide="phone" style="width:15px;height:15px;" aria-hidden="true"></i>Call Us</a>
+  <a href="../contact.html#intake" class="btn btn-primary">Submit Care Request</a>
+</div>
+<script src="../design-system/js/scroll-reveal.js"></script>
+<script src="../design-system/js/nav.js"></script>
+<script src="../design-system/js/main.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

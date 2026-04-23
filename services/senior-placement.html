@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Placement Advisory — Ohana Senior Care Agency</title>
+  <meta name="description" content="Ohana helps families find the right senior living option — independent living, assisted living, memory care, or skilled nursing. No cost to families. Expert advisory, operated directly by Ohana." />
+
+  <!-- Favicon — replace with real icon files before launch -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ohana Senior Care Agency" />
+  <meta property="og:url" content="https://www.ohanaseniorcare.com/services/senior-placement.html" />
+  <meta property="og:title" content="Senior Placement Advisory | Ohana Senior Care Agency" />
+  <meta property="og:description" content="Expert senior living placement advisory for families — independent living, assisted living, memory care, and skilled nursing. No cost to families. Southern California." />
+  <meta property="og:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ohana Senior Care Agency — Care Coordination, Southern California" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Senior Placement Advisory | Ohana Senior Care Agency" />
+  <meta name="twitter:description" content="Expert senior living placement advisory for families — independent living, assisted living, memory care, and skilled nursing. No cost to families. Southern California." />
+  <meta name="twitter:image" content="https://www.ohanaseniorcare.com/images/og/ohana-og-default.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ohanaseniorcare.com/services/senior-placement.html" />
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../design-system/css/tokens.css" />
+  <link rel="stylesheet" href="../design-system/css/global.css" />
+  <link rel="stylesheet" href="../design-system/css/typography.css" />
+  <link rel="stylesheet" href="../design-system/css/components/sections.css" />
+  <link rel="stylesheet" href="../design-system/css/components/buttons.css" />
+  <link rel="stylesheet" href="../design-system/css/components/nav.css" />
+  <link rel="stylesheet" href="../design-system/css/components/cards.css" />
+  <link rel="stylesheet" href="../design-system/css/components/cta.css" />
+  <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+
+  <style>
+    .page-hero {
+      padding-block: var(--section-y);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero__glow {
+      position: absolute;
+      top: -40%; right: -5%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(78,140,28,.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero__inner {
+      position: relative; z-index: 1;
+    }
+    .page-hero__text { max-width: 720px; }
+    .process-steps { display: flex; flex-direction: column; gap: var(--sp-6); counter-reset: steps; }
+    .process-step { display: flex; gap: var(--sp-5); align-items: flex-start; counter-increment: steps; }
+    .process-step__num {
+      width: 40px; height: 40px; border-radius: var(--radius-full);
+      background: var(--color-primary); color: var(--white);
+      font-family: var(--font-heading); font-size: var(--text-sm); font-weight: var(--fw-bold);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .process-step__body { padding-top: var(--sp-1); }
+    .process-step__title { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--sp-1); }
+    .faq-list { display: flex; flex-direction: column; gap: var(--sp-5); }
+    .faq-item { border-bottom: 1px solid var(--gray-200); padding-bottom: var(--sp-5); }
+    .faq-q { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--sp-2); }
+    .faq-a { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+    .feature-list { display: flex; flex-direction: column; gap: var(--sp-3); }
+    .feature-list li { display: flex; align-items: flex-start; gap: var(--sp-3); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+    .feature-list li svg { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+  <!-- Skip nav -->
+  <a href="#main" class="sr-only" style="position:fixed;top:var(--sp-3);left:var(--sp-3);z-index:9999;background:var(--color-primary);color:var(--white);padding:var(--sp-2) var(--sp-4);border-radius:var(--radius-md);font-family:var(--font-heading);font-size:var(--text-sm);font-weight:var(--fw-semibold);" onfocus="this.classList.remove('sr-only')" onblur="this.classList.add('sr-only')">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="nav-wrap">
+      <a href="../" class="nav-logo" aria-label="Ohana Senior Care Agency — Home">
+        <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="nav-logo__wordmark">
+          <span class="nav-logo__name">Ohana Senior Care</span>
+          <span class="nav-logo__tagline">Care Coordination · Southern CA</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../" class="nav-link">Home</a>
+        <div class="nav-has-dropdown">
+          <button class="nav-link nav-dropdown-trigger is-active" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown" role="menu">
+            <div class="nav-dropdown-group">
+              <h6>Ohana-Direct</h6>
+              <a href="senior-placement.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="map-pin" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Senior Placement</span></a>
+              <a href="nemt.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="truck" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Medical Transportation</span></a>
+              <a href="meal-program.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="utensils" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Meal Program</span></a>
+            </div>
+            <div class="nav-dropdown-group">
+              <h6>Clinical Network</h6>
+              <a href="caregiving.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="users" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Caregiving</span></a>
+              <a href="home-health.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="heart-pulse" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Home Health</span></a>
+              <a href="wound-care.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="activity" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Wound Care</span></a>
+              <a href="palliative-hospice.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="hand-heart" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Palliative &amp; Hospice</span></a>
+            </div>
+            <div class="nav-dropdown-group">
+              <h6>Diagnostics &amp; Specialized</h6>
+              <a href="mobile-doctor.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="stethoscope" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Mobile Doctor (PCP)</span></a>
+              <a href="mobile-lab.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="flask-conical" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Lab &amp; Diagnostics</span></a>
+              <a href="xray.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="scan" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">X-Ray</span></a>
+              <a href="pharmacy.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="pill" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Pharmacy</span></a>
+              <a href="mental-health.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="brain" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Mental Health</span></a>
+              <a href="staffing.html" class="nav-dropdown-item" role="menuitem"><span class="nav-dropdown-item__icon"><i data-lucide="briefcase" style="width:14px;height:14px;"></i></span><span class="nav-dropdown-item__label">Staffing</span></a>
+            </div>
+          </div>
+        </div>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../partners.html" class="nav-link">Partners</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="tel:9092064228" class="nav-phone"><i data-lucide="phone" style="width:14px;height:14px;" aria-hidden="true"></i>(909) 206-4228</a>
+        <a href="../contact.html#intake" class="btn btn-primary btn-sm">Care Request</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+  <div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <nav class="nav-drawer__links">
+      <a href="../" class="nav-drawer__link">Home</a>
+      <a href="../about.html" class="nav-drawer__link">About</a>
+      <a href="../partners.html" class="nav-drawer__link">Partners</a>
+      <a href="../contact.html" class="nav-drawer__link">Contact</a>
+    </nav>
+    <div class="nav-drawer__services">
+      <h6>All Services</h6>
+      <a href="senior-placement.html" class="nav-drawer__service-link">Senior Placement</a>
+      <a href="nemt.html" class="nav-drawer__service-link">Medical Transportation (NEMT)</a>
+      <a href="meal-program.html" class="nav-drawer__service-link">Meal Program</a>
+      <a href="caregiving.html" class="nav-drawer__service-link">Caregiving</a>
+      <a href="home-health.html" class="nav-drawer__service-link">Home Health</a>
+      <a href="wound-care.html" class="nav-drawer__service-link">Wound Care</a>
+      <a href="palliative-hospice.html" class="nav-drawer__service-link">Palliative &amp; Hospice</a>
+      <a href="mobile-doctor.html" class="nav-drawer__service-link">Mobile Doctor (PCP)</a>
+      <a href="mobile-lab.html" class="nav-drawer__service-link">Lab &amp; Diagnostics</a>
+      <a href="xray.html" class="nav-drawer__service-link">X-Ray</a>
+      <a href="pharmacy.html" class="nav-drawer__service-link">Pharmacy</a>
+      <a href="mental-health.html" class="nav-drawer__service-link">Mental Health</a>
+      <a href="staffing.html" class="nav-drawer__service-link">Staffing</a>
+    </div>
+    <div class="nav-drawer__ctas">
+      <a href="../contact.html#intake" class="btn btn-primary btn-full">Submit Care Request</a>
+      <a href="tel:9092064228" class="btn btn-secondary btn-full"><i data-lucide="phone" style="width:15px;height:15px;"></i>(909) 206-4228</a>
+      <a href="../contact.html#referral" class="btn btn-text" style="justify-content:center;">Submit a Referral <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main id="main">
+
+    <!-- ── Hero ─────────────────────────────────────────────── -->
+    <section class="page-hero bg-dark">
+      <div class="page-hero__glow" aria-hidden="true"></div>
+      <div class="container page-hero__inner">
+        <div class="page-hero__text reveal">
+          <div style="display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-4);">
+            <span class="tier-badge tier-badge--direct">Ohana-Direct</span>
+            <span class="eyebrow eyebrow--dark">Senior Placement Advisory</span>
+          </div>
+          <h1 class="on-dark" style="margin-bottom:var(--sp-5);">We help families find the right place — without the pressure.</h1>
+          <p class="lead on-dark" style="margin-bottom:var(--sp-7);">Finding senior living is one of the most emotionally charged decisions a family can make. Ohana's senior placement advisors guide you through every option — honestly, patiently, and at no cost to your family.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--sp-3);">
+            <a href="../contact.html#intake" class="btn btn-primary btn-lg">Start Your Placement Search</a>
+            <a href="tel:9092064228" class="btn btn-ghost btn-lg"><i data-lucide="phone" style="width:16px;height:16px;" aria-hidden="true"></i>(909) 206-4228</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Care Levels We Navigate ───────────────────────────── -->
+    <section class="section bg-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Care Levels</span>
+          <h2>Care levels we navigate</h2>
+          <p class="lead">Every senior's needs are different. We're fluent in all residential care settings — from independent living for active adults to skilled nursing for those requiring continuous medical oversight.</p>
+        </div>
+        <div class="grid grid-2 stagger" style="margin-top:var(--sp-10);">
+
+          <div class="card card--hoverable feature-card">
+            <div class="feature-card__icon">
+              <i data-lucide="home" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-card__title">Independent Living</h3>
+            <p class="feature-card__body">For seniors who are largely self-sufficient but want the benefit of community, social programming, and on-site amenities. Typically no hands-on personal care — but meals, activities, and maintenance are handled. Ideal for active older adults who want to simplify their lives without sacrificing independence.</p>
+          </div>
+
+          <div class="card card--hoverable feature-card">
+            <div class="feature-card__icon">
+              <i data-lucide="users" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-card__title">Assisted Living</h3>
+            <p class="feature-card__body">A residential setting with staff available to assist with bathing, dressing, medication management, and daily activities. Residents maintain a private or semi-private space while receiving the level of personal care they need. A common transition point when family caregiving becomes unsustainable or unsafe.</p>
+          </div>
+
+          <div class="card card--hoverable feature-card">
+            <div class="feature-card__icon">
+              <i data-lucide="brain" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-card__title">Memory Care</h3>
+            <p class="feature-card__body">Specialized residential environments designed specifically for individuals living with Alzheimer's disease, other forms of dementia, or cognitive impairment. Secured perimeters, structured daily routines, trained staff, and therapeutic programming address the distinct safety and behavioral needs of this population.</p>
+          </div>
+
+          <div class="card card--hoverable feature-card">
+            <div class="feature-card__icon">
+              <i data-lucide="heart-pulse" aria-hidden="true"></i>
+            </div>
+            <h3 class="feature-card__title">Skilled Nursing</h3>
+            <p class="feature-card__body">For seniors who require continuous medical oversight, complex wound care, IV therapy, post-surgical rehabilitation, or ventilator management. Skilled nursing facilities (SNFs) are licensed medical facilities staffed by nurses and therapists around the clock. Often the appropriate setting following an acute hospital stay.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Our Process ───────────────────────────────────────── -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid grid-2" style="gap:var(--sp-16);align-items:flex-start;">
+          <div class="reveal">
+            <span class="eyebrow">How It Works</span>
+            <h2 style="margin-bottom:var(--sp-5);">Our placement process</h2>
+            <p style="color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);">We don't send you a spreadsheet and wish you luck. From initial conversation to move-in day, Ohana's placement advisors are present, reachable, and working on your behalf — at every stage.</p>
+            <a href="../contact.html#intake" class="btn btn-primary">Begin the Process</a>
+          </div>
+          <div class="reveal">
+            <div class="process-steps">
+
+              <div class="process-step">
+                <div class="process-step__num" aria-hidden="true">1</div>
+                <div class="process-step__body">
+                  <div class="process-step__title">Free Consultation</div>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--lh-relaxed);">We listen to your situation, your loved one's care needs, and your family's priorities — with no agenda other than understanding the full picture. There's no commitment required and no fee for this initial conversation.</p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step__num" aria-hidden="true">2</div>
+                <div class="process-step__body">
+                  <div class="process-step__title">Needs Assessment</div>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--lh-relaxed);">We evaluate current health status, mobility, cognitive capacity, activities of daily living, behavioral considerations, and personal preferences. This assessment shapes every recommendation we make.</p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step__num" aria-hidden="true">3</div>
+                <div class="process-step__body">
+                  <div class="process-step__title">Options Presented</div>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--lh-relaxed);">We identify 3–5 facilities that match your loved one's care needs, your family's budget, and your preferred geographic area. We explain each option plainly — the strengths, the limitations, and why it made the list.</p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step__num" aria-hidden="true">4</div>
+                <div class="process-step__body">
+                  <div class="process-step__title">Guided Tours</div>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--lh-relaxed);">We coordinate visits to each facility and accompany you when requested. We know the right questions to ask — about staffing ratios, inspection history, medication management practices, and how facilities handle care transitions.</p>
+                </div>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step__num" aria-hidden="true">5</div>
+                <div class="process-step__body">
+                  <div class="process-step__title">Transition Support</div>
+                  <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--lh-relaxed);">Our involvement doesn't end at move-in. We stay engaged through the first week, helping navigate admission paperwork, coordinate any additional services your loved one needs, and address concerns that arise during the adjustment period.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── No Cost to Families ───────────────────────────────── -->
+    <section class="section bg-alt">
+      <div class="container">
+        <div class="grid grid-2" style="gap:var(--sp-16);align-items:flex-start;">
+          <div class="reveal">
+            <span class="eyebrow">Transparency</span>
+            <h2 style="margin-bottom:var(--sp-5);">How does this service work financially?</h2>
+            <p style="color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-5);">Senior placement advisory is provided at no direct cost to families. Ohana coordinates with residential care facilities who participate in our network. Families are never charged a placement fee.</p>
+            <p style="color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);">Ohana's relationship with participating facilities is disclosed upon request in accordance with applicable California regulations. Our advisors are evaluated on family satisfaction and appropriate placement outcomes — not on volume or speed of placement.</p>
+            <div class="compliance-note reveal">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+              <p>Senior placement coordination involves relationships with residential care facilities. Ohana discloses the nature of any compensation arrangements upon request. Placement recommendations are made based on fit for the patient, not financial incentive.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="card" style="padding:var(--sp-8);">
+              <h3 style="margin-bottom:var(--sp-5);">What families can expect</h3>
+              <ul class="feature-list">
+                <li>
+                  <i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>
+                  <span>No placement fee charged to the family at any point in the process</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>
+                  <span>Full disclosure of facility relationships upon request</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>
+                  <span>Recommendations based on care needs, budget, and location — not referral incentives</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>
+                  <span>No pressure to choose a specific facility or move on any timeline</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>
+                  <span>Ongoing support through move-in and the initial adjustment period</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle" style="width:18px;height:18px;" aria-hidden="true"></i>
+                  <span>Access to Ohana's full care network if additional services are needed post-placement</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ──────────────────────────────────────────────── -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid grid-2" style="gap:var(--sp-16);align-items:flex-start;">
+          <div class="reveal">
+            <span class="eyebrow">Common Questions</span>
+            <h2 style="margin-bottom:var(--sp-5);">Frequently asked questions</h2>
+            <p style="color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);">Placement decisions come with a lot of questions. These are the ones families ask us most often. If yours isn't here, call us — there's always someone available to talk.</p>
+            <a href="tel:9092064228" class="btn btn-secondary"><i data-lucide="phone" style="width:15px;height:15px;" aria-hidden="true"></i>(909) 206-4228</a>
+          </div>
+          <div class="reveal">
+            <div class="faq-list">
+
+              <div class="faq-item">
+                <p class="faq-q">How long does placement typically take?</p>
+                <p class="faq-a">Most families identify a suitable facility within 5–10 business days. Urgent placements — following hospital discharge or a care crisis — can often be completed within 24–48 hours. Timeline depends on the specificity of the family's requirements and current availability at preferred facilities.</p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Can Ohana help with emergency placements?</p>
+                <p class="faq-a">Yes. If your loved one is being discharged from the hospital and needs immediate placement, contact us directly. We prioritize urgent cases and have established relationships with facilities across Southern California that can accommodate short-notice admissions.</p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">What if we don't like any of the options presented?</p>
+                <p class="faq-a">We go back to the search. There's no pressure, no deadline, and no obligation. Our goal is the right fit — not a fast placement. If the initial options don't resonate, we refine our criteria and identify alternatives.</p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Does Ohana work with all types of facilities?</p>
+                <p class="faq-a">We coordinate with a network of vetted facilities across Los Angeles, Orange, Riverside, and San Bernardino counties — spanning independent living, assisted living, board and care homes, memory care communities, and skilled nursing facilities. If your preferred location is outside our current network, we will tell you directly rather than send you somewhere we cannot vouch for.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Block ─────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-block reveal">
+          <div class="cta-block__content">
+            <h2 class="on-dark">Ready to start the search?</h2>
+            <p class="lead on-dark">Our placement advisors are available Monday through Friday, 8am–6pm. Call or submit a request and we'll be in touch within one business day.</p>
+            <div class="cta-block__actions">
+              <a href="../contact.html#intake" class="btn btn-white btn-lg">Start Your Placement Search</a>
+              <a href="tel:9092064228" class="btn btn-ghost btn-lg"><i data-lucide="phone" style="width:16px;height:16px;" aria-hidden="true"></i>(909) 206-4228</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../" class="footer-logo" aria-label="Ohana Senior Care Agency — Home">
+            <div style="width:36px;height:36px;background:var(--green-800);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div><span class="footer-logo__name">Ohana Senior Care</span><span class="footer-logo__tagline">Care Coordination · Southern CA</span></div>
+          </a>
+          <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
+          <div class="footer-contacts">
+            <a href="tel:9092064228" class="footer-contact"><i data-lucide="phone" aria-hidden="true"></i>(909) 206-4228</a>
+            <a href="mailto:info@ohanaseniorcare.com" class="footer-contact"><i data-lucide="mail" aria-hidden="true"></i>info@ohanaseniorcare.com</a>
+            <span class="footer-contact"><i data-lucide="clock" aria-hidden="true"></i>Mon–Fri, 8am–6pm PT</span>
+            <span class="footer-contact"><i data-lucide="map-pin" aria-hidden="true"></i>Los Angeles · Orange · Riverside · San Bernardino</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h6>Ohana-Direct</h6>
+          <div class="footer-links">
+            <a href="senior-placement.html" class="footer-link">Senior Placement <span class="tag">Direct</span></a>
+            <a href="nemt.html" class="footer-link">Medical Transportation <span class="tag">Direct</span></a>
+            <a href="meal-program.html" class="footer-link">Meal Program</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h6>Network Services</h6>
+          <div class="footer-links">
+            <a href="caregiving.html" class="footer-link">Caregiving</a>
+            <a href="home-health.html" class="footer-link">Home Health</a>
+            <a href="wound-care.html" class="footer-link">Wound Care</a>
+            <a href="palliative-hospice.html" class="footer-link">Palliative &amp; Hospice</a>
+            <a href="mobile-doctor.html" class="footer-link">Mobile Doctor (PCP)</a>
+            <a href="mobile-lab.html" class="footer-link">Lab &amp; Diagnostics</a>
+            <a href="xray.html" class="footer-link">X-Ray</a>
+            <a href="pharmacy.html" class="footer-link">Pharmacy</a>
+            <a href="mental-health.html" class="footer-link">Mental Health</a>
+            <a href="staffing.html" class="footer-link">Staffing</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h6>Company</h6>
+          <div class="footer-links">
+            <a href="../about.html" class="footer-link">About Ohana</a>
+            <a href="../partners.html" class="footer-link">Partner Network</a>
+            <a href="../contact.html" class="footer-link">Contact Us</a>
+            <a href="../contact.html#referral" class="footer-link">Submit Referral</a>
+            <a href="../contact.html#intake" class="footer-link">Care Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <p class="footer-copy">© 2026 Ohana Senior Care Agency. All rights reserved.</p>
+          <nav class="footer-legal-links" aria-label="Legal">
+            <a href="../privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+            <a href="../terms-of-use.html" class="footer-legal-link">Terms of Use</a>
+            <a href="#" class="footer-legal-link">Accessibility</a>
+          </nav>
+        </div>
+        <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization. Clinical services are provided by independent licensed providers within our network. Ohana does not directly render clinical services except where explicitly stated.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile bar -->
+  <div class="mobile-bar" role="navigation" aria-label="Mobile quick actions">
+    <a href="tel:9092064228" class="btn btn-secondary"><i data-lucide="phone" style="width:15px;height:15px;" aria-hidden="true"></i>Call Us</a>
+    <a href="../contact.html#intake" class="btn btn-primary">Submit Care Request</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../design-system/js/scroll-reveal.js"></script>
+  <script src="../design-system/js/nav.js"></script>
+  <script src="../design-system/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+
+</body>
+</html>

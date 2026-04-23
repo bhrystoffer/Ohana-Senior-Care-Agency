@@ -1,0 +1,13 @@
+# robots.txt — Ohana Senior Care Agency
+# https://www.ohanaseniorcare.com
+
+User-agent: *
+Allow: /
+
+# Do not index the privacy policy until legal review is complete and effective date is inserted
+Disallow: /privacy-policy.html
+
+# Do not index design system source files
+Disallow: /design-system/
+
+Sitemap: https://www.ohanaseniorcare.com/sitemap.xml
