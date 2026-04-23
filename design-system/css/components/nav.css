@@ -56,11 +56,18 @@
 }
 
 .nav-logo__img {
-  height: 36px;
+  height: 40px;
   width: auto;
-  max-width: 180px;
+  max-width: 200px;
   flex-shrink: 0;
   display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .nav-logo__img {
+    height: 30px;
+  }
 }
 
 .nav-logo__wordmark {
