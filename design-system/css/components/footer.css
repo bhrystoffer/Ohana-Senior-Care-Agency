@@ -20,11 +20,17 @@
 /* ── Brand Column ─────────────────────────────────────────── */
 
 .footer-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--sp-3);
   text-decoration: none;
   margin-bottom: var(--sp-5);
+}
+
+.footer-logo__img {
+  height: 32px;
+  width: auto;
+  max-width: 160px;
+  display: block;
 }
 
 .footer-logo__name {

@@ -6,9 +6,10 @@
   <title>Partner Network — Ohana Senior Care Agency</title>
   <meta name="description" content="Ohana Senior Care Agency works with a network of independently licensed providers across home health, hospice, diagnostics, pharmacy, mental health, and staffing to coordinate access to care for Southern California families." />
 
-  <!-- Favicon — replace with real icon files before launch -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
@@ -68,15 +69,19 @@
       transform: translateY(-3px);
     }
     .partner-detail-card__logo {
-      width: 56px; height: 56px;
-      background: var(--green-50);
+      width: 72px; height: 56px;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
       border-radius: var(--radius-xl);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      font-family: var(--font-heading);
-      font-size: var(--text-xl);
-      font-weight: var(--fw-bold);
-      color: var(--color-primary);
+      overflow: hidden;
+      padding: 6px;
+    }
+    .partner-detail-card__logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     .partner-detail-card__category {
       display: inline-flex;
@@ -146,13 +151,7 @@
 <header class="site-header" id="site-header">
   <div class="nav-wrap">
     <a href="/" class="nav-logo" aria-label="Ohana Senior Care Agency — Home">
-      <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <div class="nav-logo__wordmark">
-        <span class="nav-logo__name">Ohana Senior Care</span>
-        <span class="nav-logo__tagline">Care Coordination &middot; Southern CA</span>
-      </div>
+      <img src="/images/logo-wide-white.svg" alt="Ohana Senior Care Agency" class="nav-logo__img" />
     </a>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="index.html" class="nav-link">Home</a>
@@ -310,8 +309,7 @@
         <!-- Angel Pathway Hospice -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <!-- PLACEHOLDER: Replace with partner logo image when available -->
-            <div class="partner-detail-card__logo">AP</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/angel-pathway-hospice.png" alt="Angel Pathway Hospice" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Angel Pathway Hospice</div>
               <span class="partner-detail-card__category"><i data-lucide="hand-heart" style="width:11px;height:11px;" aria-hidden="true"></i>Hospice &amp; Palliative</span>
@@ -323,7 +321,7 @@
         <!-- Madison Hospice -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">MH</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/madison-hospice.png" alt="Madison Hospice" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Madison Hospice</div>
               <span class="partner-detail-card__category"><i data-lucide="hand-heart" style="width:11px;height:11px;" aria-hidden="true"></i>Hospice &amp; Palliative</span>
@@ -335,7 +333,7 @@
         <!-- Galaxy Home Health -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">GH</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/galaxy-home-health.png" alt="Galaxy Home Health" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Galaxy Home Health</div>
               <span class="partner-detail-card__category"><i data-lucide="heart-pulse" style="width:11px;height:11px;" aria-hidden="true"></i>Home Health</span>
@@ -347,7 +345,7 @@
         <!-- Quality Care Home Health -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">QC</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/quality-care-home-health.png" alt="Quality Care Home Health" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Quality Care Home Health</div>
               <span class="partner-detail-card__category"><i data-lucide="heart-pulse" style="width:11px;height:11px;" aria-hidden="true"></i>Home Health</span>
@@ -359,7 +357,7 @@
         <!-- 101 Mobile Medical -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">101</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/101-mobile-medical.png" alt="101 Mobile Medical Group" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">101 Mobile Medical Group</div>
               <span class="partner-detail-card__category"><i data-lucide="stethoscope" style="width:11px;height:11px;" aria-hidden="true"></i>Mobile Medical (PCP)</span>
@@ -371,7 +369,7 @@
         <!-- Quantum Laboratory -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">QL</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/quantum-laboratory.png" alt="Quantum Laboratory" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Quantum Laboratory</div>
               <span class="partner-detail-card__category"><i data-lucide="flask-conical" style="width:11px;height:11px;" aria-hidden="true"></i>Lab &amp; Diagnostics</span>
@@ -383,7 +381,7 @@
         <!-- The Wound Fix -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">WF</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/the-wound-fix.png" alt="The Wound Fix" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">The Wound Fix</div>
               <span class="partner-detail-card__category"><i data-lucide="activity" style="width:11px;height:11px;" aria-hidden="true"></i>Wound Care</span>
@@ -395,7 +393,7 @@
         <!-- ACT Group -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">AG</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/act-group.png" alt="ACT Group" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">ACT Group</div>
               <span class="partner-detail-card__category"><i data-lucide="brain" style="width:11px;height:11px;" aria-hidden="true"></i>Mental Health</span>
@@ -407,7 +405,7 @@
         <!-- Azzur Workforce Solutions -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">AW</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/azzur-workforce.png" alt="Azzur Workforce Solutions" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Azzur Workforce Solutions</div>
               <span class="partner-detail-card__category"><i data-lucide="briefcase" style="width:11px;height:11px;" aria-hidden="true"></i>Clinical Staffing</span>
@@ -419,7 +417,7 @@
         <!-- EVA In-Home Care -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">EV</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/eva-health.png" alt="EVA In-Home Care" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">EVA In-Home Care</div>
               <span class="partner-detail-card__category"><i data-lucide="users" style="width:11px;height:11px;" aria-hidden="true"></i>Caregiving &amp; Staffing</span>
@@ -431,7 +429,7 @@
         <!-- Manage Care Solutions -->
         <div class="partner-detail-card reveal">
           <div style="display:flex;align-items:center;gap:var(--sp-4);">
-            <div class="partner-detail-card__logo">MC</div>
+            <div class="partner-detail-card__logo"><img src="/images/partners/manage-care-solutions.png" alt="Manage Care Solutions" loading="lazy" /></div>
             <div>
               <div class="partner-detail-card__name">Manage Care Solutions</div>
               <span class="partner-detail-card__category"><i data-lucide="git-branch" style="width:11px;height:11px;" aria-hidden="true"></i>Care Management</span>
@@ -455,18 +453,18 @@
   <div class="logo-carousel">
     <p class="logo-carousel__label">Ohana Coordination Network</p>
     <div class="logo-track-wrap">
-      <div class="logo-track" aria-label="Partner organization names" role="list">
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Angel Pathway Hospice</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">ACT Group</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Azzur Workforce</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">EVA In-Home Care</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Galaxy Home Health</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Madison Hospice</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Quality Care Home Health</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Quantum Laboratory</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">101 Mobile Medical</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Manage Care Solutions</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">The Wound Fix</span></div>
+      <div class="logo-track" aria-label="Partner organization logos" role="list">
+        <div class="logo-item" role="listitem"><img src="/images/partners/angel-pathway-hospice.png" alt="Angel Pathway Hospice" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/act-group.png" alt="ACT Group" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/azzur-workforce.png" alt="Azzur Workforce" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/eva-health.png" alt="EVA In-Home Care" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/galaxy-home-health.png" alt="Galaxy Home Health" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/madison-hospice.png" alt="Madison Hospice" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/quality-care-home-health.png" alt="Quality Care Home Health" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/quantum-laboratory.png" alt="Quantum Laboratory" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/101-mobile-medical.png" alt="101 Mobile Medical" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/manage-care-solutions.png" alt="Manage Care Solutions" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/the-wound-fix.png" alt="The Wound Fix" loading="lazy" /></div>
       </div>
     </div>
   </div>
@@ -563,8 +561,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="footer-logo" aria-label="Ohana Senior Care Agency — Home">
-          <div style="width:36px;height:36px;background:var(--green-800);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <div><span class="footer-logo__name">Ohana Senior Care</span><span class="footer-logo__tagline">Care Coordination &middot; Southern CA</span></div>
+          <img src="/images/logo-footer.svg" alt="Ohana Senior Care Agency" class="footer-logo__img" />
         </a>
         <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
         <div class="footer-contacts">

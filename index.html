@@ -6,9 +6,10 @@
   <title>Ohana Senior Care Agency | Care Coordination & Healthcare Management — Southern California</title>
   <meta name="description" content="Ohana Senior Care Agency is a healthcare management organization coordinating access to the full continuum of home-based and community care across Southern California. NEMT, senior placement, home health, hospice, and more." />
 
-  <!-- Favicon — replace with real icon files before launch -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
@@ -63,6 +64,20 @@
       padding-block: var(--section-y-lg);
       position: relative;
       overflow: hidden;
+    }
+
+    /* Hero background video */
+    .hero__video-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero__video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
     }
 
     .hero__glow-a {
@@ -393,13 +408,7 @@
 
     <!-- Logo -->
     <a href="/" class="nav-logo" aria-label="Ohana Senior Care Agency — Home">
-      <div style="width:38px;height:38px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <div class="nav-logo__wordmark">
-        <span class="nav-logo__name">Ohana Senior Care</span>
-        <span class="nav-logo__tagline">Care Coordination &middot; Southern CA</span>
-      </div>
+      <img src="/images/logo-wide-white.svg" alt="Ohana Senior Care Agency" class="nav-logo__img" />
     </a>
 
     <!-- Desktop nav links -->
@@ -549,6 +558,12 @@
        SECTION 1 — HERO
        ============================================================ -->
   <section class="hero bg-dark" aria-labelledby="hero-heading">
+    <!-- Background video — muted, looping, decorative -->
+    <div class="hero__video-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="none">
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero__glow-a" aria-hidden="true"></div>
     <div class="hero__glow-b" aria-hidden="true"></div>
 
@@ -970,16 +985,16 @@
     <p class="logo-carousel__label">Trusted Network Partners</p>
     <div class="logo-track-wrap">
       <div class="logo-track" aria-label="Partner organization logos" role="list">
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Angel Pathway Hospice</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">ACT Group</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Azzur Workforce</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">EVA In-Home Care</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Galaxy Home Health</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Madison Hospice</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Quality Care Home Health</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Quantum Laboratory</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">101 Mobile Medical</span></div>
-        <div class="logo-item" role="listitem"><span class="logo-item__text">Manage Care Solutions</span></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/angel-pathway-hospice.png" alt="Angel Pathway Hospice" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/act-group.png" alt="ACT Group" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/azzur-workforce.png" alt="Azzur Workforce" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/eva-health.png" alt="EVA In-Home Care" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/galaxy-home-health.png" alt="Galaxy Home Health" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/madison-hospice.png" alt="Madison Hospice" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/quality-care-home-health.png" alt="Quality Care Home Health" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/quantum-laboratory.png" alt="Quantum Laboratory" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/101-mobile-medical.png" alt="101 Mobile Medical" loading="lazy" /></div>
+        <div class="logo-item" role="listitem"><img src="/images/partners/manage-care-solutions.png" alt="Manage Care Solutions" loading="lazy" /></div>
       </div>
     </div>
   </div>
@@ -1033,6 +1048,37 @@
     </div>
   </section>
   <!-- /why ohana -->
+
+
+  <!-- ============================================================
+       SECTION 5B — CARE IN PRACTICE (PHOTO SPLIT)
+       ============================================================ -->
+  <section class="section bg-alt" aria-label="Care coordination in practice">
+    <div class="container">
+      <div class="split split--60-40 reveal" style="gap:var(--sp-12);">
+        <div style="border-radius:var(--radius-2xl);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;">
+          <img src="/images/care-4.png" alt="Ohana care coordinator assisting a senior and their family" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;gap:var(--sp-6);">
+          <div>
+            <div class="eyebrow">What We Do, In Practice</div>
+            <h2>Someone in your corner — from first call to service delivered.</h2>
+            <p style="margin-top:var(--sp-4);color:var(--color-text-secondary);font-size:var(--text-sm);line-height:var(--lh-relaxed);">Effective coordination means showing up — not just connecting people and disappearing. Ohana stays involved through intake, matching, communication, and follow-through until the service is confirmed and the outcome is known.</p>
+          </div>
+          <ul class="feature-list">
+            <li><i data-lucide="check" style="width:15px;height:15px;" aria-hidden="true"></i>A real person answers when families call</li>
+            <li><i data-lucide="check" style="width:15px;height:15px;" aria-hidden="true"></i>Clinical decisions stay with licensed providers</li>
+            <li><i data-lucide="check" style="width:15px;height:15px;" aria-hidden="true"></i>We remain your point of contact throughout</li>
+            <li><i data-lucide="check" style="width:15px;height:15px;" aria-hidden="true"></i>No handoff and disappear — we confirm outcomes</li>
+          </ul>
+          <div>
+            <a href="about.html" class="btn btn-secondary">Learn How Ohana Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /care in practice -->
 
 
   <!-- ============================================================
@@ -1248,13 +1294,7 @@
       <!-- Brand column -->
       <div class="footer-brand">
         <a href="/" class="footer-logo" aria-label="Ohana Senior Care Agency &mdash; Home">
-          <div style="width:34px;height:34px;background:var(--color-primary);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div>
-            <span class="footer-logo__name">Ohana Senior Care</span>
-            <span class="footer-logo__tagline">Care Coordination &middot; Southern CA</span>
-          </div>
+          <img src="/images/logo-footer.svg" alt="Ohana Senior Care Agency" class="footer-logo__img" />
         </a>
         <p class="footer-desc">A healthcare management organization coordinating access to home-based and community care across Southern California.</p>
         <div class="footer-contacts">
