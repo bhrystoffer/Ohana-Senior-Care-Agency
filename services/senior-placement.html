@@ -81,6 +81,126 @@
     .feature-list { display: flex; flex-direction: column; gap: var(--sp-3); }
     .feature-list li { display: flex; align-items: flex-start; gap: var(--sp-3); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
     .feature-list li svg { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Care Levels Tab Section ──────────────────────────────── */
+    .clt-nav-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      border-bottom: 2px solid var(--color-border-subtle);
+      margin-top: var(--sp-10);
+    }
+    .clt-nav-wrap::-webkit-scrollbar { display: none; }
+    .clt-nav { display: flex; min-width: max-content; }
+    .clt-tab {
+      padding: var(--sp-3) var(--sp-5);
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-semibold);
+      color: var(--color-text-secondary);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color var(--t-base), border-color var(--t-base);
+      line-height: 1;
+      padding-bottom: calc(var(--sp-3) + 1px);
+    }
+    .clt-tab:hover { color: var(--color-text); }
+    .clt-tab:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: var(--radius-sm);
+    }
+    .clt-tab.is-active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+
+    .clt-panels { margin-top: var(--sp-10); }
+    .clt-panel { display: none; }
+    .clt-panel.is-active { display: block; animation: clt-in 0.22s ease; }
+    @keyframes clt-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .clt-panel__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-12);
+      align-items: center;
+    }
+    .clt-panel__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: var(--fw-bold);
+      color: var(--color-text);
+      line-height: var(--lh-tight);
+      margin-bottom: var(--sp-4);
+    }
+    .clt-panel__desc {
+      font-size: var(--text-base);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--sp-6);
+    }
+    .clt-best-for { margin-bottom: var(--sp-6); }
+    .clt-best-for__label {
+      font-family: var(--font-heading);
+      font-size: var(--text-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--sp-3);
+    }
+    .clt-best-for ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+    .clt-best-for li {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-relaxed);
+      display: flex; align-items: flex-start; gap: var(--sp-2);
+    }
+    .clt-best-for li::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .clt-ohana-note {
+      display: flex; align-items: flex-start; gap: var(--sp-3);
+      padding: var(--sp-4) var(--sp-5);
+      background: var(--color-surface-green);
+      border: 1px solid var(--green-100);
+      border-left: 3px solid var(--color-primary-mid);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-normal);
+    }
+    .clt-ohana-note svg { color: var(--color-primary); flex-shrink: 0; margin-top: 1px; }
+    .clt-panel__img-wrap {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+    }
+    .clt-panel__img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    @media (max-width: 900px) {
+      .clt-panel__inner { grid-template-columns: 1fr; gap: var(--sp-8); }
+      .clt-panel__img-wrap { order: -1; aspect-ratio: 16/9; }
+    }
+    @media (max-width: 640px) {
+      .clt-tab { padding: var(--sp-3) var(--sp-4); font-size: 0.8125rem; }
+      .clt-panel__title { font-size: var(--text-xl); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .clt-panel.is-active { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -190,49 +310,216 @@
       </div>
     </section>
 
-    <!-- ── Care Levels We Navigate ───────────────────────────── -->
-    <section class="section bg-alt">
+    <!-- ── Care Levels Tabs ─────────────────────────────────── -->
+    <section class="section bg-alt" aria-labelledby="clt-heading">
       <div class="container">
+
         <div class="section-header reveal">
-          <span class="eyebrow">Care Levels</span>
-          <h2>Care levels we navigate</h2>
-          <p class="lead">Every senior's needs are different. We're fluent in all residential care settings, from independent living for active adults to skilled nursing for those requiring continuous medical oversight.</p>
+          <span class="eyebrow">Senior Living Options</span>
+          <h2 id="clt-heading">Care levels we navigate</h2>
+          <p class="lead">Every senior's needs are different. We're fluent in all residential care settings — from independent living for active adults to skilled nursing for those requiring continuous medical oversight.</p>
         </div>
-        <div class="grid grid-2 stagger" style="margin-top:var(--sp-10);">
 
-          <div class="card card--hoverable feature-card">
-            <div class="feature-card__icon">
-              <i data-lucide="home" aria-hidden="true"></i>
+        <!-- Tab Navigation -->
+        <div class="clt-nav-wrap" role="tablist" aria-label="Senior living care level options">
+          <div class="clt-nav">
+            <button class="clt-tab is-active" role="tab" aria-selected="true"  aria-controls="clt-panel-1" id="clt-tab-1" tabindex="0">Board &amp; Care</button>
+            <button class="clt-tab"            role="tab" aria-selected="false" aria-controls="clt-panel-2" id="clt-tab-2" tabindex="-1">Assisted Living</button>
+            <button class="clt-tab"            role="tab" aria-selected="false" aria-controls="clt-panel-3" id="clt-tab-3" tabindex="-1">Independent Living</button>
+            <button class="clt-tab"            role="tab" aria-selected="false" aria-controls="clt-panel-4" id="clt-tab-4" tabindex="-1">Skilled Nursing</button>
+            <button class="clt-tab"            role="tab" aria-selected="false" aria-controls="clt-panel-5" id="clt-tab-5" tabindex="-1">Home Care</button>
+            <button class="clt-tab"            role="tab" aria-selected="false" aria-controls="clt-panel-6" id="clt-tab-6" tabindex="-1">Memory Care</button>
+            <button class="clt-tab"            role="tab" aria-selected="false" aria-controls="clt-panel-7" id="clt-tab-7" tabindex="-1">CCRC</button>
+          </div>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="clt-panels">
+
+          <!-- 1 · Board & Care -->
+          <div class="clt-panel is-active" id="clt-panel-1" role="tabpanel" aria-labelledby="clt-tab-1">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Board &amp; Care</h3>
+                <p class="clt-panel__desc">Board and care homes are smaller residential settings that may support seniors who need help with daily routines in a more home-like environment. Typically serving 2–6 residents, these homes offer personal care, meals, and 24-hour supervision in a shared household setting.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Seniors who need daily personal care assistance</li>
+                    <li>Those who prefer a smaller, more intimate setting over a large facility</li>
+                    <li>Individuals who don't require 24/7 skilled nursing oversight</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana helps families compare board and care options and coordinates introductions to vetted homes across Southern California. Availability, pricing, and eligibility vary by home and provider.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/landscape-4.png" alt="A warm residential home-like setting for senior care" loading="lazy" />
+              </div>
             </div>
-            <h3 class="feature-card__title">Independent Living</h3>
-            <p class="feature-card__body">For seniors who are largely self-sufficient but want the benefit of community, social programming, and on-site amenities. Typically no hands-on personal care, but meals, activities, and maintenance are handled. Ideal for active older adults who want to simplify their lives without sacrificing independence.</p>
           </div>
 
-          <div class="card card--hoverable feature-card">
-            <div class="feature-card__icon">
-              <i data-lucide="users" aria-hidden="true"></i>
+          <!-- 2 · Assisted Living -->
+          <div class="clt-panel" id="clt-panel-2" role="tabpanel" aria-labelledby="clt-tab-2">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Assisted Living</h3>
+                <p class="clt-panel__desc">Assisted living communities may support seniors who need help with daily activities while maintaining as much independence as possible. Residents typically have private or semi-private apartments with access to staff, meals, social activities, and on-site amenities.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Seniors who need help with bathing, dressing, or medication management</li>
+                    <li>Those who benefit from social programming and on-site amenities</li>
+                    <li>Family caregivers approaching or at a transition point</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana helps families compare assisted living options and coordinates introductions and next steps with communities in our network. Availability, pricing, and eligibility vary by community.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/pexels-care-1.jpg" alt="Caregiver supporting a senior in an assisted living community" loading="lazy" />
+              </div>
             </div>
-            <h3 class="feature-card__title">Assisted Living</h3>
-            <p class="feature-card__body">A residential setting with staff available to assist with bathing, dressing, medication management, and daily activities. Residents maintain a private or semi-private space while receiving the level of personal care they need. A common transition point when family caregiving becomes unsustainable or unsafe.</p>
           </div>
 
-          <div class="card card--hoverable feature-card">
-            <div class="feature-card__icon">
-              <i data-lucide="brain" aria-hidden="true"></i>
+          <!-- 3 · Independent Living -->
+          <div class="clt-panel" id="clt-panel-3" role="tabpanel" aria-labelledby="clt-tab-3">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Independent Living</h3>
+                <p class="clt-panel__desc">Independent living communities are designed for active older adults who want a maintenance-free lifestyle, social connection, and convenient amenities — without the responsibilities of home ownership. Meals, housekeeping, transportation, and activities are typically included.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Active seniors who are largely self-sufficient</li>
+                    <li>Those seeking community, activities, and daily convenience</li>
+                    <li>Adults who want to simplify their lives without sacrificing independence</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana helps families identify independent living communities that match lifestyle preferences, budget, and location. We coordinate introductions and guided tours at no cost to families.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/landscape-1.png" alt="Active seniors enjoying amenities at an independent living community" loading="lazy" />
+              </div>
             </div>
-            <h3 class="feature-card__title">Memory Care</h3>
-            <p class="feature-card__body">Specialized residential environments designed specifically for individuals living with Alzheimer's disease, other forms of dementia, or cognitive impairment. Secured perimeters, structured daily routines, trained staff, and therapeutic programming address the distinct safety and behavioral needs of this population.</p>
           </div>
 
-          <div class="card card--hoverable feature-card">
-            <div class="feature-card__icon">
-              <i data-lucide="heart-pulse" aria-hidden="true"></i>
+          <!-- 4 · Skilled Nursing -->
+          <div class="clt-panel" id="clt-panel-4" role="tabpanel" aria-labelledby="clt-tab-4">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Nursing Home / Skilled Nursing</h3>
+                <p class="clt-panel__desc">Skilled nursing facilities (SNFs) support individuals who may need a higher level of medical oversight, rehabilitation services, or around-the-clock licensed nursing care. They are licensed medical facilities staffed by nurses and therapists, and are often the appropriate setting following an acute hospital stay.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Post-acute patients transitioning from hospital discharge</li>
+                    <li>Individuals requiring complex wound care, IV therapy, or rehabilitation</li>
+                    <li>Seniors with chronic conditions requiring licensed clinical monitoring</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana coordinates referral and intake support for skilled nursing placement, with established contacts at facilities across Southern California. Availability and coverage vary by facility, eligibility, and payer.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/pexels-care-4.jpg" alt="Licensed clinical staff providing skilled nursing care" loading="lazy" />
+              </div>
             </div>
-            <h3 class="feature-card__title">Skilled Nursing</h3>
-            <p class="feature-card__body">For seniors who require continuous medical oversight, complex wound care, IV therapy, post-surgical rehabilitation, or ventilator management. Skilled nursing facilities (SNFs) are licensed medical facilities staffed by nurses and therapists around the clock. Often the appropriate setting following an acute hospital stay.</p>
+          </div>
+
+          <!-- 5 · Home Care -->
+          <div class="clt-panel" id="clt-panel-5" role="tabpanel" aria-labelledby="clt-tab-5">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Home Care</h3>
+                <p class="clt-panel__desc">Home care may support seniors with non-medical daily assistance — such as companionship, meal preparation, personal care, and routine support — in the comfort of their own home. Home care aides are not licensed clinical staff and do not perform skilled medical procedures.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Seniors who prefer to remain at home with reliable support</li>
+                    <li>Those who need companionship, light housekeeping, or personal care</li>
+                    <li>Families managing caregiving responsibilities from a distance</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana coordinates access to vetted home care providers through our network. Availability may vary by service area, caregiver availability, and scheduling. Provider services are delivered independently.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/pexels-care-6.jpg" alt="Home care aide assisting a senior at home" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 · Memory Care -->
+          <div class="clt-panel" id="clt-panel-6" role="tabpanel" aria-labelledby="clt-tab-6">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Memory Care</h3>
+                <p class="clt-panel__desc">Memory care communities are designed for seniors living with Alzheimer's, dementia, or memory-related conditions who may benefit from structured support and safety-focused environments. These specialized communities typically feature secured perimeters, trained staff, and therapeutic programming.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Seniors with diagnosed Alzheimer's disease or other forms of dementia</li>
+                    <li>Those who require a structured, safety-focused daily environment</li>
+                    <li>Individuals whose safety cannot be adequately maintained in other settings</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana helps families understand their memory care options and navigate the intake process with compassion and clarity. We coordinate introductions to communities that specialize in cognitive support.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/pexels-care-3.jpg" alt="Compassionate caregiver with a senior in a memory care community" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 · CCRC -->
+          <div class="clt-panel" id="clt-panel-7" role="tabpanel" aria-labelledby="clt-tab-7">
+            <div class="clt-panel__inner">
+              <div>
+                <h3 class="clt-panel__title">Continuing Care Retirement Community</h3>
+                <p class="clt-panel__desc">Continuing care retirement communities (CCRCs) offer multiple levels of senior living on one campus — typically independent living, assisted living, and skilled nursing — allowing residents to transition between care levels as needs change without moving to a new community.</p>
+                <div class="clt-best-for">
+                  <p class="clt-best-for__label">Often a fit for</p>
+                  <ul>
+                    <li>Seniors planning ahead who want continuity of community as care needs evolve</li>
+                    <li>Couples with differing care levels who want to remain on the same campus</li>
+                    <li>Those who value long-term care relationships and predictable transitions</li>
+                  </ul>
+                </div>
+                <div class="clt-ohana-note">
+                  <i data-lucide="info" style="width:16px;height:16px;" aria-hidden="true"></i>
+                  <p>Ohana helps families evaluate CCRC options including contract types, fee structures, and services included at each care tier. We coordinate introductions and guided visits at no cost to families.</p>
+                </div>
+              </div>
+              <div class="clt-panel__img-wrap">
+                <img src="../images/landscape-2.png" alt="Exterior view of a continuing care retirement community campus" loading="lazy" />
+              </div>
+            </div>
           </div>
 
         </div>
+        <!-- /clt-panels -->
+
+        <!-- Section compliance note -->
+        <div class="compliance-note reveal" style="margin-top:var(--sp-10);">
+          <i data-lucide="info" aria-hidden="true"></i>
+          <p>Ohana Senior Care Agency helps coordinate senior living and care setting options through independent communities and provider partners. Availability, pricing, eligibility, and services vary by location and provider. Ohana does not own or operate all communities or providers shown or discussed.</p>
+        </div>
+
       </div>
     </section>
 
@@ -476,6 +763,44 @@
   <script src="../design-system/js/nav.js"></script>
   <script src="../design-system/js/main.js"></script>
   <script>lucide.createIcons();</script>
+  <script>
+    /* Care Levels Tab interaction */
+    (function () {
+      var tabs   = Array.from(document.querySelectorAll('.clt-tab'));
+      var panels = Array.from(document.querySelectorAll('.clt-panel'));
+      if (!tabs.length) return;
+
+      function activate(tab) {
+        tabs.forEach(function (t) {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
+        });
+        panels.forEach(function (p) { p.classList.remove('is-active'); });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+        var panel = document.getElementById(tab.getAttribute('aria-controls'));
+        if (panel) panel.classList.add('is-active');
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { activate(tab); });
+        tab.addEventListener('keydown', function (e) {
+          var idx = tabs.indexOf(tab);
+          if (e.key === 'ArrowRight') {
+            e.preventDefault(); var n = tabs[(idx + 1) % tabs.length]; activate(n); n.focus();
+          } else if (e.key === 'ArrowLeft') {
+            e.preventDefault(); var p = tabs[(idx - 1 + tabs.length) % tabs.length]; activate(p); p.focus();
+          } else if (e.key === 'Home') {
+            e.preventDefault(); activate(tabs[0]); tabs[0].focus();
+          } else if (e.key === 'End') {
+            e.preventDefault(); var last = tabs[tabs.length - 1]; activate(last); last.focus();
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
