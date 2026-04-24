@@ -54,7 +54,7 @@
 .logo-track {
   display: flex;
   align-items: center;
-  gap: clamp(36px, 5vw, 64px);
+  gap: clamp(40px, 5vw, 72px);
   width: max-content;
   animation: logo-slide 30s linear infinite;
   padding-block: var(--sp-2);
@@ -74,16 +74,25 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  height: 40px;
+  height: 48px;
 }
 
 .logo-item img {
   height: 100%;
   width: auto;
-  max-width: 130px;
+  max-width: 150px;
   object-fit: contain;
   filter: grayscale(1) opacity(.5);
   transition: filter var(--t-base), transform var(--t-base);
+}
+
+@media (max-width: 640px) {
+  .logo-item {
+    height: 38px;
+  }
+  .logo-item img {
+    max-width: 110px;
+  }
 }
 
 .logo-item:hover img {
