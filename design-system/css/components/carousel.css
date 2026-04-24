@@ -67,6 +67,21 @@
   100% { transform: translateX(-50%); }
 }
 
+/* ── Partner Logo Link ────────────────────────────────────── */
+
+.partner-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.partner-logo-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
 /* ── Logo Item ────────────────────────────────────────────── */
 
 .logo-item {
