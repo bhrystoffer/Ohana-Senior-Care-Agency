@@ -655,6 +655,12 @@
                     <span class="field-hint">Do not include diagnoses, insurance ID numbers, or full medical history in this field.</span>
                   </div>
 
+                  <div class="field">
+                    <label for="ci-insurance">Insurance / Plan Type <span style="font-weight:var(--fw-normal);color:var(--color-text-muted);">(optional)</span></label>
+                    <input type="text" id="ci-insurance" name="insurance-type" class="input" placeholder="e.g. Medicare, Medi-Cal, Blue Shield, self-pay" autocomplete="off" />
+                    <span class="field-hint">Do not include member ID, policy numbers, or other account details. This helps us coordinate the right service partner.</span>
+                  </div>
+
                   <div class="form-footer">
                     <label class="check-label">
                       <input type="checkbox" name="privacy-consent" required aria-required="true" />
@@ -861,7 +867,7 @@
               <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>A care coordinator reviews your request, typically within 1 business day</li>
               <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>We'll discuss your needs and the right coordination approach</li>
               <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>No pressure: we present options and let families decide</li>
-              <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>We work with most insurance plans and can discuss financial questions</li>
+              <li><i data-lucide="check-circle-2" style="width:16px;height:16px;"></i>Coverage questions vary by service and provider; our team can help clarify next steps</li>
             </ul>
           </div>
 
@@ -1005,7 +1011,7 @@
           <a href="#" class="footer-legal-link">Accessibility</a>
         </nav>
       </div>
-      <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization providing administrative, coordination, and select non-clinical support services. Clinical services are provided by independent licensed providers and partners. Ohana does not directly render clinical services except where explicitly stated. Ohana Senior Care Agency does not accept or pay compensation for patient referrals in violation of applicable federal or state law.</p>
+      <p class="footer-disclaimer">Ohana Senior Care Agency is a care coordination and healthcare management organization providing administrative, coordination, and select non-clinical support services. Clinical services are provided by independent licensed providers and partners. Ohana does not directly render clinical services except where explicitly stated. Ohana Senior Care Agency does not accept or pay compensation for patient referrals in violation of applicable federal or state law. Insurance, Medicare, HMO, and other coverage options vary by service, provider, plan, eligibility, and authorization requirements. Ohana coordinates access to appropriate service partners but does not guarantee coverage, benefits, authorization, or payment.</p>
     </div>
   </div>
 </footer>
