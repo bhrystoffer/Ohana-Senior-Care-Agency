@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
 
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
@@ -293,6 +294,65 @@
 
 
   <!-- CTA -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-rx-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-rx-heading">Frequently asked questions</h2>
+        <p class="lead">Questions about pharmacy coordination and access through Ohana&#8217;s network.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-rx-1">
+            Does Ohana operate a pharmacy directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-rx-1">
+            <p class="faq-accordion__answer">Ohana coordinates access to pharmacy services through independently licensed pharmacy partners. Prescription dispensing, delivery logistics, and clinical pharmacy services are performed by the partner pharmacy &#8212; not Ohana.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-rx-2">
+            Can prescription delivery be coordinated?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-rx-2">
+            <p class="faq-accordion__answer">Pharmacy delivery to patients in residential settings &#8212; including home, assisted living, board and care, and skilled nursing &#8212; may be available through Ohana&#8217;s pharmacy partners. Delivery area and service terms vary by pharmacy partner and location.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-rx-3">
+            Can medication synchronization or blister-pack dispensing be supported?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-rx-3">
+            <p class="faq-accordion__answer">Medication synchronization, blister-pack dispensing, and other adherence programs may be available through pharmacy partners depending on the partner and service area. Confirm directly with the pharmacy partner for current program availability.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-rx-4">
+            Does insurance or plan coverage vary?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-rx-4">
+            <p class="faq-accordion__answer">Coverage for prescriptions varies by medication, insurance plan, formulary, and pharmacy network participation. Many Medicare Part D plans, Medi-Cal Rx, and private plans may be accepted by pharmacy partners depending on their network agreements. Coverage is handled directly by the partner pharmacy.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-rx-5">
+            Can specialty medications or long-term care pharmacy services be coordinated?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-rx-5">
+            <p class="faq-accordion__answer">Long-term care pharmacy services and specialty medication coordination may be available through Ohana&#8217;s pharmacy partner network. Contact our team to confirm current capabilities for specific medication needs.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Get started">
     <div class="container">
       <div class="cta-block reveal">
@@ -377,6 +437,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

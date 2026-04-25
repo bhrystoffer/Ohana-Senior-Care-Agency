@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
     .page-hero__glow { position: absolute; top: -40%; right: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(78,140,28,.18) 0%, transparent 65%); pointer-events: none; }
@@ -285,6 +286,65 @@
   </section>
 
   <!-- CTA Block -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-hh-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-hh-heading">Frequently asked questions</h2>
+        <p class="lead">Frequently asked questions about coordinating home health access through Ohana&#8217;s network.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-hh-1">
+            What is home health, and how is it different from home care?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-hh-1">
+            <p class="faq-accordion__answer">Home health refers to Medicare-certified skilled nursing, physical therapy, occupational therapy, and related clinical services delivered in the patient&#8217;s home. It requires a physician order. Non-medical home care, by contrast, provides companionship and daily living assistance without skilled clinical services.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-hh-2">
+            Does a physician need to order home health services?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-hh-2">
+            <p class="faq-accordion__answer">Yes. Home health services require a physician order and a documented face-to-face encounter in accordance with Medicare and Medi-Cal requirements. Ohana does not issue physician orders &#8212; we help facilitate the referral and intake process once an order is in place.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-hh-3">
+            Does Ohana provide home health directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-hh-3">
+            <p class="faq-accordion__answer">No. Ohana coordinates access to home health through independently licensed, Medicare-certified partner agencies. Clinical services are provided by those agencies &#8212; not by Ohana.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-hh-4">
+            Can Medicare or HMO coverage apply to home health?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-hh-4">
+            <p class="faq-accordion__answer">Home health may be covered under Medicare Part A or Part B, Medi-Cal, or managed care plans for eligible patients when specific clinical criteria are met. Coverage eligibility, authorization requirements, and covered services vary by plan. Coverage is managed directly by the partner home health agency.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-hh-5">
+            What counties does Ohana&#8217;s home health network serve?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-hh-5">
+            <p class="faq-accordion__answer">Ohana coordinates home health access across Los Angeles, Orange, Riverside, and San Bernardino counties through partner agencies. Provider availability may vary by sub-region and current capacity.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Get home health coordination">
     <div class="container">
       <div class="cta-block reveal">
@@ -366,6 +426,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

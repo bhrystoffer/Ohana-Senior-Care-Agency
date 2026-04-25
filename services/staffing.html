@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
 
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
@@ -320,6 +321,65 @@
 
 
   <!-- CTA -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-st-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-st-heading">Frequently asked questions</h2>
+        <p class="lead">Questions from facilities and agencies about coordinating supplemental clinical staffing through Ohana.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-st-1">
+            What types of facilities can request staffing support?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-st-1">
+            <p class="faq-accordion__answer">Ohana coordinates supplemental clinical staffing for skilled nursing facilities, assisted living communities, board and care homes, home care agencies, and residential care facilities. Availability may vary by geographic area and staff classification.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-st-2">
+            Does Ohana employ all clinical staff directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-st-2">
+            <p class="faq-accordion__answer">Ohana coordinates staffing through independently licensed staffing partners, including Azzur Workforce Solutions. Staff classification, employment relationship, and supervision are managed by the staffing partner. Ohana is not the employer of record for all placements.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-st-3">
+            Are staff verified and credentialed before placement?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-st-3">
+            <p class="faq-accordion__answer">Ohana&#8217;s staffing partners are responsible for verifying licensure, certifications, background clearances, and practice eligibility prior to placement. Ohana coordinates the referral &#8212; the staffing partner manages the verification and credentialing process.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-st-4">
+            How quickly can supplemental staffing be arranged?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-st-4">
+            <p class="faq-accordion__answer">Response time depends on the staff classification, location, and partner availability. For urgent or same-day staffing needs, contact our team directly. Availability cannot be guaranteed in advance.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-st-5">
+            Does Ohana guarantee ongoing staff availability?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-st-5">
+            <p class="faq-accordion__answer">Staffing availability varies by region, classification, and current partner capacity. Ohana does not guarantee ongoing placement or availability. Additional staffing partners may be available depending on your location and staffing requirements.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Get started">
     <div class="container">
       <div class="cta-block reveal">
@@ -404,6 +464,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

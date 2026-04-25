@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
     .page-hero__glow { position: absolute; top: -40%; right: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(78,140,28,.18) 0%, transparent 65%); pointer-events: none; }
@@ -304,6 +305,65 @@
   </section>
 
   <!-- CTA Block -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-cg-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-cg-heading">Frequently asked questions</h2>
+        <p class="lead">The questions families ask most when considering caregiver coordination through Ohana.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-cg-1">
+            Does Ohana employ caregivers directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-cg-1">
+            <p class="faq-accordion__answer">Some caregiving services may be coordinated through Ohana&#8217;s direct operations and through independently staffed partner organizations. The staffing arrangement may vary based on the type of support needed and the care setting. Ohana will clarify the caregiver&#8217;s employment relationship prior to placement.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-cg-2">
+            What tasks can caregivers help with?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-cg-2">
+            <p class="faq-accordion__answer">Caregivers may assist with activities of daily living (ADLs) such as bathing, dressing, grooming, meal preparation, light housekeeping, medication reminders, and companionship. Specific services depend on the caregiver&#8217;s classification and the care plan in place.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-cg-3">
+            Can caregivers provide medical or clinical care?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-cg-3">
+            <p class="faq-accordion__answer">Non-medical home care aides and companions do not perform clinical procedures, administer injections, or perform skilled nursing tasks. If clinical care is needed alongside caregiving support, Ohana may coordinate access to appropriate network providers separately.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-cg-4">
+            How does caregiver matching work?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-cg-4">
+            <p class="faq-accordion__answer">Ohana considers the patient&#8217;s care needs, language preferences, schedule, and location when coordinating caregiver placement. We do not guarantee a specific caregiver match &#8212; availability varies by region, schedule, and caregiver classification.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-cg-5">
+            Is there a minimum hours or visit requirement?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-cg-5">
+            <p class="faq-accordion__answer">Minimum visit durations and weekly hour requirements may vary depending on the service type and provider. Contact our team to discuss your specific scheduling needs and confirm what&#8217;s available in your area.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Get caregiver coordination">
     <div class="container">
       <div class="cta-block reveal">
@@ -385,6 +445,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

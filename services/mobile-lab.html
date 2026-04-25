@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
     .page-hero__glow { position: absolute; top: -40%; right: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(78,140,28,.18) 0%, transparent 65%); pointer-events: none; }
@@ -256,6 +257,65 @@
   </section>
 
   <!-- CTA Block -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-ml-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-ml-heading">Frequently asked questions</h2>
+        <p class="lead">Questions about coordinating mobile laboratory and specimen collection services through Ohana.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-ml-1">
+            Is a lab order required for mobile specimen collection?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-ml-1">
+            <p class="faq-accordion__answer">Yes. Mobile laboratory specimen collection requires a valid physician or provider order. Ohana facilitates access to partner labs but does not issue lab orders. The ordering provider is responsible for clinical follow-up on results.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-ml-2">
+            Can lab specimens be collected at home or in a care facility?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-ml-2">
+            <p class="faq-accordion__answer">Mobile specimen collection may be coordinated for patients at home, in assisted living communities, board and care homes, and skilled nursing facilities, subject to the laboratory partner&#8217;s service area and scheduling.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-ml-3">
+            Does Ohana perform lab testing directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-ml-3">
+            <p class="faq-accordion__answer">No. Ohana coordinates access to independently CLIA-certified laboratory partners. Specimen collection, processing, testing, and result reporting are performed by the partner laboratory &#8212; not Ohana.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-ml-4">
+            How are lab results sent, and to whom?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-ml-4">
+            <p class="faq-accordion__answer">Lab results are sent directly to the ordering provider by the partner laboratory. Ohana is not responsible for result delivery, clinical interpretation, or follow-up. All clinical decisions remain with the ordering provider.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-ml-5">
+            What types of tests can be ordered through mobile lab partners?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-ml-5">
+            <p class="faq-accordion__answer">Test availability depends on the partner laboratory. Services may include blood panels, urinalysis, wound cultures, PCR testing, and other common diagnostics. Contact our team to confirm current test availability and turnaround times.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Request lab coordination">
     <div class="container">
       <div class="cta-block reveal">
@@ -336,6 +396,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

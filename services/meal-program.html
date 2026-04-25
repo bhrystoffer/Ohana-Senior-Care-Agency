@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
     .page-hero__glow { position: absolute; top: -40%; right: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(78,140,28,.18) 0%, transparent 65%); pointer-events: none; }
@@ -267,6 +268,65 @@
   </section>
 
   <!-- CTA Block -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-mp-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-mp-heading">Frequently asked questions</h2>
+        <p class="lead">Questions families and care coordinators ask about meal program access through Ohana.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mp-1">
+            Does Ohana operate the meal program directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mp-1">
+            <p class="faq-accordion__answer">Ohana coordinates access to meal delivery and meal program services for seniors. Depending on the location and program type, services may involve direct Ohana coordination or independently operated meal service partners. Contact our team to confirm what&#8217;s available in your area.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mp-2">
+            What meal or dietary options may be available?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mp-2">
+            <p class="faq-accordion__answer">Meal programs coordinated through Ohana may offer options for seniors with specific dietary needs including heart-healthy, diabetic-friendly, soft/pur&#233;ed, or culturally appropriate meals, subject to program availability. Specific options vary by program, location, and service capacity.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mp-3">
+            Can meals be arranged for seniors living at home?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mp-3">
+            <p class="faq-accordion__answer">Meal delivery for homebound seniors and seniors in residential care settings may be available in certain areas. Delivery coverage, meal frequency, and program terms vary by location and provider.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mp-4">
+            Is there a cost to families for the meal program?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mp-4">
+            <p class="faq-accordion__answer">Program costs vary depending on the specific meal service, eligibility criteria, and whether any subsidized programs apply. Ohana will clarify cost information as part of the coordination process. Some programs may be available at no direct cost to qualifying seniors.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mp-5">
+            Does availability vary by location?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mp-5">
+            <p class="faq-accordion__answer">Yes. Meal program availability, delivery coverage, and menu options vary by city, ZIP code, and service area. Contact our team to confirm current availability for your specific location.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Request meal program access">
     <div class="container">
       <div class="cta-block reveal">
@@ -348,6 +408,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>

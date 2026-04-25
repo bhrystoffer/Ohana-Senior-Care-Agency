@@ -46,6 +46,7 @@
   <link rel="stylesheet" href="../design-system/css/components/cards.css" />
   <link rel="stylesheet" href="../design-system/css/components/cta.css" />
   <link rel="stylesheet" href="../design-system/css/components/footer.css" />
+  <link rel="stylesheet" href="../design-system/css/components/faq.css" />
 
   <style>
     .page-hero { padding-block: var(--section-y); position: relative; overflow: hidden; }
@@ -263,6 +264,65 @@
 
 
   <!-- CTA -->
+
+  <!-- FAQ -->
+  <section class="section bg-alt" aria-labelledby="faq-mh-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-mh-heading">Frequently asked questions</h2>
+        <p class="lead">What families and care teams ask most about mental health coordination through Ohana.</p>
+      </div>
+      <div class="faq-accordion reveal">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mh-1">
+            Is this service appropriate for a psychiatric emergency?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mh-1">
+            <p class="faq-accordion__answer">No. Ohana&#8217;s mental health coordination is not a crisis or emergency service. If someone is in immediate danger, call 911. For mental health crises, the 988 Suicide &amp; Crisis Lifeline (call or text 988) is available 24/7. Once a crisis is stabilized, contact Ohana to discuss coordinating ongoing mental health support.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mh-2">
+            What should I do during a mental health crisis?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mh-2">
+            <p class="faq-accordion__answer">Call 911 for immediate danger. For non-emergency mental health crises, California&#8217;s 988 Lifeline is available by phone, text, or chat around the clock. County behavioral health crisis lines and mobile crisis teams may also be available in your area.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mh-3">
+            Can telehealth mental health services be coordinated?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mh-3">
+            <p class="faq-accordion__answer">Telehealth mental health services may be available through Ohana&#8217;s licensed behavioral health partners depending on the provider and patient eligibility. Telehealth availability varies by provider, insurance plan, and state-specific requirements.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mh-4">
+            Does Ohana provide therapy, counseling, or psychiatric services directly?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mh-4">
+            <p class="faq-accordion__answer">No. Ohana is not a licensed mental health agency and does not provide therapy, counseling, psychiatric evaluation, or medication management. Mental health services are provided by independently licensed clinicians within our coordination network.</p>
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__trigger" aria-expanded="false" aria-controls="faq-mh-5">
+            What types of mental health providers may be accessible through Ohana?
+            <svg class="faq-accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-accordion__body" id="faq-mh-5">
+            <p class="faq-accordion__answer">Ohana may help coordinate access to licensed clinical social workers (LCSWs), marriage and family therapists (MFTs), psychologists, and psychiatrists depending on availability. Provider type, specialization, and insurance participation vary by provider.</p>
+          </div>
+        </div>
+      </div>
+      <p class="faq-disclaimer reveal">Answers are provided for general informational purposes only. Services, eligibility, availability, provider participation, authorization requirements, and coverage may vary. Ohana Senior Care Agency helps coordinate access and next steps but does not guarantee services, clinical outcomes, benefits, or payment.</p>
+    </div>
+  </section>
   <section class="section" aria-label="Get started">
     <div class="container">
       <div class="cta-block reveal">
@@ -347,6 +407,7 @@
 <script src="../design-system/js/scroll-reveal.js"></script>
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
+  <script src="../design-system/js/faq.js"></script>
 <script>lucide.createIcons();</script>
 </body>
 </html>
