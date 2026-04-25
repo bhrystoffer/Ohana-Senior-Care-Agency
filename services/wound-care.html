@@ -60,6 +60,23 @@
     .faq-item { border-bottom: 1px solid var(--gray-200); padding-bottom: var(--sp-5); }
     .faq-q { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--sp-2); }
     .faq-a { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+
+    /* ── Why Wound Care Matters — Compact Accordion ────────── */
+    .wim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); max-width: 760px; margin: var(--sp-8) auto 0; align-items: start; }
+    .wim-block { border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); overflow: hidden; background: var(--white); }
+    .wim-block__trigger { width: 100%; display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-4) var(--sp-5); background: none; border: none; border-bottom: 1px solid transparent; text-align: left; cursor: pointer; font-family: var(--font-heading); font-size: var(--text-sm); font-weight: var(--fw-semibold); color: var(--color-text); line-height: var(--lh-snug); transition: background var(--t-base), color var(--t-base), border-color var(--t-base); }
+    .wim-block__trigger:hover { background: var(--green-50); color: var(--color-primary); }
+    .wim-block__trigger:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; border-radius: var(--radius-lg); }
+    .wim-block__trigger[aria-expanded="true"] { color: var(--color-primary); border-bottom-color: var(--color-border-subtle); }
+    .wim-block__icon { width: 32px; height: 32px; border-radius: var(--radius-md); background: var(--green-50); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-primary); }
+    .wim-block__title { flex: 1; }
+    .wim-block__chevron { width: 15px; height: 15px; flex-shrink: 0; color: var(--color-text-muted); transition: transform 0.22s ease, color var(--t-base); }
+    .wim-block__trigger[aria-expanded="true"] .wim-block__chevron { transform: rotate(180deg); color: var(--color-primary); }
+    .wim-block__body { overflow: hidden; max-height: 0; transition: max-height 0.28s ease; }
+    .wim-block__body.is-open { max-height: 160px; }
+    .wim-block__text { padding: var(--sp-3) var(--sp-5) var(--sp-4) calc(var(--sp-5) + 32px + var(--sp-3)); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); margin: 0; }
+    @media (max-width: 640px) { .wim-grid { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .wim-block__body { transition: none; } .wim-block__chevron { transition: none; } }
   </style>
 </head>
 <body>
@@ -209,38 +226,50 @@
         <h2 class="h2">Why wound care matters</h2>
         <p class="text-lg text-secondary" style="max-width:720px;margin-inline:auto;">When wounds are not properly monitored or managed, they may lead to delayed healing, infection risk, pain, reduced mobility, and avoidable hospital visits. Ohana helps families and care teams coordinate access to appropriate wound care providers so concerns can be reviewed early and next steps can be organized clearly.</p>
       </div>
-      <div class="cards-grid stagger" style="margin-top:var(--sp-8);">
+      <div class="wim-grid">
 
-        <div class="card feature-card">
-          <div class="feature-card__icon">
-            <i data-lucide="clock" aria-hidden="true"></i>
+        <div class="wim-block">
+          <button class="wim-block__trigger" aria-expanded="false" aria-controls="wim-1" id="wim-btn-1">
+            <span class="wim-block__icon"><i data-lucide="clock" style="width:16px;height:16px;" aria-hidden="true"></i></span>
+            <span class="wim-block__title">Support Timely Review</span>
+            <svg class="wim-block__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wim-block__body" id="wim-1" role="region" aria-labelledby="wim-btn-1">
+            <p class="wim-block__text">Early coordination can help families and care teams avoid delays when a wound needs professional attention.</p>
           </div>
-          <h3 class="feature-card__title">Support Timely Review</h3>
-          <p class="feature-card__body">Early coordination can help families and care teams avoid delays when a wound needs professional attention.</p>
         </div>
 
-        <div class="card feature-card">
-          <div class="feature-card__icon">
-            <i data-lucide="messages-square" aria-hidden="true"></i>
+        <div class="wim-block">
+          <button class="wim-block__trigger" aria-expanded="false" aria-controls="wim-2" id="wim-btn-2">
+            <span class="wim-block__icon"><i data-lucide="messages-square" style="width:16px;height:16px;" aria-hidden="true"></i></span>
+            <span class="wim-block__title">Reduce Confusion</span>
+            <svg class="wim-block__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wim-block__body" id="wim-2" role="region" aria-labelledby="wim-btn-2">
+            <p class="wim-block__text">Ohana helps organize communication between families, facilities, home health teams, and provider partners.</p>
           </div>
-          <h3 class="feature-card__title">Reduce Confusion</h3>
-          <p class="feature-card__body">Ohana helps organize communication between families, facilities, home health teams, and provider partners.</p>
         </div>
 
-        <div class="card feature-card">
-          <div class="feature-card__icon">
-            <i data-lucide="map" aria-hidden="true"></i>
+        <div class="wim-block">
+          <button class="wim-block__trigger" aria-expanded="false" aria-controls="wim-3" id="wim-btn-3">
+            <span class="wim-block__icon"><i data-lucide="map" style="width:16px;height:16px;" aria-hidden="true"></i></span>
+            <span class="wim-block__title">Improve Care Navigation</span>
+            <svg class="wim-block__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wim-block__body" id="wim-3" role="region" aria-labelledby="wim-btn-3">
+            <p class="wim-block__text">We help route requests to appropriate provider partners based on service area, availability, and patient needs.</p>
           </div>
-          <h3 class="feature-card__title">Improve Care Navigation</h3>
-          <p class="feature-card__body">We help route requests to appropriate provider partners based on service area, availability, and patient needs.</p>
         </div>
 
-        <div class="card feature-card">
-          <div class="feature-card__icon">
-            <i data-lucide="link" aria-hidden="true"></i>
+        <div class="wim-block">
+          <button class="wim-block__trigger" aria-expanded="false" aria-controls="wim-4" id="wim-btn-4">
+            <span class="wim-block__icon"><i data-lucide="link" style="width:16px;height:16px;" aria-hidden="true"></i></span>
+            <span class="wim-block__title">Support Continuity</span>
+            <svg class="wim-block__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="wim-block__body" id="wim-4" role="region" aria-labelledby="wim-btn-4">
+            <p class="wim-block__text">Clear coordination can help reduce gaps between discharge, home care, facility care, and follow-up needs.</p>
           </div>
-          <h3 class="feature-card__title">Support Continuity</h3>
-          <p class="feature-card__body">Clear coordination can help reduce gaps between discharge, home care, facility care, and follow-up needs.</p>
         </div>
 
       </div>
@@ -511,6 +540,18 @@
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
   <script src="../design-system/js/faq.js"></script>
+  <script>
+    (function () {
+      document.querySelectorAll('.wim-block__trigger').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+          var body = document.getElementById(btn.getAttribute('aria-controls'));
+          if (body) body.classList.toggle('is-open', !isOpen);
+        });
+      });
+    })();
+  </script>
 <script>lucide.createIcons();</script>
 </body>
 </html>
