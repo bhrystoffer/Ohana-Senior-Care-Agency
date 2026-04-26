@@ -60,6 +60,35 @@
     .faq-item { border-bottom: 1px solid var(--gray-200); padding-bottom: var(--sp-5); }
     .faq-q { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--fw-semibold); color: var(--color-text); margin-bottom: var(--sp-2); }
     .faq-a { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
+
+    /* Feature-card icon hover */
+    .feature-card .feature-card__icon { transition: transform var(--t-base), filter var(--t-base); }
+    .feature-card:hover .feature-card__icon,
+    .feature-card:focus-within .feature-card__icon { transform: scale(1.12); filter: brightness(1.15); }
+
+    /* Reliable Care hover-card grid */
+    .cg-care-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); margin-top: var(--sp-10); }
+    .cg-care-card { position: relative; border-radius: var(--radius-2xl); overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+    .cg-care-card:focus-visible { box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--color-primary); outline: none; }
+    .cg-care-card__img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .cg-care-card:hover .cg-care-card__img,
+    .cg-care-card:focus-within .cg-care-card__img,
+    .cg-care-card.is-open .cg-care-card__img { transform: scale(1.05); }
+    .cg-care-card__title-bar { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--sp-12) var(--sp-5) var(--sp-5); background: linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.18) 65%, transparent 100%); z-index: 2; transition: opacity 0.25s ease; }
+    .cg-care-card__title-bar h3 { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--fw-semibold); color: white; margin: 0; line-height: var(--lh-snug); }
+    .cg-care-card:hover .cg-care-card__title-bar,
+    .cg-care-card:focus-within .cg-care-card__title-bar,
+    .cg-care-card.is-open .cg-care-card__title-bar { opacity: 0; }
+    .cg-care-card__overlay { position: absolute; inset: 0; background: rgba(14, 34, 4, .90); display: flex; flex-direction: column; justify-content: flex-end; padding: var(--sp-6); z-index: 3; opacity: 0; transform: translateY(6px); transition: opacity 0.28s ease, transform 0.28s ease; pointer-events: none; }
+    .cg-care-card:hover .cg-care-card__overlay,
+    .cg-care-card:focus-within .cg-care-card__overlay,
+    .cg-care-card.is-open .cg-care-card__overlay { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .cg-care-card__overlay-label { font-family: var(--font-heading); font-size: var(--text-xs); font-weight: var(--fw-bold); letter-spacing: var(--ls-widest); text-transform: uppercase; color: var(--green-400); margin-bottom: var(--sp-2); }
+    .cg-care-card__overlay-title { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: var(--fw-bold); color: white; margin-bottom: var(--sp-3); line-height: var(--lh-snug); }
+    .cg-care-card__overlay-text { font-size: var(--text-sm); color: rgba(255,255,255,.82); line-height: var(--lh-relaxed); }
+    @media (max-width: 900px) { .cg-care-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .cg-care-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-3); } .cg-care-card { aspect-ratio: 1/1; } .cg-care-card__overlay { padding: var(--sp-4); } .cg-care-card__overlay-title { font-size: var(--text-base); } }
+    @media (prefers-reduced-motion: reduce) { .cg-care-card__img, .cg-care-card__overlay, .cg-care-card__title-bar { transition: none; } }
   </style>
 </head>
 <body>
@@ -185,7 +214,7 @@
       </div>
       <div class="cards-grid stagger" style="margin-top:var(--sp-8);">
 
-        <div class="card feature-card">
+        <div class="card feature-card card--hoverable">
           <div class="feature-card__icon">
             <i data-lucide="users" aria-hidden="true"></i>
           </div>
@@ -193,7 +222,7 @@
           <p class="feature-card__body">Assistance with bathing, dressing, grooming, toileting, and mobility. All non-medical activities of daily living (ADL) support. Caregivers work within the patient's comfort and routine, following a care plan developed with the family.</p>
         </div>
 
-        <div class="card feature-card">
+        <div class="card feature-card card--hoverable">
           <div class="feature-card__icon">
             <i data-lucide="heart" aria-hidden="true"></i>
           </div>
@@ -201,7 +230,7 @@
           <p class="feature-card__body">Meaningful social interaction, conversation, light recreation, and accompaniment on outings. Isolation is a documented health risk for seniors; consistent, caring presence matters as much as any task performed.</p>
         </div>
 
-        <div class="card feature-card">
+        <div class="card feature-card card--hoverable">
           <div class="feature-card__icon">
             <i data-lucide="home" aria-hidden="true"></i>
           </div>
@@ -216,18 +245,22 @@
   <!-- Compliance: What Caregivers Do NOT Provide -->
   <section class="section bg-white">
     <div class="container">
-      <div class="reveal" style="max-width:760px;margin-inline:auto;">
-        <h2 class="h2" style="margin-bottom:var(--sp-3);">An important distinction.</h2>
-        <p class="text-lg text-secondary" style="margin-bottom:var(--sp-5);">Non-medical caregivers do not provide clinical care. Understanding this boundary protects patients and ensures the right level of care is in place.</p>
-        <div class="compliance-note">
-          <p style="font-weight:var(--fw-semibold);margin-bottom:var(--sp-3);">Caregivers coordinated through our network do not:</p>
-          <ul class="feature-list" style="margin-bottom:var(--sp-4);">
-            <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Administer medications or injections</li>
-            <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Perform wound care or dressing changes</li>
-            <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Provide skilled nursing or therapy services</li>
-            <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Serve as a replacement for licensed home health, hospice, or medical care</li>
-          </ul>
-          <p class="text-sm text-secondary">If your loved one needs skilled nursing, home health, wound care, or other clinical services, Ohana can coordinate those services separately through our clinical network. See <a href="home-health.html" style="color:var(--color-primary);">Home Health</a> or <a href="wound-care.html" style="color:var(--color-primary);">Wound Care</a> for more information.</p>
+      <div class="grid grid-2 reveal" style="gap:var(--sp-12);align-items:start;">
+        <div>
+          <h2 class="h2" style="margin-bottom:var(--sp-4);">An important distinction.</h2>
+          <p class="text-lg text-secondary" style="margin-bottom:var(--sp-4);">Non-medical caregivers do not provide clinical care. Understanding this boundary protects patients and ensures the right level of care is in place.</p>
+          <p class="text-secondary" style="font-size:var(--text-sm);line-height:var(--lh-relaxed);">If your loved one needs skilled nursing, home health, wound care, or other clinical services, Ohana can coordinate those services separately through our clinical network. See <a href="home-health.html" style="color:var(--color-primary);">Home Health</a> or <a href="wound-care.html" style="color:var(--color-primary);">Wound Care</a> for more information.</p>
+        </div>
+        <div>
+          <div class="compliance-note">
+            <p style="font-weight:var(--fw-semibold);margin-bottom:var(--sp-3);">Caregivers coordinated through our network do not:</p>
+            <ul class="feature-list">
+              <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Administer medications or injections</li>
+              <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Perform wound care or dressing changes</li>
+              <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Provide skilled nursing or therapy services</li>
+              <li><i data-lucide="x-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Serve as a replacement for licensed home health, hospice, or medical care</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -300,6 +333,49 @@
             <p>Caregiver screening is performed by the employing partner agency, not by Ohana. Ohana verifies that partner agencies maintain appropriate screening policies before including them in our network, but does not independently conduct background checks or credentialing for individual caregivers.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reliable Care Starts Here -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="h2">Reliable Care Starts Here</h2>
+        <p class="text-lg text-secondary">Coordinated caregivers show up prepared, matched to your family's routine, and supported by a network designed for consistency.</p>
+      </div>
+      <div class="cg-care-grid">
+
+        <div class="cg-care-card" tabindex="0" aria-label="Everyday Help and Friendly Company">
+          <img class="cg-care-card__img" src="../images/pexels-care-5.jpg" alt="Caregiver sharing a warm moment with senior client at home" loading="lazy" />
+          <div class="cg-care-card__title-bar"><h3>Everyday Help &amp; Friendly Company</h3></div>
+          <div class="cg-care-card__overlay">
+            <p class="cg-care-card__overlay-label">Companionship</p>
+            <p class="cg-care-card__overlay-title">Everyday Help &amp; Friendly Company</p>
+            <p class="cg-care-card__overlay-text">Coordinated access to caregivers who provide conversation, safe outings, and daily structure. Consistency of presence matters for seniors living at home.</p>
+          </div>
+        </div>
+
+        <div class="cg-care-card" tabindex="0" aria-label="Daily Living Assistance">
+          <img class="cg-care-card__img" src="../images/pexels-care-2.jpg" alt="Caregiver assisting senior with daily living activities" loading="lazy" />
+          <div class="cg-care-card__title-bar"><h3>Daily Living Assistance</h3></div>
+          <div class="cg-care-card__overlay">
+            <p class="cg-care-card__overlay-label">ADL Support</p>
+            <p class="cg-care-card__overlay-title">Daily Living Assistance</p>
+            <p class="cg-care-card__overlay-text">Bathing, dressing, grooming, and meal preparation support through our partner caregiver network. All non-medical, within the caregiver's scope of practice.</p>
+          </div>
+        </div>
+
+        <div class="cg-care-card" tabindex="0" aria-label="Non-Medical Support Coordination">
+          <img class="cg-care-card__img" src="../images/pexels-care-7.jpg" alt="Caregiver helping senior with household tasks and errands" loading="lazy" />
+          <div class="cg-care-card__title-bar"><h3>Non-Medical Support Coordination</h3></div>
+          <div class="cg-care-card__overlay">
+            <p class="cg-care-card__overlay-label">Household &amp; Errands</p>
+            <p class="cg-care-card__overlay-title">Non-Medical Support Coordination</p>
+            <p class="cg-care-card__overlay-text">Medication reminders, light housekeeping, and errand support coordinated through licensed partner agencies. Ohana confirms the match and stays involved.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -446,6 +522,20 @@
 <script src="../design-system/js/nav.js"></script>
 <script src="../design-system/js/main.js"></script>
   <script src="../design-system/js/faq.js"></script>
+<script>
+(function () {
+  document.querySelectorAll('.cg-care-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var wasOpen = card.classList.contains('is-open');
+      document.querySelectorAll('.cg-care-card').forEach(function (c) { c.classList.remove('is-open'); });
+      if (!wasOpen) card.classList.add('is-open');
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+    });
+  });
+})();
+</script>
 <script>lucide.createIcons();</script>
 </body>
 </html>
