@@ -106,6 +106,83 @@
     .feature-list li { display: flex; align-items: flex-start; gap: var(--sp-3); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: var(--lh-relaxed); }
     .feature-list li svg { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
 
+    /* ── Why Choose Ohana NEMT section ─────────────────────────── */
+    .nemt-why {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-14);
+      align-items: center;
+    }
+    .nemt-why__img {
+      margin-top: var(--sp-8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nemt-why__img img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 28px rgba(0,0,0,.13));
+    }
+    .nemt-why__cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-4);
+    }
+    .nemt-why-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      padding: var(--sp-5);
+      border: 1px solid var(--color-border-subtle);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      transition:
+        transform   var(--t-base),
+        box-shadow  var(--t-base),
+        border-color var(--t-base);
+    }
+    .nemt-why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-green-lg);
+      border-color: var(--green-200);
+    }
+    .nemt-why-card__icon {
+      width: 36px; height: 36px;
+      border-radius: var(--radius-md);
+      background: var(--green-50);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+      transition: transform var(--t-base), filter var(--t-base);
+    }
+    .nemt-why-card:hover .nemt-why-card__icon {
+      transform: scale(1.12);
+      filter: brightness(1.1);
+    }
+    .nemt-why-card__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-sm);
+      font-weight: var(--fw-semibold);
+      color: var(--color-text);
+      line-height: var(--lh-snug);
+      margin: 0;
+    }
+    .nemt-why-card__body {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: var(--lh-relaxed);
+      margin: 0;
+    }
+    @media (max-width: 960px) {
+      .nemt-why { grid-template-columns: 1fr; gap: var(--sp-10); }
+      .nemt-why__img { margin-top: 0; }
+    }
+    @media (max-width: 640px) {
+      .nemt-why__cards { grid-template-columns: 1fr; }
+    }
+
     /* ── Van scroll-linked entrance ────────────────────────────── */
     /* No CSS transitions — JS drives every frame via rAF.
        will-change promotes the layer so compositing is cheap.    */
@@ -246,6 +323,67 @@
             <img src="../images/nemt-vehicle.png" alt="Ohana NEMT Toyota Sienna wheelchair-accessible vehicle" style="width:100%;height:auto;display:block;" loading="eager" />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ── Why Choose Ohana NEMT ─────────────────────────────── -->
+    <section class="section bg-white" aria-labelledby="nemt-why-heading">
+      <div class="container">
+        <div class="nemt-why">
+
+          <!-- Left: headline + copy + van image -->
+          <div class="reveal">
+            <span class="eyebrow">Ohana-Direct Transportation</span>
+            <h2 id="nemt-why-heading" style="margin-bottom:var(--sp-4);">Why Choose Ohana NEMT</h2>
+            <p style="color:var(--color-text-secondary);line-height:var(--lh-relaxed);">Ohana operates its own NEMT fleet and coordinates transportation with a focus on safety, reliability, and clear communication for families, facilities, and care teams.</p>
+            <div class="nemt-why__img">
+              <img src="../images/nemt-van-side.avif" alt="Ohana NEMT vehicle" width="520" height="300" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Right: 2-column benefit card grid -->
+          <div class="nemt-why__cards reveal">
+
+            <div class="nemt-why-card">
+              <div class="nemt-why-card__icon"><i data-lucide="users" style="width:18px;height:18px;" aria-hidden="true"></i></div>
+              <p class="nemt-why-card__title">Family-Owned Support</p>
+              <p class="nemt-why-card__body">Local, responsive coordination with a team that understands the importance of dependable transport.</p>
+            </div>
+
+            <div class="nemt-why-card">
+              <div class="nemt-why-card__icon"><i data-lucide="shield-check" style="width:18px;height:18px;" aria-hidden="true"></i></div>
+              <p class="nemt-why-card__title">Licensed, Bonded &amp; Insured</p>
+              <p class="nemt-why-card__body">Vehicles and operations are maintained with safety, inspection, and compliance standards in mind.</p>
+            </div>
+
+            <div class="nemt-why-card">
+              <div class="nemt-why-card__icon"><i data-lucide="accessibility" style="width:18px;height:18px;" aria-hidden="true"></i></div>
+              <p class="nemt-why-card__title">Accessible Transport Options</p>
+              <p class="nemt-why-card__body">Ambulatory, wheelchair-accessible, and gurney-equipped transport options may be available based on need.</p>
+            </div>
+
+            <div class="nemt-why-card">
+              <div class="nemt-why-card__icon"><i data-lucide="building-2" style="width:18px;height:18px;" aria-hidden="true"></i></div>
+              <p class="nemt-why-card__title">Facility &amp; Discharge Ready</p>
+              <p class="nemt-why-card__body">Support for hospital discharges, skilled nursing facility transfers, dialysis trips, and home-to-appointment transport.</p>
+            </div>
+
+            <div class="nemt-why-card">
+              <div class="nemt-why-card__icon"><i data-lucide="calendar-check" style="width:18px;height:18px;" aria-hidden="true"></i></div>
+              <p class="nemt-why-card__title">Clear Scheduling</p>
+              <p class="nemt-why-card__body">Our team helps confirm trip details, timing, pickup location, destination, and special transport needs.</p>
+            </div>
+
+            <div class="nemt-why-card">
+              <div class="nemt-why-card__icon"><i data-lucide="map-pin" style="width:18px;height:18px;" aria-hidden="true"></i></div>
+              <p class="nemt-why-card__title">Door-to-Door Assistance</p>
+              <p class="nemt-why-card__body">Transport support is coordinated with attention to safe pickup, arrival, and communication throughout the trip.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <p class="faq-disclaimer reveal" style="margin-top:var(--sp-10);">NEMT services are non-emergency transportation only. For a medical emergency, call 911.</p>
       </div>
     </section>
 
