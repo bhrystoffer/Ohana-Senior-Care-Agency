@@ -117,6 +117,21 @@
       .ml-why-card, .ml-trust-card { transition: none; }
       .ml-why-card__icon, .ml-trust-card__icon { transition: none; }
     }
+
+    /* ── Facilities Served + Diagnostic Network split layout ─── */
+    .lab-split-container {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+    .lab-left  { flex: 1; }
+    .lab-right { flex: 1.2; }
+    @media (max-width: 1024px) {
+      .lab-split-container { gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .lab-split-container { flex-direction: column; gap: 40px; }
+    }
   </style>
 </head>
 <body>
@@ -288,29 +303,32 @@
     </div>
   </section>
 
-  <!-- Facilities Served -->
-  <section class="section bg-alt">
-    <div class="container reveal" style="max-width:760px;">
-      <h2 class="h2">Facilities Served</h2>
-      <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-top:var(--sp-4);">Mobile specimen collection is available for patients at:</p>
-      <ul class="feature-list" style="margin-top:var(--sp-5);">
-        <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Private residences</li>
-        <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Skilled nursing facilities (SNFs)</li>
-        <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Assisted living and memory care facilities</li>
-        <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Hospice and palliative care settings</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Facilities Served + Diagnostic Network -->
+  <section class="section bg-alt" aria-label="Facilities served and diagnostic network">
+    <div class="container">
+      <div class="lab-split-container">
 
-  <!-- Partner Reference -->
-  <section class="section bg-white">
-    <div class="container reveal" style="max-width:760px;">
-      <h2 class="h2">Our diagnostic network.</h2>
-      <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-top:var(--sp-4);">Ohana coordinates with Quantum Laboratory and other CLIA-certified diagnostic partners serving Southern California.</p>
-      <p class="compliance-note">Ohana does not operate a laboratory and does not collect specimens directly. All specimen handling, testing, and results reporting are performed by CLIA-certified partner laboratories.</p>
-      <div class="compliance-note" style="margin-top:var(--sp-4);">
-        <i data-lucide="info" aria-hidden="true"></i>
-        <p>Coverage for at-home lab services varies by test type, ordering physician, insurance plan, and eligibility. Some diagnostic services may be covered under Medicare Part B or private insurance when ordered by a physician. Coverage eligibility, billing, and prior authorization are handled directly by the partner laboratory. Ohana does not bill insurance and does not guarantee coverage or payment.</p>
+        <div class="lab-left reveal">
+          <h2 class="h2">Facilities Served</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-top:var(--sp-4);">Mobile specimen collection is available for patients at:</p>
+          <ul class="feature-list" style="margin-top:var(--sp-5);">
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Private residences</li>
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Skilled nursing facilities (SNFs)</li>
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Assisted living and memory care facilities</li>
+            <li><i data-lucide="check-circle" style="width:16px;height:16px;" aria-hidden="true"></i>Hospice and palliative care settings</li>
+          </ul>
+        </div>
+
+        <div class="lab-right reveal">
+          <h2 class="h2">Our diagnostic network.</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:var(--lh-relaxed);margin-top:var(--sp-4);">Ohana coordinates with Quantum Laboratory and other CLIA-certified diagnostic partners serving Southern California.</p>
+          <p class="compliance-note">Ohana does not operate a laboratory and does not collect specimens directly. All specimen handling, testing, and results reporting are performed by CLIA-certified partner laboratories.</p>
+          <div class="compliance-note" style="margin-top:var(--sp-4);">
+            <i data-lucide="info" aria-hidden="true"></i>
+            <p>Coverage for at-home lab services varies by test type, ordering physician, insurance plan, and eligibility. Some diagnostic services may be covered under Medicare Part B or private insurance when ordered by a physician. Coverage eligibility, billing, and prior authorization are handled directly by the partner laboratory. Ohana does not bill insurance and does not guarantee coverage or payment.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
